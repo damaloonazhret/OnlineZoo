@@ -1,0 +1,33 @@
+@media (max-width: 1280px) {
+	.container {
+		padding: 0 40px;
+	}
+
+	.pets-paf__info-box {
+		&::after {
+			width: 725px;
+		}
+	}
+
+	.pets-paf__info-box{
+		gap:20px;
+	}
+
+	.slick-slide{
+		margin: 0 10px;
+	}
+
+	.pets-think {
+
+		&__box {
+			grid-template-columns: auto;
+			grid-template-rows: auto auto;
+			gap: 50px;
+			padding-top: 100px;
+		}
+
+		&__box-slider{
+			margin-left: 10px;
+		}
+}
+}
