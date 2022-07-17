@@ -1,26 +1,28 @@
 $(function () {
 
 
-/* 	$('.pets-bottom').slick({
-		infinite: true,
-		prevArrow: '<img class="slider-arrows slider-arrows__left"/>',
-		nextArrow: '<img class="slider-arrows slider-arrows__rigth"/>',
-
-		responsive: [
-			{
-				breakpoint: 1300,
-				settings: {
-					infinite: false,
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					centerMode: true,
-					variableWidth: true,
-					initialSlide: 0,
-					rows: 2,
+	/* 	$('.pets-bottom').slick({
+			infinite: true,
+			prevArrow: '<img class="slider-arrows slider-arrows__left"/>',
+			nextArrow: '<img class="slider-arrows slider-arrows__rigth"/>',
+	
+			responsive: [
+				{
+					breakpoint: 1300,
+					settings: {
+						infinite: false,
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						centerMode: true,
+						variableWidth: true,
+						initialSlide: 0,
+						rows: 2,
+					}
 				}
-			}
-		]
-	}); */
+			]
+		}); */
+
+
 
 
 	/* 	$('.pets-think__box-slider').slick({

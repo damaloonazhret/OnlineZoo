@@ -453,6 +453,7 @@ html {
 		width: 60px;
 		height: 60px;
 		transition: 0.8s;
+		cursor: pointer;
 
 		&:hover {
 			background-color: #20113D;
@@ -472,6 +473,7 @@ html {
 		width: 60px;
 		height: 60px;
 		transition: 0.8s;
+		cursor: pointer;
 
 		&:hover {
 			background-color: #20113D;
@@ -1376,6 +1378,12 @@ footer {
 		font-size: 18px;
 		line-height: 22px;
 		text-transform: uppercase;
+
+		p {
+			cursor: pointer;
+		}
+
+
 	}
 
 	&-content__top-btn {
@@ -1432,6 +1440,10 @@ footer {
 		display: flex;
 		width: 200px;
 		justify-content: space-between;
+
+		img {
+			cursor: pointer;
+		}
 	}
 
 	&-content__bottom-images-1 img:hover {
@@ -1466,6 +1478,12 @@ footer {
 }
 
 .map {
+	
+	&__hvr {
+		cursor: pointer;
+		transition: all 0.4s;
+	}
+
 	&-head {
 		font-family: 'Montserrat';
 		padding: 0;
@@ -1479,7 +1497,7 @@ footer {
 		padding-top: 40px;
 		display: grid;
 		justify-items: center;
-
+		
 		p {
 			width: 600px;
 		}
@@ -1497,176 +1515,209 @@ footer {
 		position: absolute;
 		left: 138px;
 		top: 378px;
-	}
+		background-image: url(../images/points/pointsFull.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 140px;
+		height: 171px;
+		
 
-
-
-
-	/* 	.map__hvr .okantovka{
-		stroke: transparent;
-		stroke-width: 0;
-		stroke-dasharray: 360;
-		stroke-dashoffset: 0;
-		transition: 2s;
-
-	} */
-
-	/* 	.map__hvr {
-		svg:hover .okantovka {
-			stroke: #FFFFFF;
-			stroke-width: 6;
-			animation: animate-all 1.3s linear forwards;
-		}
-
-		svg:hover .osnova{
-			animation: animate-in 0.7s linear forwards;
+		&:hover {
+			background-image: url(../images/points/pointswhite.svg);
 			
 		}
-	} */
 
-	/* 	@keyframes animate-all {
-		0% {
-			stroke-dashoffset: 0;
-		}
-		40%{
-			stroke-dashoffset: 360;
-		}
-		80%{
-			stroke-dashoffset: 720;
-			stroke: #F58021;
-		}
-		100%{
-			stroke-dashoffset: 720;
-			stroke: #FFFFFF;
+		&::after {
+			content: "";
+			background-image: url(../images/points/orel.svg);
+			height: 46.7px;
+			width: 48.2px;
+			position: absolute;
+			left: 44px;
+			top: 44px;
 		}
 	}
-
-	@keyframes animate-in {
-		0% {
-			fill: #F58021;
-		}
-		40%{
-			fill: #f58021e3;
-		}
-		80%{
-			fill: #ffc58f;
-		}
-		100%{
-			fill: #ffffff;
-		}
-	} */
-
-	.map__hvr {
-
-		width: 162px;
-		height: 206px;
-
-		svg:hover .osnova {
-			fill: #FFFFFF;
-			animation: myanim 0.5s;
-			fill: #FFFFFF;
-		}
-
-		svg:hover .okantovka {
-			animation: myshow 0.5s;
-			stroke: #FFFFFF;
-		}
-
-		svg:not(:hover) .osnova {
-			transition: 1.5s;
-		}
-
-		svg:not(:hover) .okantovka {
-			transition: 1.5s;
-		}
-
-		@keyframes myanim {
-			0% {
-				transform: scale(0.8);
-				transform-origin: center center;
-			}
-
-			100% {
-				transform: scale(1);
-				transform-origin: center center;
-				fill: #FFFFFF;
-			}
-		}
-
-		@keyframes myshow {
-			0% {
-				stroke-width: 0;
-				transform: scale(0.5);
-				stroke: #ffffff00;
-				transform-origin: center center;
-			}
-
-			50% {
-				stroke: #ffffff6e;
-				stroke-width: 1;
-			}
-
-			100% {
-				stroke-width: 4;
-				stroke: #FFFFFF;
-				transform: scale(1);
-				transform-origin: center center;
-			}
-		}
-	}
-
-
-
-	/* 	&-map__hvr:hover .osnova {
-		fill: #FFFFFF;
-		stroke: #FFFFFF;
-	}
-
-	&-map__hvr:hover .okantovka {
-		stroke: #FFFFFF;
-		fill: #FFFFFF;
-	} */
 
 	&-map__2 {
 		position: absolute;
 		left: 261px;
 		top: 391px;
+		background-image: url(../images/points/pointsFull.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 140px;
+		height: 171px;
+
+		&:hover {
+			background-image: url(../images/points/pointswhite.svg);
+		}
+
+
+		&::after {
+			content: "";
+			background-image: url(../images/points/croco.svg);
+			height: 47.7px;
+			width: 60.2px;
+			position: absolute;
+			left: 40px;
+			top: 44px;
+		}
 	}
 
 	&-map__3 {
 		position: absolute;
 		left: 546px;
 		top: 439px;
+		background-image: url(../images/points/pointsFull.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 140px;
+		height: 171px;
+
+		&:hover {
+			background-image: url(../images/points/pointswhite.svg);
+		}
+
+
+		&::after {
+			content: "";
+			background-image: url(../images/points/lion.svg);
+			height: 46.7px;
+			width: 52.2px;
+			position: absolute;
+			left: 44px;
+			top: 44px;
+		}
 	}
 
 	&-map__4 {
 		position: absolute;
 		left: 663px;
 		top: 461px;
+		background-image: url(../images/points/pointsFull.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 140px;
+		height: 171px;
+
+		&:hover {
+			background-image: url(../images/points/pointswhite.svg);
+		}
+
+
+		&::after {
+			content: "";
+			background-image: url(../images/points/gorilla.svg);
+			height: 47.7px;
+			width: 56.2px;
+			position: absolute;
+			left: 42px;
+			top: 42px;
+		}
 	}
 
 	&-map__5 {
 		position: absolute;
 		left: 768px;
 		top: 582px;
+		background-image: url(../images/points/pointsFull.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 140px;
+		height: 171px;
+
+		&:hover {
+			background-image: url(../images/points/pointswhite.svg);
+		}
+
+
+		&::after {
+			content: "";
+			background-image: url(../images/points/lemur.svg);
+			height: 55.7px;
+			width: 33.2px;
+			position: absolute;
+			left: 54px;
+			top: 44px;
+		}
 	}
 
 	&-map__6 {
 		position: absolute;
 		left: 925px;
 		top: 332px;
+		background-image: url(../images/points/pointsFull.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 140px;
+		height: 171px;
+
+		&:hover {
+			background-image: url(../images/points/pointswhite.svg);
+		}
+
+
+		&::after {
+			content: "";
+			background-image: url(../images/points/panda.svg);
+			height: 44.7px;
+			width: 59.2px;
+			position: absolute;
+			left: 42px;
+			top: 43px;
+		}
 	}
 
 	&-map__7 {
 		position: absolute;
 		left: 986px;
 		top: 491px;
+		background-image: url(../images/points/pointsFull.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 140px;
+		height: 171px;
+
+		&:hover {
+			background-image: url(../images/points/pointswhite.svg);
+		}
+
+
+		&::after {
+			content: "";
+			background-image: url(../images/points/tiger.svg);
+			height: 51.7px;
+			width: 57.2px;
+			position: absolute;
+			left: 38px;
+			top: 43px;
+		}
 	}
 
 	&-map__8 {
 		position: absolute;
 		left: 1117px;
 		top: 606px;
+		background-image: url(../images/points/pointsFull.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 140px;
+		height: 171px;
+
+		&:hover {
+			background-image: url(../images/points/pointswhite.svg);
+		}
+
+
+		&::after {
+			content: "";
+			background-image: url(../images/points/coala.svg);
+			height: 54.7px;
+			width: 45.2px;
+			position: absolute;
+			left: 47px;
+			top: 44px;
+		}
 	}
 }
 
