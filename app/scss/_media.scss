@@ -38,4 +38,18 @@
 			width: 346px;
 		}
 	}
+
+	.care-animals {
+		gap: 20px;
+		grid-template-areas:
+			"A A A   A A A"
+			"B B B   C C C"
+			"D D D   E E E"
+			". . F   F . .";
+		max-width: 930px;
+
+		margin: 0 auto;
+
+
+	}
 }
