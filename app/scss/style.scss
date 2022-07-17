@@ -1478,7 +1478,7 @@ footer {
 }
 
 .map {
-	
+
 	&__hvr {
 		cursor: pointer;
 		transition: all 0.4s;
@@ -1497,7 +1497,7 @@ footer {
 		padding-top: 40px;
 		display: grid;
 		justify-items: center;
-		
+
 		p {
 			width: 600px;
 		}
@@ -1520,11 +1520,11 @@ footer {
 		background-size: cover;
 		width: 140px;
 		height: 171px;
-		
+
 
 		&:hover {
 			background-image: url(../images/points/pointswhite.svg);
-			
+
 		}
 
 		&::after {
@@ -1750,6 +1750,12 @@ footer {
 		justify-content: center;
 		align-items: center;
 		justify-self: end;
+		cursor: pointer;
+		transition: 0.8s;
+
+		&:hover {
+			background-color: #D26004;
+		}
 
 		a {
 			font-family: 'Montserrat';
@@ -1758,6 +1764,18 @@ footer {
 			line-height: 22px;
 			text-transform: uppercase;
 			color: #FFFFFF;
+			padding-right: 33px;
+			position: relative;
+
+			&::after {
+				content: "";
+				background-image: url(../images/arrow-right__white.svg);
+				height: 25px;
+				width: 28.3px;
+				position: absolute;
+				left: 145px;
+				top: -3px;
+			}
 		}
 	}
 
@@ -1781,7 +1799,7 @@ footer {
 		text-transform: uppercase;
 		color: #000000;
 		text-align: center;
-		padding-top: 100px;
+		padding-top: 94px;
 	}
 
 	&-more-slider-box {
@@ -1789,8 +1807,122 @@ footer {
 		grid-template-columns: auto auto auto;
 		justify-content: center;
 		column-gap: 40px;
-		padding-top: 30px;
+		padding-top: 28px;
+		padding-left: 117px;
 	}
+
+	&-more-slider-box-img-1 {
+		position: relative;
+
+		img {
+			border: 4px solid #F58021;
+			width: 320px;
+			height: 209px;
+
+		}
+
+		&::after {
+			content: "CAM 1";
+			background-image: url(../images/cam/cam.svg);
+			background-repeat: no-repeat;
+			background-position: 75% 50%;
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 26px;
+			line-height: 32px;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			color: #FFFFFF;
+			border: 1px solid #FFFFFF;
+			border-radius: 5px 0px;
+			border-top: none;
+			border-left: none;
+			position: absolute;
+			width: 189px;
+			height: 44px;
+			left: 4px;
+			top: 4px;
+			padding-left: 37px;
+		}
+	}
+
+	&-more-slider-box-img-2 {
+		position: relative;
+
+		img {
+			width: 320px;
+			height: 209px;
+			border: 4px solid transparent;
+		}
+
+		&::after {
+			content: "CAM 2";
+			background-image: url(../images/cam/cam.svg);
+			background-repeat: no-repeat;
+			background-position: 78% 50%;
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 26px;
+			line-height: 32px;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			color: #FFFFFF;
+			border: 1px solid #FFFFFF;
+			border-radius: 5px 0px;
+			border-top: none;
+			border-left: none;
+			position: absolute;
+			width: 189px;
+			height: 44px;
+			left: 4px;
+			top: 4px;
+			padding-left: 37px;
+		}
+
+	}
+
+	&-more-slider-box-img-3 {
+		position: relative;
+
+		img {
+			width: 320px;
+			height: 209px;
+			border: 4px solid transparent;
+		}
+
+		&::after {
+			content: "CAM 3";
+			background-image: url(../images/cam/cam.svg);
+			background-repeat: no-repeat;
+			background-position: 77% 50%;
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 26px;
+			line-height: 32px;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			color: #FFFFFF;
+			border: 1px solid #FFFFFF;
+			border-radius: 5px 0px;
+			border-top: none;
+			border-left: none;
+			position: absolute;
+			width: 189px;
+			height: 44px;
+			left: 4px;
+			top: 4px;
+			padding-left: 37px;
+		}
+
+	}
+
+	
 }
 
 
