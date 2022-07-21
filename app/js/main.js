@@ -22,6 +22,16 @@ $(function () {
 			]
 		}); */
 
+	$('.video-menu__box').slick({
+		infinite: true,
+		useTransform: true,
+		useCSS: true,
+		vertical: true,
+		slidesToShow: 4,
+		nextArrow: $('.video-animals--btn'),
+		prevArrow: false,
+	});
+
 
 
 

@@ -4,25 +4,19 @@
 @import "fonts";
 @import 'animate.css';
 
-
 html {
 	overflow-x: hidden;
 }
 
-/* .container {
-	max-width: 1400px;
-	margin: 0 auto;
-} */
+body {
+	overflow-x: clip;
+}
 
 .container {
 	max-width: 1480px;
 	margin: 0 auto;
 	padding: 0 40px;
 }
-
-/* .wrapper {
-	padding: 0 35px;
-} */
 
 .header-page {
 	background-color: #F58021;
@@ -348,6 +342,12 @@ html {
 		margin-top: 150px;
 	}
 
+	&-box--cam {
+		grid-template-rows: 249px;
+	}
+
+
+
 	&-box__left-title {
 		font-family: 'Montserrat';
 		font-style: normal;
@@ -365,6 +365,10 @@ html {
 		line-height: 150%;
 		width: 609px;
 		padding-top: 21px;
+	}
+
+	&-box__left--text {
+		width: 873px;
 	}
 
 	&-box__right-quick {
@@ -433,9 +437,6 @@ html {
 		padding: 50px 235px 98px 235px;
 	}
 }
-
-
-
 
 .pets-bottom {
 
@@ -995,9 +996,6 @@ html {
 		padding-top: 71px;
 	}
 }
-
-
-
 
 .care-title {
 	font-family: 'Montserrat';
@@ -1721,7 +1719,253 @@ footer {
 	}
 }
 
+.video {
+	display: flex;
+	justify-content: space-between;
+
+	&-menu__box {
+		height: 692px;
+	}
+
+	&--box {
+		display: flex;
+		margin-left: -200px;
+	}
+
+	&--box__content-left {
+		position: sticky;
+		top: 0;
+	}
+
+	&-menu__box {
+		overflow: hidden;
+	}
+
+	&-animals--openbtn {
+		cursor: pointer;
+		top: 0;
+		width: 220px;
+		height: 80px;
+		background: url(../images/cam/double-arrows.svg) 85% 46% no-repeat;
+		transition: 0.8s;
+		&:hover{
+			transform: translateX(7px);
+		}
+
+		&:hover::after{
+			transform: translateX(-7px);
+		}
+
+		&::after {
+			content: "LIVE";
+			background-color: #F58021;
+			border-radius: 0px 0px 5px 0px;
+			width: 120px;
+			height: 38px;
+			background-image: url(../images/cam/cam.svg);
+			background-repeat: no-repeat;
+			background-position: 75% 50%;
+			font-family: 'Montserrat';
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 22px;
+			display: flex;
+			align-items: center;
+			text-transform: uppercase;
+			color: #FFFFFF;
+			padding-left: 25px;
+			transition: 0.8s;
+		}
+	}
+
+	&-animals--btn {
+		position: relative;
+		transition: 0.8s;
+		&:hover{
+			transform: translateY(7px);
+		}
+
+		&::after {
+			content: "";
+			background-image: url(../images/cam/btn-down.svg);
+			background-position: 50% 50%;
+			width: 220px;
+			height: 80px;
+			background-repeat: no-repeat;
+			position: absolute;
+			left: 0px;
+			top: -14px;
+		}
+
+	}
+
+	&-animals--1 {
+		position: relative;
+		width: 220px;
+		height: 171px;
+		background-image: url(../images/cam/ellipse1.svg);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-top: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+
+		img {
+			width: 80px;
+			height: 60px;
+			position: absolute;
+			left: 70px;
+			top: 49px;
+
+		}
+	}
+
+	&-animals--2 {
+		position: relative;
+		width: 220px;
+		height: 171px;
+		background-image: url(../images/cam/elipseorange.svg);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-top: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+
+		img {
+			width: 80px;
+			height: 60px;
+			position: absolute;
+			left: 70px;
+			top: 49px;
+		}
+	}
+
+	&-animals--3 {
+		position: relative;
+		width: 220px;
+		height: 171px;
+		background-image: url(../images/cam/elipseorange.svg);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-top: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+
+		img {
+			width: 80px;
+			height: 60px;
+			position: absolute;
+			left: 70px;
+			top: 49px;
+		}
+	}
+
+	&-animals--4 {
+		position: relative;
+		width: 220px;
+		height: 171px;
+		background-image: url(../images/cam/elipseorange.svg);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-top: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+
+		img {
+			width: 80px;
+			height: 60px;
+			position: absolute;
+			left: 70px;
+			top: 49px;
+		}
+	}
+
+	&-animals--5 {
+		position: relative;
+		width: 220px;
+		height: 171px;
+		background-image: url(../images/cam/elipseorange.svg);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-top: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+
+		img {
+			width: 80px;
+			height: 60px;
+			position: absolute;
+			left: 70px;
+			top: 49px;
+		}
+	}
+
+	&-animals--6 {
+		position: relative;
+		width: 220px;
+		height: 171px;
+		background-image: url(../images/cam/elipseorange.svg);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-top: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+
+		img {
+			width: 80px;
+			height: 60px;
+			position: absolute;
+			left: 70px;
+			top: 49px;
+		}
+	}
+
+	&-animals--7 {
+		position: relative;
+		width: 220px;
+		height: 171px;
+		background-image: url(../images/cam/elipseorange.svg);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-top: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+
+		img {
+			width: 80px;
+			height: 60px;
+			position: absolute;
+			left: 70px;
+			top: 49px;
+		}
+	}
+
+	&-animals--8 {
+		position: relative;
+		width: 220px;
+		height: 171px;
+		background-image: url(../images/cam/elipseorange.svg);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-top: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
+
+		img {
+			width: 80px;
+			height: 60px;
+			position: absolute;
+			left: 70px;
+			top: 49px;
+		}
+	}
+
+
+	&-menu {
+		width: 220px;
+		height: 846px;
+		background: #20113D;
+		position: sticky;
+		top: 0;
+	}
+
+
+}
+
 .video__head {
+
 
 
 	&-top {
@@ -1779,6 +2023,8 @@ footer {
 		}
 	}
 
+
+
 	&-video {
 		padding-top: 50px;
 		display: grid;
@@ -1809,7 +2055,19 @@ footer {
 		column-gap: 40px;
 		padding-top: 28px;
 		padding-left: 117px;
+		position: relative;
 	}
+
+	&-more--btn {
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		top: 120px;
+		width: 1173px;
+		left: 173px;
+	}
+
+
 
 	&-more-slider-box-img-1 {
 		position: relative;
@@ -1919,74 +2177,8 @@ footer {
 			top: 4px;
 			padding-left: 37px;
 		}
-
 	}
-
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

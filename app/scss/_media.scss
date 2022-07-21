@@ -11,9 +11,9 @@
 		gap: 20px;
 	}
 
-	.slick-slide {
+	/* .slick-slide {
 		margin: 0 10px;
-	}
+	} */
 
 	.pets-think {
 
@@ -64,4 +64,20 @@
 		}
 
 	}
+
+	.video__head-video {
+		grid-template-columns: minmax(auto, 1025px);
+		grid-template-rows: minmax(auto, 760px);
+		justify-content: end;
+	}
+
+/* 	.video{
+		&-animals--1{
+			background-image: url(../images/points/panda.svg);
+		}
+
+		&-menu{
+			width: 115px;
+		}
+	} */
 }
