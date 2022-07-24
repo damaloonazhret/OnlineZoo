@@ -339,6 +339,7 @@ body {
 		grid-template-rows: 221px;
 		justify-content: space-between;
 		align-items: center;
+		margin-top: 150px;
 	}
 
 	&-box--cam {
@@ -424,6 +425,7 @@ body {
 		text-transform: uppercase;
 		color: #00A092;
 		padding-top: 136px;
+		padding-left: 18px;
 	}
 
 	&__text {
@@ -846,7 +848,7 @@ body {
 		display: grid;
 		grid-template-columns: 560px 1060px;
 		gap: 40px;
-		padding-top: 100px;
+		padding-top: 109px;
 	}
 
 	&__box-btn {
@@ -863,7 +865,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		margin-top: 461px;
+		margin-top: 427px;
 		margin-bottom: 150px;
 		transition: 1s;
 		cursor: pointer;
@@ -878,12 +880,13 @@ body {
 			width: 24.28px;
 			height: 22px;
 			position: absolute;
-			right: 50px;
+			right: 76px;
 		}
 
 		a {
 			color: #FFFFFF;
 			display: flex;
+			padding-right: 34px;
 		}
 	}
 
@@ -1019,7 +1022,7 @@ body {
 	text-align: center;
 	color: #20113D;
 	padding-top: 50px;
-	padding-bottom: 100px;
+	padding-bottom: 94px;
 	padding-left: 440px;
 	padding-right: 440px;
 }
@@ -1089,7 +1092,7 @@ body {
 	grid-area: F;
 	display: grid;
 	align-items: center;
-	margin-top: 57px;
+	margin-top: 63px;
 	color: #20113D;
 	position: relative;
 	transition: 1s;
@@ -1102,7 +1105,7 @@ body {
 		position: absolute;
 		width: 25px;
 		height: 25px;
-		right: 15px;
+		right: 35px;
 		transition: 1s;
 	}
 
@@ -1123,11 +1126,7 @@ body {
 		font-size: 18px;
 		line-height: 22px;
 		text-transform: uppercase;
-
-
-
-
-
+		margin-right: 31px;
 	}
 
 }
@@ -1318,6 +1317,8 @@ body {
 
 
 .footer {
+
+	margin-top: 150px;
 	&-wrapper {
 		background: #20113D;
 	}
@@ -1341,7 +1342,7 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-top: 61px;
+		padding-top: 66px;
 		position: relative;
 
 		&::after {
@@ -1350,7 +1351,7 @@ body {
 			width: 1400px;
 			height: 1px;
 			position: absolute;
-			top: 205px;
+			top: 214px;
 		}
 	}
 
@@ -1358,6 +1359,7 @@ body {
 		display: flex;
 		width: 414px;
 		justify-content: space-between;
+		padding-top: 10px;
 	}
 
 	&-content__top-contact {
@@ -1413,7 +1415,7 @@ body {
 
 	&-content__bottom {
 		display: flex;
-		padding-top: 112px;
+		padding-top: 117px;
 		justify-content: space-between;
 	}
 
@@ -1723,7 +1725,7 @@ body {
 
 	&-box--cam {
 		grid-template-rows: 249px;
-
+		margin-top: -150px;
 	}
 
 }
@@ -2221,6 +2223,13 @@ body {
 .animal-infocard {
 	display: grid;
 	margin-left: 220px;
+
+
+	/* .container {
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: auto;
+	} */
 
 
 
