@@ -2,6 +2,14 @@
 	.pets-paf__info-box-moreinfo-titlemobile {
 		display: none;
 	}
+
+	.video-animals--le img {
+		left: 66px;
+	}
+
+	.video-animals--active img {
+		left: 70px;
+	}
 }
 
 @media (max-width: 1440px) {
@@ -328,6 +336,7 @@
 
 	.care {
 		padding-bottom: 143px;
+
 		&-title {
 			padding-top: 150px;
 			padding-left: 245px;
@@ -353,21 +362,22 @@
 
 		}
 
-		&-animals-grid{
+		&-animals-grid {
 			grid-template-columns: 455px;
 			grid-template-rows: auto 84px 163px;
 		}
 
-		&-animals__btn{
+		&-animals__btn {
 			margin-top: 78px;
 		}
 
-		&-animals__monitorimg{
+		&-animals__monitorimg {
 			padding-top: 152px;
-			img{
+
+			img {
 				height: 668px;
 			}
-			
+
 		}
 	}
 
