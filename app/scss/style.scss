@@ -996,7 +996,7 @@ body {
 		line-height: 150%;
 		/* padding-top: 20px; */
 		width: 415px;
-		
+
 	}
 
 	&__box-slider-box-name {
@@ -1073,11 +1073,12 @@ body {
 	grid-template-rows: 658px;
 	transition: 1s;
 	width: 100%;
-	img{
+
+	img {
 		object-fit: cover;
 	}
 
-	&-img{
+	&-img {
 		width: 100%;
 	}
 
@@ -1520,11 +1521,12 @@ body {
 	}
 
 	&-map {
-		background-image: url(../images/map.svg);
-		width: 1406px;
-		height: 912px;
 		margin-top: 70px;
 		position: relative;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	&-map__1 {
