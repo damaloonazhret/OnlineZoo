@@ -1,6 +1,7 @@
 $(function () {
 
 
+
 	/* 	$('.pets-bottom').slick({
 			infinite: true,
 			prevArrow: '<img class="slider-arrows slider-arrows__left"/>',
