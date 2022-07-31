@@ -348,6 +348,10 @@ body {
 		line-height: 130%;
 	}
 
+	&-box__right-amount-don {
+		color: #ffffff;
+	}
+
 	&-box__right-amount {
 		display: grid;
 		grid-template-columns: 240px 80px;
@@ -356,7 +360,7 @@ body {
 		justify-items: center;
 		border: 1px solid #FFFFFF;
 		border-radius: 5px;
-		margin-top: 7px;
+		margin-top: 11px;
 		position: relative;
 
 		input[type="number"] {
@@ -364,19 +368,20 @@ body {
 			outline: none;
 			width: 235px;
 			height: 76px;
-			background-color: #00000000;
-			padding-left: 29px;
+			background-color: rgba(255, 0, 0, 0);
+			padding-left: 26px;
+
+			&::placeholder {
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: 600;
+				font-size: 18px;
+				line-height: 22px;
+				text-transform: uppercase;
+				color: rgba(255, 255, 255, 1);
+			}
 		}
 
-		input[placeholder] {
-			font-family: 'Montserrat';
-			font-style: normal;
-			font-weight: 600;
-			font-size: 18px;
-			line-height: 22px;
-			text-transform: uppercase;
-			color: #FFFFFF;
-		}
 
 		&::after {
 			content: "$";
@@ -551,7 +556,7 @@ body {
 			content: "Lucas";
 			background: #20113D;
 			border-radius: 5px 0px;
-			width: 134.29px;
+			width: auto;
 			height: 60.78px;
 			position: absolute;
 			left: 0;
@@ -565,7 +570,7 @@ body {
 			display: grid;
 			align-items: center;
 			color: #FFFFFF;
-			padding-left: 8px;
+			padding: 0 28px;
 		}
 
 		&:hover {
@@ -975,7 +980,7 @@ body {
 		border-radius: 5px;
 		display: grid;
 		gap: 20px;
-		padding: 45px 50px 70px 51px;
+		padding: 47px 50px 70px 53px;
 	}
 
 	&__box-slider-box-img {
@@ -996,7 +1001,7 @@ body {
 		line-height: 150%;
 		/* padding-top: 20px; */
 		width: 415px;
-
+		margin-top: -10px;
 	}
 
 	&__box-slider-box-name {
@@ -1420,7 +1425,8 @@ body {
 			border-radius: 5px;
 			padding: 26px 68px 26px 34px;
 			color: #ffffff;
-			&:hover{
+
+			&:hover {
 				color: #FFFFFF;
 			}
 		}
@@ -1567,6 +1573,7 @@ body {
 		background-size: cover;
 		width: 140px;
 		height: 171px;
+		pointer-events: none;
 
 		&:hover {
 			background-image: url(../images/points/pointswhite.svg);
@@ -1593,6 +1600,7 @@ body {
 		background-size: cover;
 		width: 140px;
 		height: 171px;
+		pointer-events: none;
 
 		&:hover {
 			background-image: url(../images/points/pointswhite.svg);
@@ -1697,6 +1705,7 @@ body {
 		background-size: cover;
 		width: 140px;
 		height: 171px;
+		pointer-events: none;
 
 		&:hover {
 			background-image: url(../images/points/pointswhite.svg);
@@ -1723,6 +1732,7 @@ body {
 		background-size: cover;
 		width: 140px;
 		height: 171px;
+		pointer-events: none;
 
 		&:hover {
 			background-image: url(../images/points/pointswhite.svg);
@@ -1827,7 +1837,7 @@ body {
 
 	&-animals--btn {
 		position: relative;
-		
+
 
 		&:hover::after {
 			transform: translateY(7px);
