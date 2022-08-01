@@ -33,6 +33,13 @@ $(function () {
 		prevArrow: false,
 	});
 
+	
+/* 	$('.care-animals__mobile-slider').slick({
+		slidesToShow: 1,
+		nextArrow: false,
+		prevArrow: false,
+	}); */
+
 
 
 
