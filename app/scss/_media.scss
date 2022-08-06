@@ -1842,6 +1842,13 @@ footer {
 			grid-template-rows: 44px;
 			height: 44px;
 
+			a {
+				margin-bottom: 2px;
+				margin-right: 3px;
+				height: 96%;
+				border-radius: 3px;
+			}
+
 			input[type="number"] {
 				&::placeholder {
 					font-weight: 600;
@@ -2206,6 +2213,7 @@ footer {
 		&__top {
 			grid-template-columns: 300px;
 			row-gap: 25px;
+			justify-content: space-around;
 
 			&::after {
 				top: 488px;
@@ -2245,6 +2253,104 @@ footer {
 			flex-direction: column;
 			text-align: center;
 			height: 140px;
+		}
+	}
+
+	.map {
+		padding-bottom: 44px;
+
+		&-head {
+			font-weight: 500;
+			font-size: 26px;
+			line-height: 130%;
+			text-transform: lowercase;
+			padding-top: 20px;
+
+			p {
+				width: 100%;
+			}
+		}
+
+		&__hvr {
+			width: 47px;
+			height: 64px;
+
+			&::after {
+				background-size: 80%;
+				left: 15px;
+				top: 18px;
+			}
+		}
+
+		&-map__5 {
+			&::after {
+				background-size: 58%;
+				left: 18px;
+				top: 15px;
+			}
+		}
+
+		&-map__7 {
+			&::after {
+				background-size: 74%;
+				left: 13px;
+				top: 16px;
+			}
+		}
+
+		&-map__6 {
+			&::after {
+				background-size: 76%;
+			}
+		}
+
+		&-map {
+			margin-top: 20px;
+
+			img {
+				width: 115%;
+				transform: translateX(-6%);
+			}
+		}
+
+		&-map__1 {
+			left: 2.5%;
+			top: 32%;
+		}
+
+		&-map__2 {
+			left: 14.8%;
+			top: 37.4%;
+		}
+
+		&-map__3 {
+			left: 37.4%;
+			top: 39%;
+		}
+
+		&-map__4 {
+			left: 45.9%;
+			top: 48.5%;
+		}
+
+		&-map__5 {
+			left: 53.6%;
+			top: 57.2%;
+		}
+
+		&-map__6 {
+			left: 67.5%;
+			top: 31.4%;
+		}
+
+		&-map__7 {
+			left: 72.6%;
+			top: 50%;
+		}
+
+		&-map__8 {
+			left: 82%;
+			top: 62%;
 		}
 	}
 }
