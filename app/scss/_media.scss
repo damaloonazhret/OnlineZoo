@@ -71,10 +71,22 @@ footer {
 	.video__head-top-btn-mobile {
 		display: none;
 	}
+
+	.menu__btn{
+		display: none;
+	}
 }
 
 @media (min-width: 600px) {
 	.pets-bottom__card--mobile {
+		display: none;
+	}
+
+	.video__head-top-btn-mobile {
+		display: none;
+	}
+
+	.animal-infocard__btn--320-box {
 		display: none;
 	}
 }
@@ -865,6 +877,19 @@ footer {
 	.container {
 		padding: 0 20px;
 	}
+
+	.header-page__box-flex{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-content: space-between;
+	}
+
+	.menu-btn{
+		display: grid;
+		justify-self: end;
+		align-self: end;
+	}
+
 
 	.header-page {
 		&__box-contact-text {
@@ -2352,5 +2377,215 @@ footer {
 			left: 82%;
 			top: 62%;
 		}
+	}
+
+	.video {
+
+		&__head-top-title {
+			font-weight: 500;
+			font-size: 26px;
+			line-height: 32px;
+		}
+
+		&__head-video {
+			grid-template-columns: 270px;
+			grid-template-rows: 200px;
+		}
+
+		&-animals--openbtn {
+			width: 50px;
+		}
+
+		&-animals--hov a {
+			grid-template-columns: 50px;
+		}
+
+		&-animals--btn::after {
+			width: 50px;
+		}
+
+		&-menu {
+			width: 50px;
+			height: 300px;
+		}
+
+		&-menu__box {
+			height: 200px;
+		}
+
+		&-animals--hov {
+			width: 50px;
+			height: 50px;
+
+			a {
+				grid-template-columns: 50px;
+				grid-template-rows: 50px;
+
+				svg {
+					width: 30px;
+					height: 29px;
+				}
+			}
+		}
+
+		&-animals--openbtn {
+			width: 50px;
+		}
+
+		&-animals--btn {
+			width: 50px;
+
+			&::after {
+				width: 50px;
+				height: 50px;
+			}
+
+		}
+
+		&__head-top {
+			padding-top: 20px;
+		}
+
+		&__head-video {
+			padding-top: 14px;
+		}
+
+		&__head-more-slider-box-img-3 {
+			display: none;
+		}
+
+		&__head-more-title {
+			justify-self: center;
+		}
+
+		&__head-more {
+			grid-template-rows: auto 120px auto;
+			grid-template-columns: 100.5vw;
+		}
+
+		&__head-top-btn-mobile {
+			grid-row: 3 / 4;
+			justify-self: center;
+			width: 300px;
+			margin-top: 58px;
+			margin-bottom: 47px;
+		}
+
+		&__head-more-title {
+			display: grid;
+			grid-template-columns: 88vw;
+			justify-self: end;
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 22px;
+			text-transform: uppercase;
+		}
+	}
+
+	.donation-box {
+		gap: 22px;
+		padding-bottom: 50px;
+	}
+
+	.donation-box--cam {
+		padding-top: 18px;
+	}
+
+	.donation-box--cam .donation-box__left--text {
+		width: 100%;
+	}
+
+	.animal-infocard {
+		&__know {
+			width: 100%;
+			margin-top: 50px;
+			padding-bottom: 0;
+
+			div {
+				width: 100%;
+				text-align: center;
+				padding-left: 10px;
+				padding-right: 10px;
+
+				&:first-child {
+					font-weight: 500;
+					font-size: 26px;
+					line-height: 32px;
+				}
+
+				&:last-child {
+					font-weight: 400;
+					font-size: 18px;
+					line-height: 150%;
+				}
+			}
+		}
+
+		&__info {
+			padding-top: 9px;
+			row-gap: 60px;
+
+			div {
+				flex-direction: column;
+
+				p {
+					padding: 0;
+				}
+
+				;
+			}
+		}
+
+		&__btn {
+			display: none;
+		}
+
+		&__grid {
+			padding-top: 50px;
+			padding-bottom: 75px;
+		}
+
+		&__image {
+			display: grid;
+			grid-template-columns: 100vw;
+			grid-template-rows: 100%;
+
+			img {
+				display: grid;
+				grid-template-columns: 100%;
+				grid-template-rows: 100%;
+				margin-left: -10px;
+				min-width: 1px;
+				min-height: 1px;
+			}
+		}
+
+		&__btn--320-box {
+			display: grid;
+		}
+
+		&__btn--320 {
+			display: block;
+			justify-self: center;
+			padding: 0;
+			margin: 0;
+			padding-right: 44px;
+			margin-top: 30px;
+		}
+
+		&__textb {
+			padding-top: 0px;
+			margin-top: -14px;
+		}
+	}
+
+	.contact-page__bg img {
+		height: 217px;
+	}
+
+	.contact-page__title {
+		font-weight: 500;
+		font-size: 26px;
+		line-height: 32px;
 	}
 }

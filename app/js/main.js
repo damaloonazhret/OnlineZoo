@@ -23,7 +23,7 @@ $(function () {
 			]
 		}); */
 
-	$('.video-menu__box').slick({
+	/* $('.video-menu__box').slick({
 		infinite: true,
 		useTransform: true,
 		useCSS: true,
@@ -31,7 +31,7 @@ $(function () {
 		slidesToShow: 4,
 		nextArrow: $('.video-animals--btn'),
 		prevArrow: false,
-	});
+	}); */
 
 	
 /* 	$('.care-animals__mobile-slider').slick({
