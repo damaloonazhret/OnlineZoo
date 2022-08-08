@@ -1913,6 +1913,13 @@ footer {
 		&-box-btn {
 			display: flex;
 			justify-content: space-around;
+			padding-top: 29px;
+		}
+
+		&-box-btn-link{
+			&::after{
+				right: 61px;
+			}
 		}
 
 		&-box-btn-link {

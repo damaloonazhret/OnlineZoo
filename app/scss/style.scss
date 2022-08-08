@@ -1097,6 +1097,7 @@ body {
 
 	img {
 		width: 100%;
+		object-fit: cover;
 	}
 
 	font-family: 'Montserrat';
@@ -1411,7 +1412,7 @@ body {
 		&::after {
 			content: "";
 			border: 1px solid #FFFFFF;
-			width: 150vw;
+			width: 1500px;
 			height: 1px;
 			position: absolute;
 			top: 214px;
