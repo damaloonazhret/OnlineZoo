@@ -31,6 +31,15 @@ body {
 	padding: 0;
 	justify-self: end;
 	padding-right: 28px;
+	z-index: 100;
+}
+
+.menu__btn.active span{
+	display: none;
+}
+
+.menu__btn.active.menu__btn-1{
+	transform: rotate(-25%);
 }
 
 .menu__btn-line {

@@ -1,6 +1,13 @@
-$(function () {
+// $(function () {
 
-
+const iconMenu = document.querySelector('.menu__btn');
+if (iconMenu) {
+	const menuBody = document.querySelector('.header-page__box-contact');
+	iconMenu.addEventListener("click", function(e) {
+		iconMenu.classList.toggle('active');
+		menuBody.classList.toggle('active');
+	});
+}
 
 	/* 	$('.pets-bottom').slick({
 			infinite: true,
@@ -54,6 +61,6 @@ $(function () {
 			nextArrow: '<img class="slider-arrows slider-arrows__rigth" src="images/btn-right.svg" alt="arrow-rigth" />',
 		}); */
 
-}
+// }
 
-)
+// )
