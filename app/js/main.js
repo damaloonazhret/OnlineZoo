@@ -1,17 +1,29 @@
-const iconMenu = document.querySelector('.menu__btn');
-if (iconMenu) {
-	const menuBody = document.querySelector('.header-page__box-contact');
-	iconMenu.addEventListener("click", function(e) {
-		iconMenu.classList.toggle('active');
-		menuBody.classList.toggle('active');
-	});
+// const iconMenu = document.querySelector('.menu__btn');
+// if (iconMenu) {
+// 	iconMenu.addEventListener("click", function (e) {
+// 		iconMenu.classList.toggle('active');
+// 	});
+// }
+
+const btnMenu = document.querySelector(".menu__btn");
+const menu = document.querySelector(".header-page__box-contact");
+const toggleMenu = function () {
+	menu.classList.toggle("active");
 }
 
-function burgerMenu (selector) {
-	const menu = document.querySelector('.header-page__box-contact-text');
-	const button = document.querySelector('.menu__btn');
-	const links = menu.find(div);
-	alert(links);
-}
+btnMenu.addEventListener("click", function (e) {
+	// e.stopPropagation();
+	toggleMenu();
+	btnMenu.classList.toggle("active");
+});
 
-burgerMenu();
+document.addEventListener("click", function (e) {
+	const target = e.target;
+	const its_menu = target == menu || menu.contains(target);
+	const its_btnMenu = target == btnMenu;
+	const menu_is_active = menu.classList.contains("active");
+
+	if (!its_menu && !its_btnMenu && menu_is_active) {
+		toggleMenu();
+	}
+});
