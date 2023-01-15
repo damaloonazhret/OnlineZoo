@@ -30,6 +30,7 @@ body {
 	height: 22px;
 	justify-self: end;
 	align-self: center;
+	z-index: 2;
 	&::before,&::after{
 		content: '';
 		background-color: #fff;
@@ -57,6 +58,20 @@ body {
 		top: 10px;
 		transition: 0.5s;
 	}
+
+	&-overlay{
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 1;
+	}
+}
+
+.menu__btn-overlay.active {
+	display: block;
 }
 
 .menu__btn.active {

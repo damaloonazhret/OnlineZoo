@@ -976,6 +976,7 @@ footer {
 			margin-right: -20px;
 			transform: translate(100%);
 			transition: 1s;
+			z-index: 3;
 		}
 
 		&__box-contact.active {
