@@ -937,7 +937,7 @@ footer {
 	// 	width: 55px;
 	// 	height: 55px;
 	// 	cursor: pointer;
-		// // border: 4px solid #ffffff;
+	// // border: 4px solid #ffffff;
 	// 	border-radius: 50%;
 	// 	z-index: 100;
 	// }
@@ -972,17 +972,15 @@ footer {
 			width: 311px;
 			height: 754px;
 			background: #20113d;
-			// position: absolute;
-			// transform: translate(100%, 0);
-			position: absolute;
-			right: -40%;
+			justify-self: end;
+			margin-right: -20px;
+			transform: translate(100%);
 			transition: 1s;
-			z-index: 99;
 		}
 
 		&__box-contact.active {
+			transform: translate(0);
 			transition: 1s;
-			right: 0;
 		}
 
 		&__box-contact-text {
