@@ -43,6 +43,9 @@
 					<button class="menu__btn">
 						<span></span>
 					</button>
+					<div class="menu__btn-overlay"></div>
+					<button class="close">
+					</button>
 					<div class="header-page__box-contact">
 						<div class="header-page__box-contact-text">
 							<div class="header-page__box-contact-descr">
@@ -86,9 +89,12 @@
 			<div class="contact-page__form">
 				<div class="contact-page__info">
 					<div class="contact-page__title">Get in touch</div>
-					<div class="contact-page__text">Whether you have a question, or would like to say hello, we're happy to
-						hear from you. Please use the form to send us a message and we'll get back to you as soon as we can.
-						Whether you have a question, or would like to say hello, we're happy to hear from you. Please use the
+					<div class="contact-page__text">Whether you have a question, or would like to say hello, we're happy
+						to
+						hear from you. Please use the form to send us a message and we'll get back to you as soon as we
+						can.
+						Whether you have a question, or would like to say hello, we're happy to hear from you. Please
+						use the
 						form to send us a message and we'll get back to you as soon as we can. </div>
 				</div>
 				<div class="contact-page__input">
@@ -97,21 +103,24 @@
 						<label for="username">
 							<p>*</p> Your Name
 						</label>
-						<input class="contact-page__name" type="text" name="name" id="name" placeholder="First and last name">
+						<input class="contact-page__name" type="text" name="name" id="name"
+							placeholder="First and last name">
 					</div>
 
 					<div class="contact-page__name">
 						<label for="username">
 							<p>*</p> Your Email Address
 						</label>
-						<input class="contact-page__name" type="text" name="name" id="name" placeholder="Enter your email">
+						<input class="contact-page__name" type="text" name="name" id="name"
+							placeholder="Enter your email">
 					</div>
 
 					<div class="contact-page__name">
 						<label for="username">
 							<p>*</p> Subject
 						</label>
-						<input class="contact-page__name" type="text" name="name" id="name" placeholder="Enter the subject">
+						<input class="contact-page__name" type="text" name="name" id="name"
+							placeholder="Enter the subject">
 					</div>
 
 					<div class="contact-page__name">
@@ -175,7 +184,8 @@
 										<path class="svg-3"
 											d="M67.7266 39.6093C67.7266 35.9745 68.7501 33.1364 70.7722 31.1198C72.7942 29.1032 75.6401 28.0825 79.2599 28.0825C82.9795 28.0825 85.8253 29.0784 87.8474 31.07C89.8695 33.0617 90.868 35.85 90.868 39.435C90.868 42.0491 90.4187 44.1652 89.545 45.8332C88.6962 47.4764 87.3731 48.8207 85.7504 49.717C84.0779 50.6381 82.0059 51.1111 79.5345 51.1111C77.0131 51.1111 74.9411 50.7128 73.2935 49.9161C71.596 49.0697 70.198 47.7502 69.2743 46.132C68.2508 44.3893 67.7266 42.2233 67.7266 39.6093ZM74.6166 39.6342C74.6166 41.8748 75.041 43.493 75.8648 44.4889C76.6886 45.4598 77.8369 45.9577 79.2848 45.9577C80.7577 45.9577 81.906 45.4847 82.7298 44.5138C83.5536 43.5428 83.9531 41.825 83.9531 39.3354C83.9531 37.2442 83.5287 35.7006 82.6799 34.7546C81.8311 33.7837 80.6828 33.3106 79.2349 33.3106C77.9617 33.2608 76.7385 33.8086 75.8897 34.7795C75.041 35.7504 74.6166 37.3687 74.6166 39.6342ZM97.9328 39.6093C97.9328 35.9745 98.9563 33.1364 100.978 31.1198C103 29.1032 105.846 28.0825 109.466 28.0825C113.186 28.0825 116.057 29.0784 118.054 31.07C120.051 33.0617 121.074 35.85 121.074 39.435C121.074 42.0491 120.625 44.1652 119.751 45.8332C118.902 47.4764 117.579 48.8207 115.957 49.717C114.284 50.6381 112.212 51.1111 109.741 51.1111C107.219 51.1111 105.147 50.7128 103.5 49.9161C101.802 49.0697 100.404 47.7502 99.4806 46.132C98.457 44.3893 97.9328 42.2233 97.9328 39.6093ZM104.823 39.6342C104.823 41.8748 105.247 43.493 106.071 44.4889C106.895 45.4598 108.043 45.9577 109.491 45.9577C110.964 45.9577 112.112 45.4847 112.936 44.5138C113.76 43.5428 114.159 41.825 114.159 39.3354C114.159 37.2442 113.735 35.7006 112.886 34.7546C112.037 33.7837 110.889 33.3106 109.441 33.3106C108.168 33.2608 106.92 33.8086 106.096 34.7795C105.247 35.7504 104.823 37.3687 104.823 39.6342Z"
 											fill="white" />
-										<path class="svg-4" d="M120.35 28.4805H127.24V45.2602H138V50.7373H120.325V28.4805H120.35Z"
+										<path class="svg-4"
+											d="M120.35 28.4805H127.24V45.2602H138V50.7373H120.325V28.4805H120.35Z"
 											fill="white" />
 										<path class="svg-5"
 											d="M112.722 27.1998C119.653 21.9789 121.793 13.1317 117.501 7.43887C113.209 1.74609 104.111 1.36352 97.1805 6.58439C90.2495 11.8053 88.11 20.6525 92.4018 26.3453C96.6935 32.0381 105.791 32.4206 112.722 27.1998Z"
