@@ -64,35 +64,81 @@ document.addEventListener("click", function (e) {
 
 
 const slidesTop = [
-	{animalName: 'Giant Panda',
-	animalSrc: "images/panda.png",
-	description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
-	link: 'VIEW LIVE CAM'},
-	{animalName: 'Madagascarian Lemur',
-	animalSrc: "images/lemur.png",
-	description: 'Lemurs are considered the world’s most endangered group of mammals.',
-	link: 'VIEW LIVE CAM'},
-	{animalName: 'Gorilla in Congo',
-	animalSrc: "images/gorilla.png",
-	description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
-	link: 'VIEW LIVE CAM'}
+	{
+		name: 'Giant Panda',
+		id: 1,
+		src: "images/panda.png",
+		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Madagascarian Lemur',
+		src: "images/lemur.png",
+		description: 'Lemurs are considered the world’s most endangered group of mammals.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	}
 ];
 
 const slidesBottom = [
-	{animalName: 'African Lion',
-	animalSrc: "images/lion.png",
-	description: 'Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.',
-	link: 'VIEW LIVE CAM'},
-	{animalName: 'Sumatran Tiger',
-	animalSrc: "images/tiger.png",
-	description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
-	link: 'VIEW LIVE CAM'},
-	{animalName: 'Chinese Alligator',
-	animalSrc: "images/aligator.png",
-	description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
-	link: 'VIEW LIVE CAM'}
+	{
+		name: 'African Lion',
+		id: 7,
+		src: "images/lion.png",
+		description: 'Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Sumatran Tiger',
+		id: 8,
+		src: "images/tiger.png",
+		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Chinese Alligator',
+		id: 4,
+		src: "images/aligator.png",
+		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		id: 1,
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	}
 ];
 
+const animalPlaceholder = document.querySelector(".pets-bottom");
+
+function createListWithInnerHTML(slidesBottom) {
+
+	const rows = slidesBottom.map(animal => {
+		// console.log(animal);
+		return `
+		<div class="pets-bottom__card card-${animal.id}">
+			<div class="pets-bottom__card-img">
+			<img src="${animal.src}">
+			</div>
+				<div class="pets-bottom__card-info">
+					<div class="pets-bottom__card-info-head">${animal.name}</div>
+					<div class="pets-bottom__card-info-text">${animal.description}</div>
+				</div>
+		</div>`;
+	});
+	const html = `<div class="pets-bottom__row-1">${rows.join()}</div>`;
+	console.log(html);
+	animalPlaceholder.innerHTML = html;
+}
+
+createListWithInnerHTML(slidesBottom);
 
 // let slides = document.querySelectorAll('.pets-bottom__card');
 // console.log(slides);
@@ -161,4 +207,4 @@ const slidesBottom = [
 // document.onclick = left;
 // prev.addEventListener('click', () => {
 // 	left();
-// });
+//// });
