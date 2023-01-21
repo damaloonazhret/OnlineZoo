@@ -572,8 +572,10 @@ body {
 	}
 
 	&__row-1 {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
 		padding-bottom: 40px;
+		// transform: translateX(-1920px);
 	}
 
 	&__row-2 {
@@ -584,22 +586,54 @@ body {
 		border-radius: 5px;
 	}
 
-
 	img {
 		width: 100%;
 		border-radius: 5px;
 		object-fit: cover;
 	}
 
+	.card-9::after {
+		content: "Lucas";
+	}
+
+	.card-13::after {
+		content: "Lucas";
+	}
+
 	.card-2::after {
 		content: "Andy";
 	}
+
+	.card-10::after {
+		content: "Andy";
+	}
+
+	.card-14::after {
+		content: "Andy";
+	}
+
 
 	.card-3::after {
 		content: "Glen";
 	}
 
+	.card-11::after {
+		content: "Glen";
+	}
+
+	.card-15::after {
+		content: "Glen";
+	}
+
 	.card-4::after {
+		content: "Mike";
+	}
+
+	.card-12::after {
+		content: "Mike";
+	}
+
+	.card-16::after {
 		content: "Mike";
 	}
 
@@ -620,6 +654,71 @@ body {
 		content: "Senja";
 	}
 
+	.next {
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.pets-top__arrows.left {
+		left: 0;
+		right: auto;
+	}
+
+	.pets-top__arrows.right {
+		left: auto;
+		right: 0;
+	}
+
+
+	&__card.active,
+	.next {
+		// display: block;
+		opacity: 1;
+	}
+
+	&__card.not-active {
+		// display: none;
+		opacity: 0;
+	}
+
+	.pets-bottom__arrow--right.right {
+		right: 50%;
+	}
+
+	.to-left {
+		animation-name: left;
+	}
+	.to-right {
+		animation-name: right;
+		animation-direction: reverse;
+	}
+	.from-left {
+		animation-name: left;
+		animation-direction: reverse;
+	}
+	.from-right {
+		animation-name: right;
+	}
+
+
+	@keyframes left {
+		from {
+			left: 0;
+		}
+		to {
+			left: -100%;
+		}
+	}
+
+	@keyframes right {
+		from {
+			left: 100%;
+		}
+		to {
+			left: 0;
+		}
+	}
 
 	&__card {
 		width: 440px;
@@ -630,6 +729,8 @@ body {
 		margin-right: 40px;
 		position: relative;
 		border-radius: 5px;
+		animation: 0.5s ease-in-out;
+		opacity: 0;
 
 		&::after {
 			content: "Lucas";
