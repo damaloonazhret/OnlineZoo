@@ -575,7 +575,12 @@ body {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		padding-bottom: 40px;
-		// transform: translateX(-1920px);
+		transform: translateX(-1920px);
+	}
+
+	.row-transform{
+		transform: translateX(-600px);
+		transition: 1s;
 	}
 
 	&__row-2 {
