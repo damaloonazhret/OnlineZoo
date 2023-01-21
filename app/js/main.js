@@ -249,11 +249,12 @@ const slidesBottom = [
 
 const animalPlaceholder = document.querySelector(".pets-bottom");
 
+const slidesOne = document.querySelector('.pets-bottom__card');
 const slides = document.querySelectorAll('.pets-bottom__card'),
 	prev = document.querySelector('.pets-bottom__arrow--left'),
 	next = document.querySelector('.pets-bottom__arrow--right');
 
-	let sliders = [];
+let sliders = [];
 
 function createListWithInnerHTML(slidesTop) {
 
@@ -270,23 +271,65 @@ function createListWithInnerHTML(slidesTop) {
 				</div>
 		</div>`;
 	});
-	const html = `<div class="pets-bottom__row-1">${rows.join(' ')}</div>`;
-	console.log(html);
+	const html = `<div class="pets-bottom__row-1" style="left:0">${rows.join(' ')}</div>`;
+	// console.log(html);
 	animalPlaceholder.innerHTML = html;
 
-	
+
 }
 
 createListWithInnerHTML(slidesTop);
 
+
+
+// document.onclick = function () {
+	// 	const ball = document.querySelector(".pets-bottom__row-1").style;
+	// 	ball.left = parseFloat(ball.left) + 20 + "px";
+	// };
+	
+const slideOne = document.querySelector('.pets-bottom__card').clientWidth;
+console.log(slideOne);
+
 const proba = document.querySelector('.pets-bottom__row-1');
 
-document.addEventListener('click', function() {
-	proba.classList.add('row-transform');
-	setTimeout(function() {
-		proba.classList.remove('row-transform');
-	}, 1111);
+prev.addEventListener('click', function () {
+	proba.style.left = (parseInt(proba.style.left, 10) + 1440) + 'px';
 });
+
+next.addEventListener('click', function () {
+	proba.style.left = (parseInt(proba.style.left, 10) - 1440) + 'px';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// document.querySelector('.btn1')
+	// 	.addEventListener('click', () => update(10));
+
+	// так можно добавить вторую кнопку для укорачивания:
+	// document.querySelector('.btn2')
+	// 	.addEventListener('click', () => update(-10));
 
 // const slideses = document.querySelectorAll('.pets-bottom__card');
 

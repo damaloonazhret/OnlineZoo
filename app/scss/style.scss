@@ -575,7 +575,9 @@ body {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		padding-bottom: 40px;
-		transform: translateX(-1920px);
+		// left: 400px;
+		position: relative;
+		transition: 1s;
 	}
 
 	.row-transform{
@@ -682,14 +684,14 @@ body {
 		opacity: 1;
 	}
 
-	&__card.not-active {
-		// display: none;
-		opacity: 0;
-	}
+	// &__card.not-active {
+	// 	// display: none;
+	// 	// opacity: 0;
+	// }
 
-	.pets-bottom__arrow--right.right {
-		right: 50%;
-	}
+	// .pets-bottom__arrow--right.right {
+	// 	right: 50%;
+	// }
 
 	.to-left {
 		animation-name: left;
@@ -735,7 +737,7 @@ body {
 		position: relative;
 		border-radius: 5px;
 		animation: 0.5s ease-in-out;
-		opacity: 0;
+		// opacity: 0;
 
 		&::after {
 			content: "Lucas";
@@ -2808,6 +2810,35 @@ body {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pets-top__arrows {
+	&-my{
+		display: grid;
+	grid-template-columns: repeat(2, auto);
+	}
+	
+	.left {
+		justify-self: end;
+		align-self: end;
+	}
+
+	
+
+}
+
+
 
 
 
