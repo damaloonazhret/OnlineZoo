@@ -528,7 +528,8 @@ body {
 .pets-bottom {
 
 	display: grid;
-
+	// overflow: hidden;
+	// width: 100vw;
 
 
 	&__arrow--left {
@@ -573,11 +574,13 @@ body {
 
 	&__row-1 {
 		display: grid;
-		grid-template-columns: repeat(12, 1fr);
+		grid-template-columns: repeat(14, 1fr);
 		padding-bottom: 40px;
 		// left: 400px;
 		position: relative;
 		transition: 1s;
+		// overflow: hidden;
+		// margin-left: auto;
 	}
 
 	.row-transform{
@@ -2823,22 +2826,25 @@ body {
 
 
 
+// .pets-top__arrows {
+// 	&-my{
+// 		display: grid;
+// 	grid-template-columns: repeat(2, auto);
+// 	}
+	
+// 	.left {
+// 		justify-self: end;
+// 		align-self: end;
+// 	}
+
+	
+
+// }
+
 .pets-top__arrows {
-	&-my{
-		display: grid;
+	display: grid;
 	grid-template-columns: repeat(2, auto);
-	}
-	
-	.left {
-		justify-self: end;
-		align-self: end;
-	}
-
-	
-
 }
-
-
 
 
 

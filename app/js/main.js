@@ -33,34 +33,6 @@ document.addEventListener("click", function (e) {
 
 
 
-
-
-// let slideIndex = 3;
-
-// function showSlides(n) {
-// 	if (n > slides.length) {
-// 		slideIndex = 3;
-// 	} 
-// 	if (n < 3) { 
-// 		slideIndex = slides.length;
-// 	}
-
-// 	slides.forEach(item => item.style.display = 'none');
-
-// 	slides[slideIndex - 1].style.display = 'block';
-// }
-
-// function plusSlides(n) {
-// 	showSlides(slideIndex += n);
-// }
-
-
-// prev.addEventListener('click', () => {
-// 	plusSlides(-1);
-// });
-
-
-
 const slidesTop = [
 	{
 		name: 'Giant Panda',
@@ -156,6 +128,245 @@ const slidesTop = [
 		status: 'not-active',
 		src: "images/aligator.png",
 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+		link: 'VIEW LIVE CAM'
+	},
+];
+
+const slidesAll = [
+	[
+		{
+			name: 'Chinese Alligator',
+			id: 'firstClone',
+			status: 'not-active',
+			src: "images/aligator.png",
+			description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Giant Panda',
+			id: 1,
+			status: 'not-active',
+			src: "images/panda.png",
+			description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Madagascarian Lemur',
+			id: 2,
+			status: 'not-active',
+			src: "images/lemur.png",
+			description: 'Lemurs are considered the world’s most endangered group of mammals.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Gorilla in Congo',
+			id: 3,
+			status: 'not-active',
+			src: "images/gorilla.png",
+			description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+			link: 'VIEW LIVE CAM'
+		},
+	],
+	[
+		{
+			name: 'Giant Panda',
+			id: 1,
+			status: 'not-active',
+			src: "images/panda.png",
+			description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Madagascarian Lemur',
+			id: 2,
+			status: 'not-active',
+			src: "images/lemur.png",
+			description: 'Lemurs are considered the world’s most endangered group of mammals.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Gorilla in Congo',
+			id: 3,
+			status: 'not-active',
+			src: "images/gorilla.png",
+			description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Chinese Alligator',
+			id: 4,
+			status: 'not-active',
+			src: "images/aligator.png",
+			description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Giant Panda',
+			id: 9,
+			status: 'active',
+			src: "images/panda.png",
+			description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Madagascarian Lemur',
+			id: 10,
+			status: 'active',
+			src: "images/lemur.png",
+			description: 'Lemurs are considered the world’s most endangered group of mammals.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Gorilla in Congo',
+			id: 11,
+			status: 'active',
+			src: "images/gorilla.png",
+			description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Chinese Alligator',
+			id: 12,
+			status: 'active',
+			src: "images/aligator.png",
+			description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Giant Panda',
+			id: 13,
+			status: 'not-active',
+			src: "images/panda.png",
+			description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Madagascarian Lemur',
+			id: 14,
+			status: 'not-active',
+			src: "images/lemur.png",
+			description: 'Lemurs are considered the world’s most endangered group of mammals.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Gorilla in Congo',
+			id: 15,
+			status: 'not-active',
+			src: "images/gorilla.png",
+			description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Chinese Alligator',
+			id: 16,
+			status: 'not-active',
+			src: "images/aligator.png",
+			description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+			link: 'VIEW LIVE CAM'
+		},
+	], 
+	[
+		{
+			name: 'Madagascarian Lemur',
+			id: 14,
+			status: 'not-active',
+			src: "images/lemur.png",
+			description: 'Lemurs are considered the world’s most endangered group of mammals.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Gorilla in Congo',
+			id: 15,
+			status: 'not-active',
+			src: "images/gorilla.png",
+			description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Chinese Alligator',
+			id: 16,
+			status: 'not-active',
+			src: "images/aligator.png",
+			description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+			link: 'VIEW LIVE CAM'
+		},
+		{
+			name: 'Giant Panda',
+			id: 'lastClone',
+			status: 'not-active',
+			src: "images/panda.png",
+			description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+			link: 'VIEW LIVE CAM'
+		},
+	]
+];
+
+const slidesCloneFirst = [
+	{
+		name: 'Chinese Alligator',
+		id: 'firstClone',
+		status: 'not-active',
+		src: "images/aligator.png",
+		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Giant Panda',
+		id: 1,
+		status: 'not-active',
+		src: "images/panda.png",
+		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Madagascarian Lemur',
+		id: 2,
+		status: 'not-active',
+		src: "images/lemur.png",
+		description: 'Lemurs are considered the world’s most endangered group of mammals.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		id: 3,
+		status: 'not-active',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+];
+
+const slidesCloneLast = [
+	{
+		name: 'Madagascarian Lemur',
+		id: 14,
+		status: 'not-active',
+		src: "images/lemur.png",
+		description: 'Lemurs are considered the world’s most endangered group of mammals.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		id: 15,
+		status: 'not-active',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Chinese Alligator',
+		id: 16,
+		status: 'not-active',
+		src: "images/aligator.png",
+		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Giant Panda',
+		id: 'lastClone',
+		status: 'not-active',
+		src: "images/panda.png",
+		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
 		link: 'VIEW LIVE CAM'
 	},
 ];
@@ -258,194 +469,147 @@ let sliders = [];
 
 function createListWithInnerHTML(slidesTop) {
 
-	const rows = slidesTop.map(animal => {
-		// console.log(animal);
-		return `
-		<div class="pets-bottom__card card-${animal.id} ${animal.status}">
-			<div class="pets-bottom__card-img">
-			<img src="${animal.src}">
-			</div>
-				<div class="pets-bottom__card-info">
-					<div class="pets-bottom__card-info-head">${animal.name}</div>
-					<div class="pets-bottom__card-info-text">${animal.description}</div>
+	
+
+	// const rowsCloneFirst = slidesCloneFirst.map(animal => {
+	// 	return `
+	// 	<div id="firstClone">
+	// 		<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0">
+	// 			<div class="pets-bottom__card-img">
+	// 			<img src="${animal.src}">
+	// 			</div>
+	// 				<div class="pets-bottom__card-info">
+	// 					<div class="pets-bottom__card-info-head">${animal.name}</div>
+	// 					<div class="pets-bottom__card-info-text">${animal.description}</div>
+	// 				</div>
+	// 		</div>
+	// 	</div>`;
+	// });
+
+	// const rows = slidesTop.map(animal => {
+	// 	return `
+	// 	<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0">
+	// 		<div class="pets-bottom__card-img">
+	// 		<img src="${animal.src}">
+	// 		</div>
+	// 			<div class="pets-bottom__card-info">
+	// 				<div class="pets-bottom__card-info-head">${animal.name}</div>
+	// 				<div class="pets-bottom__card-info-text">${animal.description}</div>
+	// 			</div>
+	// 	</div>`;
+	// });
+
+	// const rowsCloneLast = slidesCloneFirst.map(animal => {
+	// 	return `
+	// 		<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0">
+	// 			<div class="pets-bottom__card-img">
+	// 			<img src="${animal.src}">
+	// 			</div>
+	// 				<div class="pets-bottom__card-info">
+	// 					<div class="pets-bottom__card-info-head">${animal.name}</div>
+	// 					<div class="pets-bottom__card-info-text">${animal.description}</div>
+	// 				</div>
+	// 		</div>`;
+	// });
+
+	for (let i = 0; i < 3; i++) {
+		let rows = slidesAll[i].map(animal => {
+			return `
+			<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0">
+				<div class="pets-bottom__card-img">
+					<img src="${animal.src}">
 				</div>
-		</div>`;
-	});
-	const html = `<div class="pets-bottom__row-1" style="left:0">${rows.join(' ')}</div>`;
-	// console.log(html);
+					<div class="pets-bottom__card-info">
+						<div class="pets-bottom__card-info-head">${animal.name}</div>
+						<div class="pets-bottom__card-info-text">${animal.description}</div>
+					</div>
+			</div>`;
+		});
+	}
+	const html = `<div class="pets-bottom__row-1" >${rows.join(' ')}</div>`;
 	animalPlaceholder.innerHTML = html;
 
-
+	// const htmlFirst = `<div class="pets-bottom__row-1" >${rowsCloneFirst.join(' ')}</div>`;
+	// const htmlLast = `<div class="pets-bottom__row-1" >${rowsCloneLast.join(' ')}</div>`;
+	// animalPlaceholder.innerHTML = htmlFirst;
+	// animalPlaceholder.innerHTML = htmlLast;
 }
 
 createListWithInnerHTML(slidesTop);
 
+var doc = document,
+	index = 1;
 
+var Slider = function () {
+	this.box = doc.querySelector('.pets-bottom');
+	this.slidesBox = doc.querySelector('.pets-bottom__row-1');
+	this.slidess = doc.querySelectorAll('.pets-bottom__card');
+	this.btns = doc.querySelectorAll('.btnses');
+	this.size = this.box.clientWidth;
 
-// document.onclick = function () {
-	// 	const ball = document.querySelector(".pets-bottom__row-1").style;
-	// 	ball.left = parseFloat(ball.left) + 20 + "px";
-	// };
-	
-const slideOne = document.querySelector('.pets-bottom__card').clientWidth;
-console.log(slideOne);
+	this.position();
+	this.carousel();
+};
 
-const proba = document.querySelector('.pets-bottom__row-1');
+Slider.prototype.position = function () {
+	var size = this.size;
+	this.slidesBox.style.transform = 'translateX(' + (-index * size) + 'px';
+};
 
-prev.addEventListener('click', function () {
-	proba.style.left = (parseInt(proba.style.left, 10) + 1440) + 'px';
-});
+Slider.prototype.carousel = function () {
+	var i, max = this.btns.length,
+		that = this;
 
-next.addEventListener('click', function () {
-	proba.style.left = (parseInt(proba.style.left, 10) - 1440) + 'px';
-});
+	for (i = 0; i < max; i += 1) {
+		that.btns[i].addEventListener('click', Slider[that.btns[i].id].bind(null, that));
+	}
+};
 
+Slider.prev = function (box) {
+	box.slidesBox.style.transition = "transform .3s ease-in-out";
+	var size = box.size;
+	index <= 0 ? false : index--;
+	box.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+	box.jump();
+};
 
+Slider.next = function (box) {
+	box.slidesBox.style.transition = "transform .3s ease-in-out";
+	var max = box.slidess.length;
+	var size = box.size;
+	index >= max - 1 ? false : index++;
+	box.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+	box.jump();
+};
 
+Slider.prototype.jump = function () {
+	var that = this;
+	var size = this.size;
+	this.slidesBox.addEventListener('transitionend', function () {
+		that.slidess[index].id === "firstClone" ? index = 1 : index;
+		that.slidess[index].id === "lastClone" ? index = that.slidess.length - 2 : index;
+		that.slidesBox.style.transition = "none";
+		that.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+	});
+}
 
+new Slider();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// document.querySelector('.btn1')
-	// 	.addEventListener('click', () => update(10));
-
-	// так можно добавить вторую кнопку для укорачивания:
-	// document.querySelector('.btn2')
-	// 	.addEventListener('click', () => update(-10));
-
-// const slideses = document.querySelectorAll('.pets-bottom__card');
-
-// let currentItem = 0;
-// let isEnabled = true;
-
-// function changeCurrentItem(n) {
-// 	currentItem = (n + slideses.length) % slideses.length;
-// }
-
-// function hideItem(direction) {
-// 	isEnabled = false;
-// 	slideses[currentItem].classList.add(direction);
-// 	slideses[currentItem].addEventListener('animationend', function() {
-// 		this.classList.remove('active', direction);
-// 	});
-// }
-
-// function showItem(direction) {
-// 	slideses[currentItem].classList.add('next' , direction);
-// 	slideses[currentItem].addEventListener('animationend', function() {
-// 		this.classList.remove('next', direction);
-// 		this.classList.add('active');
-// 		isEnabled = true;
-// 	});
-// }
-
-// function previousItem(n) {
-// 	hideItem('to-right');
-// 	changeCurrentItem(n - 1);
-// 	showItem('from-left');
-// }
-
-// function nextItem(n) {
-// 	hideItem('to-left');
-// 	changeCurrentItem(n + 1);
-// 	showItem('from-right');
-// }
-
-// document.querySelector('.pets-top__arrows.left').addEventListener('click', function() {
-// 	if (isEnabled) {
-// 		previousItem(currentItem);
-// 	}
-// });
-
-// document.querySelector('.pets-top__arrows.right').addEventListener('click', function() {
-// 	if (isEnabled) {
-// 		nextItem(currentItem);
-// 	}
-// });
-
-
-
-
-// const slidersh = document.querySelector('.pets-bottom__row-1');
-
-// let offset = 1;
-
-// function draw() {
-// 	slides.style.left = 4400 + 'px';
-// }
-
-// draw();
-
-
-
-// let slides = document.querySelectorAll('.pets-bottom__card');
-// console.log(slides);
-// let slider = [];
-// for (let i = 0; i < slides.length; i++) {
-// 	slider[i] = slides[i];
-// 	slides[i].remove();
-// }
-// console.log(slider);
-
-
-// let slideOne = document.createElement('div');
+// const slideOne = document.querySelector('.pets-bottom__card').clientWidth;
 // console.log(slideOne);
-// for (let i = 0; i < slides.length; i++) {
-// 	document.querySelector('#slide').appendChild(slider[i]);
-// }
 
+// const slideRow1 = document.querySelector('.pets-bottom__row-1');
+// const slidesRows = document.querySelectorAll('.pets-bottom__card');
+// console.log(slidesRows);
 
-// let step = 0;
-// let offset = 0;
-
-// function draw() {
-
-
-// 	img.src = slider[step];
-
-	// slideOne.classList.add(slides[1]);
-	// slideOne.classList.add('card-4');
-
-// 	img.style.left = offset*311 + 'px';
-
-// 	step++;
-// 	offset = 1;
-// }
-
-
-
-// function left() {
-// 	let slides2 = document.querySelectorAll('.pets-bottom__card');
-// 	let offset2 = 0;
-// 	for (let i = 0; i < slides2.length; i++) {
-// 		slides2[i].style.left = offset2 * 311 - 311 + 'px';
-// 		offset2++;
+// prev.addEventListener('click', function () {
+// 	for (let i = 0; i < slidesRows.length; i++) {
+// 		slidesRows[i].style.left = (parseInt(slidesRows[i].style.left, 10) + 1440) + 'px';
 // 	}
-// 	setTimeout(function () {
-// 		slides2[0].remove();
-// 		// draw();
-// 	});
-// }
+// });
 
-// document.onclick = left;
-// prev.addEventListener('click', () => {
-// 	left();
-//// });
+// next.addEventListener('click', function () {
+// 	for (let i = 0; i < slidesRows.length; i++) {
+// 		slidesRows[i].style.left = (parseInt(slidesRows[i].style.left, 10) - 1440) + 'px';
+// 	}
+// });
