@@ -254,7 +254,7 @@ Slider.prototype.jump = function () {
 		that.slidess[index].id === "firstClone" ? index = 1 : index;
 		// slidesBoxe[10].id === "firstClone" ? index = 1 : index;
 		// that.slidess[index].id === "lastClone" ? index = that.slidess.length - 4 : index;
-		that.slidesBox.style.transition = "none";
+		// that.slidesBox.style.transition = "none";
 		that.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	});
 };
