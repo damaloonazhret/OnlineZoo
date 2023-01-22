@@ -35,6 +35,15 @@ document.addEventListener("click", function (e) {
 
 const slidesTop = [
 	{
+		name: 'Chinese Alligator',
+		id: 16,
+		idi: 'lastClone',
+		status: 'not-active',
+		src: "images/aligator.png",
+		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
 		name: 'Giant Panda',
 		id: 1,
 		status: 'not-active',
@@ -93,6 +102,7 @@ const slidesTop = [
 	{
 		name: 'Chinese Alligator',
 		id: 12,
+		
 		status: 'active',
 		src: "images/aligator.png",
 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
@@ -101,6 +111,25 @@ const slidesTop = [
 	{
 		name: 'Giant Panda',
 		id: 13,
+		
+		status: 'not-active',
+		src: "images/panda.png",
+		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Chinese Alligator',
+		id: 16,
+		idi: 'firstClone',
+		status: 'not-active',
+		src: "images/aligator.png",
+		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Giant Panda',
+		id: 1,
+		
 		status: 'not-active',
 		src: "images/panda.png",
 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
@@ -109,6 +138,7 @@ const slidesTop = [
 	{
 		name: 'Madagascarian Lemur',
 		id: 14,
+		
 		status: 'not-active',
 		src: "images/lemur.png",
 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
@@ -117,17 +147,10 @@ const slidesTop = [
 	{
 		name: 'Gorilla in Congo',
 		id: 15,
+		
 		status: 'not-active',
 		src: "images/gorilla.png",
 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Chinese Alligator',
-		id: 16,
-		status: 'not-active',
-		src: "images/aligator.png",
-		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
 		link: 'VIEW LIVE CAM'
 	},
 ];
@@ -469,70 +492,22 @@ let sliders = [];
 
 function createListWithInnerHTML(slidesTop) {
 
-	
-
-	// const rowsCloneFirst = slidesCloneFirst.map(animal => {
-	// 	return `
-	// 	<div id="firstClone">
-	// 		<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0">
-	// 			<div class="pets-bottom__card-img">
-	// 			<img src="${animal.src}">
-	// 			</div>
-	// 				<div class="pets-bottom__card-info">
-	// 					<div class="pets-bottom__card-info-head">${animal.name}</div>
-	// 					<div class="pets-bottom__card-info-text">${animal.description}</div>
-	// 				</div>
-	// 		</div>
-	// 	</div>`;
-	// });
-
-	// const rows = slidesTop.map(animal => {
-	// 	return `
-	// 	<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0">
-	// 		<div class="pets-bottom__card-img">
-	// 		<img src="${animal.src}">
-	// 		</div>
-	// 			<div class="pets-bottom__card-info">
-	// 				<div class="pets-bottom__card-info-head">${animal.name}</div>
-	// 				<div class="pets-bottom__card-info-text">${animal.description}</div>
-	// 			</div>
-	// 	</div>`;
-	// });
-
-	// const rowsCloneLast = slidesCloneFirst.map(animal => {
-	// 	return `
-	// 		<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0">
-	// 			<div class="pets-bottom__card-img">
-	// 			<img src="${animal.src}">
-	// 			</div>
-	// 				<div class="pets-bottom__card-info">
-	// 					<div class="pets-bottom__card-info-head">${animal.name}</div>
-	// 					<div class="pets-bottom__card-info-text">${animal.description}</div>
-	// 				</div>
-	// 		</div>`;
-	// });
-
-	for (let i = 0; i < 3; i++) {
-		let rows = slidesAll[i].map(animal => {
-			return `
-			<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0">
-				<div class="pets-bottom__card-img">
-					<img src="${animal.src}">
+	const rows = slidesTop.map(animal => {
+		return `
+		<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0" id="${animal.idi}">
+			<div class="pets-bottom__card-img">
+			<img src="${animal.src}">
+			</div>
+				<div class="pets-bottom__card-info">
+					<div class="pets-bottom__card-info-head">${animal.name}</div>
+					<div class="pets-bottom__card-info-text">${animal.description}</div>
 				</div>
-					<div class="pets-bottom__card-info">
-						<div class="pets-bottom__card-info-head">${animal.name}</div>
-						<div class="pets-bottom__card-info-text">${animal.description}</div>
-					</div>
-			</div>`;
-		});
-	}
+		</div>`;
+	});
+
+
 	const html = `<div class="pets-bottom__row-1" >${rows.join(' ')}</div>`;
 	animalPlaceholder.innerHTML = html;
-
-	// const htmlFirst = `<div class="pets-bottom__row-1" >${rowsCloneFirst.join(' ')}</div>`;
-	// const htmlLast = `<div class="pets-bottom__row-1" >${rowsCloneLast.join(' ')}</div>`;
-	// animalPlaceholder.innerHTML = htmlFirst;
-	// animalPlaceholder.innerHTML = htmlLast;
 }
 
 createListWithInnerHTML(slidesTop);
@@ -541,11 +516,11 @@ var doc = document,
 	index = 1;
 
 var Slider = function () {
-	this.box = doc.querySelector('.pets-bottom');
+	this.box = doc.querySelector('.pets-top');
 	this.slidesBox = doc.querySelector('.pets-bottom__row-1');
 	this.slidess = doc.querySelectorAll('.pets-bottom__card');
 	this.btns = doc.querySelectorAll('.btnses');
-	this.size = this.box.clientWidth;
+	this.size = (this.box.clientWidth + 40) / 3;
 
 	this.position();
 	this.carousel();
@@ -570,14 +545,15 @@ Slider.prev = function (box) {
 	var size = box.size;
 	index <= 0 ? false : index--;
 	box.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
-	box.jump();
+	box.jump2();
 };
 
 Slider.next = function (box) {
 	box.slidesBox.style.transition = "transform .3s ease-in-out";
 	var max = box.slidess.length;
 	var size = box.size;
-	index >= max - 1 ? false : index++;
+	index >= max - 4 ? false : index++;
+	// index++;
 	box.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	box.jump();
 };
@@ -586,12 +562,25 @@ Slider.prototype.jump = function () {
 	var that = this;
 	var size = this.size;
 	this.slidesBox.addEventListener('transitionend', function () {
-		that.slidess[index].id === "firstClone" ? index = 1 : index;
-		that.slidess[index].id === "lastClone" ? index = that.slidess.length - 2 : index;
+		that.slidess[index].id === "firstClone" ? index = 0 : index;
+		// that.slidess[index].id === "lastClone" ? index = that.slidess.length - 4 : index;
 		that.slidesBox.style.transition = "none";
 		that.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	});
-}
+};
+
+Slider.prototype.jump2 = function () {
+	var that = this;
+	var size = this.size;
+	this.slidesBox.addEventListener('transitionend', function () {
+		// that.slidess[index].id === "firstClone" ? index = 0 : index;
+		that.slidess[index].id === "lastClone" ? index = that.slidess.length - 4 : index;
+		that.slidesBox.style.transition = "none";
+		that.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+	});
+};
+
+// that.slidess.length - 4
 
 new Slider();
 
