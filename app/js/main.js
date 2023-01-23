@@ -35,9 +35,35 @@ document.addEventListener("click", function (e) {
 
 const slidesTop = [
 	{
+		name: 'Gorilla in Congo',
+		id: 11,
+		idi: 'lastClone',
+		status: 'active',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Chinese Alligator',
+		id: 12,
+
+		status: 'active',
+		src: "images/aligator.png",
+		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Giant Panda',
+		id: 13,
+
+		status: 'not-active',
+		src: "images/panda.png",
+		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
 		name: 'Chinese Alligator',
 		id: 16,
-		idi: 'lastClone',
 		status: 'not-active',
 		src: "images/aligator.png",
 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
@@ -54,6 +80,7 @@ const slidesTop = [
 	{
 		name: 'Madagascarian Lemur',
 		id: 2,
+
 		status: 'not-active',
 		src: "images/lemur.png",
 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
@@ -62,6 +89,7 @@ const slidesTop = [
 	{
 		name: 'Gorilla in Congo',
 		id: 3,
+		idi: 'firstClone',
 		status: 'not-active',
 		src: "images/gorilla.png",
 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
@@ -100,9 +128,49 @@ const slidesTop = [
 		link: 'VIEW LIVE CAM'
 	},
 	{
+		name: 'Gorilla in Congo',
+		id: 11,
+		status: 'active',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		id: 11,
+		status: 'active',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		id: 11,
+		status: 'active',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		id: 11,
+		status: 'active',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		id: 11,
+		status: 'active',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
 		name: 'Chinese Alligator',
 		id: 12,
-		
+
 		status: 'active',
 		src: "images/aligator.png",
 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
@@ -111,7 +179,7 @@ const slidesTop = [
 	{
 		name: 'Giant Panda',
 		id: 13,
-		
+
 		status: 'not-active',
 		src: "images/panda.png",
 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
@@ -128,8 +196,7 @@ const slidesTop = [
 	{
 		name: 'Giant Panda',
 		id: 1,
-		idi: 'firstClone',
-		
+
 		status: 'not-active',
 		src: "images/panda.png",
 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
@@ -138,7 +205,6 @@ const slidesTop = [
 	{
 		name: 'Madagascarian Lemur',
 		id: 14,
-		
 		status: 'not-active',
 		src: "images/lemur.png",
 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
@@ -147,7 +213,6 @@ const slidesTop = [
 	{
 		name: 'Gorilla in Congo',
 		id: 15,
-		
 		status: 'not-active',
 		src: "images/gorilla.png",
 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
@@ -190,74 +255,133 @@ createListWithInnerHTML(slidesTop);
 let doc = document,
 	index = 1;
 
-let Slider = function () {
-	this.box = doc.querySelector('.pets-top');
-	this.slidesBox = doc.querySelector('.pets-bottom__row-1');
-	this.slidess = doc.querySelectorAll('.pets-bottom__card');
-	this.btns = doc.querySelectorAll('.btnses');
-	this.size = (this.box.clientWidth + 40) / 3;
+// let Slider = function () {
+// 	this.box = doc.querySelector('.pets-top');
+// 	this.slidesBox = doc.querySelector('.pets-bottom__row-1');
+// 	this.slidess = doc.querySelectorAll('.pets-bottom__card');
+// 	this.btns = doc.querySelectorAll('.btnses');
+// 	this.size = (this.box.clientWidth + 40);
 
-	this.position();
-	this.carousel();
-};
+// 	this.position();
+// 	this.carousel();
+// };
 
-Slider.prototype.position = function () {
-	let size = this.size;
-	this.slidesBox.style.transform = 'translateX(' + (-index * size) + 'px';
-};
+// Slider.prototype.position = function () {
+// 	let size = this.size;
+// 	this.slidesBox.style.transform = 'translateX(' + (-index * size) + 'px';
+// };
 
-Slider.prototype.carousel = function () {
-	let i, max = this.btns.length,
-		that = this;
+// Slider.prototype.carousel = function () {
+// 	let i, max = this.btns.length,
+// 		that = this;
 
-	for (i = 0; i < max; i += 1) {
-		that.btns[i].addEventListener('click', Slider[that.btns[i].id].bind(null, that));
-	}
-};
+// 	for (i = 0; i < max; i += 1) {
+// 		that.btns[i].addEventListener('click', Slider[that.btns[i].id].bind(null, that));
+// 	}
+// };
 
-Slider.prev = function (box) {
-	box.slidesBox.style.transition = "transform .3s ease-in-out";
-	let size = box.size;
+// Slider.prev = function (box) {
+// 	box.slidesBox.style.transition = "transform .9s ease-in-out";
+// 	let size = box.size;
+// 	index <= 0 ? false : index--;
+// 	box.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+// 	box.jump2();
+// };
+
+// Slider.next = function (box) {
+// 	box.slidesBox.style.transition = "transform .9s ease-in-out";
+// 	let max = box.slidess.length; // 22
+// 	let size = box.size; // 1440
+// 	index >= max - 16 ? false : index++;
+// 	box.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+// 	box.jump2();
+// };
+
+// Slider.prototype.jump2 = function () {
+// 	let that = this;
+// 	let size = this.size;
+// 	this.slidesBox.addEventListener('transitionend', function () {
+// 		// that.slidess[index].id === "firstClone" ? index = 0 : index;
+// 		// slidesBoxe[10].id === "firstClone" ? index = 1 : index;
+// 		console.log(that.slidess.length);
+// 		that.slidess[index].id === "firstClone" ? index = 1 : index;
+// 		that.slidess[index].id === "lastClone" ? index = that.slidess.length - 17 : index;
+// 		that.slidesBox.style.transition = "none";
+// 		console.log(index);
+// 		that.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+// 	});
+// };
+
+// new Slider();
+
+const box = doc.querySelector('.pets-top');
+const slidesBox = doc.querySelector('.pets-bottom__row-1');
+const slidess = doc.querySelectorAll('.pets-bottom__card');
+const btnLeft = doc.querySelector('.pets-bottom__arrow--left');
+const btnRight = doc.querySelector('.pets-bottom__arrow--right');
+const size = (box.clientWidth + 40);
+
+
+
+
+slidesBox.style.transform = 'translateX(' + (-index * size) + 'px';
+
+btnLeft.addEventListener('click', function() {
+	slidesBox.style.transition = "transform .9s ease-in-out";
+	let size = box.clientWidth + 40;
+	console.log(index);
 	index <= 0 ? false : index--;
-	box.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
-	box.jump2();
-};
+	console.log(index);
+	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+	jump();
+});
 
-Slider.prototype.jump2 = function () {
-	let that = this;
-	let size = this.size;
-	this.slidesBox.addEventListener('transitionend', function () {
-		// that.slidess[index].id === "firstClone" ? index = 0 : index;
-		// slidesBoxe[10].id === "firstClone" ? index = 1 : index;
-		that.slidess[index].id === "lastClone" ? index = that.slidess.length - 4 : index;
-		that.slidesBox.style.transition = "none";
-		that.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+function jump () {
+	let size = box.clientWidth + 40;
+	slidesBox.addEventListener('transitionend', function() {
+		slidess[index].id === "lastClone" ? index = slidess.length - 17 : index;
+		slidesBox.style.transition = "none";
+		slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	});
-};
+}
 
-Slider.next = function (box) {
-	box.slidesBox.style.transition = "transform .3s ease-in-out";
-	let max = box.slidess.length;
-	let size = box.size;
-	index >= max - 2 ? false : index++;
-	// index++;
-	box.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
-	box.jump();
-};
+btnRight.addEventListener('click', function() {
+	slidesBox.style.transition = "transform .9s ease-in-out";
+	let size = box.clientWidth + 40;
+	index >= 6 ? false : index++;
+	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+	jumpRight();
+});
 
-const slidesBoxe = doc.querySelector('.pets-bottom__row-1');
-
-Slider.prototype.jump = function () {
-	let that = this;
-	let size = this.size;
-	this.slidesBox.addEventListener('transitionend', function () {
-		that.slidess[index].id === "firstClone" ? index = 1 : index;
-		// slidesBoxe[10].id === "firstClone" ? index = 1 : index;
-		// that.slidess[index].id === "lastClone" ? index = that.slidess.length - 4 : index;
-		// that.slidesBox.style.transition = "none";
-		that.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+function jumpRight () {
+	let size = box.clientWidth + 40;
+	slidesBox.addEventListener('transitionend', function() {
+		slidess[index].id === "firstClone" ? index = 1 : index;
+		slidesBox.style.transition = "none";
+		slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	});
-};
+}
+
+
+
+
+
+
+
+
+
+// Slider.prototype.jump = function () {
+// 	let that = this;
+// 	let size = this.size;
+// 	this.slidesBox.addEventListener('transitionend', function () {
+// 		that.slidess[index].id === "firstClone" ? index = 1 : index;
+// 		// slidesBoxe[10].id === "firstClone" ? index = 1 : index;
+// 		// that.slidess[index].id === "lastClone" ? index = that.slidess.length - 4 : index;
+// 		that.slidesBox.style.transition = "none";
+// 		that.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+// 	});
+// };
+
 
 // Slider.prototype.jump2 = function () {
 // 	var that = this;
@@ -269,7 +393,6 @@ Slider.prototype.jump = function () {
 // 		that.slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 // 	});
 // };
-new Slider();
 
 // that.slidess.length - 4
 
