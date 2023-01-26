@@ -529,7 +529,7 @@ body {
 
 	display: grid;
 	overflow: hidden;
-	min-width: 100vw;
+	width: 100vw;
 
 
 	&__arrow--left {
@@ -576,20 +576,14 @@ body {
 		display: grid;
 		grid-template-columns: repeat(22, 1fr);
 		padding-bottom: 40px;
-		// left: 400px;
 		position: relative;
-		// transition: 1s;
-		// overflow: hidden;
-		// margin-left: auto;
 	}
 
-	.row-transform{
-		transform: translateX(-600px);
-		transition: 1s;
-	}
 
 	&__row-2 {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(22, 1fr);
+		position: relative;
 	}
 
 	&__card-img {
@@ -664,71 +658,7 @@ body {
 		content: "Senja";
 	}
 
-	.next {
-		position: absolute;
-		top: 0;
-		width: 100%;
-	}
 
-	.pets-top__arrows.left {
-		left: 0;
-		right: auto;
-	}
-
-	.pets-top__arrows.right {
-		left: auto;
-		right: 0;
-	}
-
-
-	&__card.active,
-	.next {
-		// display: block;
-		opacity: 1;
-	}
-
-	// &__card.not-active {
-	// 	// display: none;
-	// 	// opacity: 0;
-	// }
-
-	// .pets-bottom__arrow--right.right {
-	// 	right: 50%;
-	// }
-
-	.to-left {
-		animation-name: left;
-	}
-	.to-right {
-		animation-name: right;
-		animation-direction: reverse;
-	}
-	.from-left {
-		animation-name: left;
-		animation-direction: reverse;
-	}
-	.from-right {
-		animation-name: right;
-	}
-
-
-	@keyframes left {
-		from {
-			left: 0;
-		}
-		to {
-			left: -100%;
-		}
-	}
-
-	@keyframes right {
-		from {
-			left: 100%;
-		}
-		to {
-			left: 0;
-		}
-	}
 
 	&__card {
 		width: 440px;
@@ -740,7 +670,6 @@ body {
 		position: relative;
 		border-radius: 5px;
 		animation: 0.5s ease-in-out;
-		// opacity: 0;
 
 		&::after {
 			content: "Lucas";
