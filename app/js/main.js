@@ -477,27 +477,52 @@ createListWithInnerHTML(slidesTop, slidesBottom);
 let doc = document,
 	index = 1;
 
-const box = doc.querySelector('.pets-top');
-const slidesBox = doc.querySelector('.pets-bottom__row-1');
-const slidesBoxBottom = doc.querySelector('.pets-bottom__row-2');
-const slidess = doc.querySelectorAll('.pets-bottom__card');
-const slidesss = doc.querySelector('.pets-bottom__card');
-const btnLeft = doc.querySelector('.pets-bottom__arrow--left');
-const btnRight = doc.querySelector('.pets-bottom__arrow--right');
-const sizeTransform = (box.clientWidth + 40);
-const size = (slidesss.clientWidth);
-
-console.log(size);
-
+const box = doc.querySelector('.pets-top'),
+	slidesBox = doc.querySelector('.pets-bottom__row-1'),
+	slidesBoxBottom = doc.querySelector('.pets-bottom__row-2'),
+	slidess = doc.querySelectorAll('.pets-bottom__card'),
+	slidesss = doc.querySelector('.pets-bottom__card'),
+	btnLeft = doc.querySelector('.pets-bottom__arrow--left'),
+	btnRight = doc.querySelector('.pets-bottom__arrow--right'),
+	sizeWidth = (slidesss.clientWidth),
+	marginRight = parseInt(getComputedStyle(slidesss, true).marginRight);
+console.log(marginRight);
 
 
-slidesBox.style.transform = 'translateX(' + (-index * sizeTransform) + 'px';
-slidesBoxBottom.style.transform = 'translateX(' + (-index * sizeTransform) + 'px';
+let slidesThree = ((sizeWidth * 3) + (marginRight * 3));
+let slidesTwo = ((sizeWidth * 2) + (marginRight * 2));
+
+
+// slidesBox.style.transform = 'translateX(' + (-index * ((sizeWidth * 3) + (marginRight * 3))) + 'px';
+// slidesBoxBottom.style.transform = 'translateX(' + (-index * ((sizeWidth * 3) + (marginRight * 3))) + 'px';
+// slidesBox.style.transform = 'translateX(' + slidesThreeTransform + 'px';
+// slidesBoxBottom.style.transform = 'translateX(' + slidesThreeTransform + 'px';
+if (box.clientWidth > slidesThree) {
+	slidesBox.style.transform = 'translateX(' + (-index * ((sizeWidth * 2) + (marginRight * 2))) + 'px';
+	slidesBoxBottom.style.transform = 'translateX(' + (-index * ((sizeWidth * 2) + (marginRight * 2))) + 'px';
+} else {
+	slidesBox.style.transform = 'translateX(' + (-index * ((sizeWidth * 3) + (marginRight * 3))) + 'px';
+	slidesBoxBottom.style.transform = 'translateX(' + (-index * ((sizeWidth * 3) + (marginRight * 3))) + 'px';
+}
+
+
+console.log(slidesThree);
+console.log(slidesTwo);
+
+
 
 btnLeft.addEventListener('click', function () {
 	slidesBox.style.transition = "transform .9s ease-in-out";
 	slidesBoxBottom.style.transition = "transform .9s ease-in-out";
-	let size = box.clientWidth + 40;
+	// let size = box.clientWidth + 40;
+
+	let size = 0;
+	if (box.clientWidth > slidesThree) {
+		size = slidesTwo;
+	} else {
+		size = slidesThree;
+	}
+	console.log(size);
 	index <= 0 ? false : index--;
 	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
@@ -506,7 +531,13 @@ btnLeft.addEventListener('click', function () {
 
 
 function jump() {
-	let size = box.clientWidth + 40;
+	// let size = box.clientWidth + 40;
+	let size = 0;
+	if (box.clientWidth > slidesThree) {
+		size = slidesTwo;
+	} else {
+		size = slidesThree;
+	}
 	slidesBox.addEventListener('transitionend', function () {
 		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
 		slidesBox.style.transition = "none";
@@ -523,7 +554,12 @@ function jump() {
 btnRight.addEventListener('click', function () {
 	slidesBox.style.transition = "transform .9s ease-in-out";
 	slidesBoxBottom.style.transition = "transform .9s ease-in-out";
-	let size = box.clientWidth + 40;
+	let size = 0;
+	if (box.clientWidth > slidesThree) {
+		size = slidesTwo;
+	} else {
+		size = slidesThree;
+	}
 	index >= 6 ? false : index++;
 	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
@@ -532,7 +568,13 @@ btnRight.addEventListener('click', function () {
 
 
 function jumpRight() {
-	let size = box.clientWidth + 40;
+	// let size = box.clientWidth + 40;
+	let size = 0;
+	if (box.clientWidth > slidesThree) {
+		size = slidesTwo;
+	} else {
+		size = slidesThree;
+	}
 	slidesBox.addEventListener('transitionend', function () {
 		slidess[index].id === "firstClone" ? index = 1 : index;
 		slidesBox.style.transition = "none";
