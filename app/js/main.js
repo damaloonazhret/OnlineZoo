@@ -484,15 +484,15 @@ const slidess = doc.querySelectorAll('.pets-bottom__card');
 const slidesss = doc.querySelector('.pets-bottom__card');
 const btnLeft = doc.querySelector('.pets-bottom__arrow--left');
 const btnRight = doc.querySelector('.pets-bottom__arrow--right');
-// const size = (box.clientWidth + 40);
+const sizeTransform = (box.clientWidth + 40);
 const size = (slidesss.clientWidth);
 
-console.log(slidesss.clientWidth);
+console.log(size);
 
 
 
-slidesBox.style.transform = 'translateX(' + (-index * size) + 'px';
-slidesBoxBottom.style.transform = 'translateX(' + (-index * size) + 'px';
+slidesBox.style.transform = 'translateX(' + (-index * sizeTransform) + 'px';
+slidesBoxBottom.style.transform = 'translateX(' + (-index * sizeTransform) + 'px';
 
 btnLeft.addEventListener('click', function () {
 	slidesBox.style.transition = "transform .9s ease-in-out";
