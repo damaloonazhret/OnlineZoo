@@ -574,7 +574,7 @@ body {
 
 	&__row-1 {
 		display: grid;
-		grid-template-columns: repeat(18, 1fr);
+		grid-template-columns: repeat(22, 1fr);
 		padding-bottom: 40px;
 		position: relative;
 	}
@@ -582,7 +582,7 @@ body {
 
 	&__row-2 {
 		display: grid;
-		grid-template-columns: repeat(18, 1fr);
+		grid-template-columns: repeat(22, 1fr);
 		position: relative;
 	}
 
@@ -596,48 +596,15 @@ body {
 		object-fit: cover;
 	}
 
-	.card-9::after {
-		content: "Lucas";
-	}
-
-	.card-13::after {
-		content: "Lucas";
-	}
-
 	.card-2::after {
 		content: "Andy";
 	}
-
-	.card-10::after {
-		content: "Andy";
-	}
-
-	.card-14::after {
-		content: "Andy";
-	}
-
 
 	.card-3::after {
 		content: "Glen";
 	}
 
-	.card-11::after {
-		content: "Glen";
-	}
-
-	.card-15::after {
-		content: "Glen";
-	}
-
 	.card-4::after {
-		content: "Mike";
-	}
-
-	.card-12::after {
-		content: "Mike";
-	}
-
-	.card-16::after {
 		content: "Mike";
 	}
 
