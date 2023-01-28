@@ -484,13 +484,9 @@ btnLeft.addEventListener('click', function () {
 	indexLast -= 3;
 	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
-	function stopBtn() {
-		
-	}
 	btnLeft.setAttribute("disabled", "disabled");
-	setTimeout(() => btnLeft.removeAttribute('disabled'), 900);
 	jump();
-}, true);
+});
 
 
 function jump() {
@@ -506,6 +502,7 @@ function jump() {
 		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
 		slidesBox.style.transition = "none";
 		slidesBox.style.transform = "translateX(" + ((-index * size)) + 'px';
+		btnLeft.removeAttribute('disabled');
 	});
 	slidesBoxBottom.addEventListener('transitionend', function () {
 		slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
@@ -513,12 +510,13 @@ function jump() {
 		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
 		slidesBoxBottom.style.transition = "none";
 		slidesBoxBottom.style.transform = "translateX(" + ((-index * size)) + 'px';
+		btnLeft.removeAttribute('disabled');
 	});
 }
 
-var transitionCompleted = function(){
-    translationComplete = true;
-	
+var transitionCompleted = function () {
+	translationComplete = true;
+
 };
 
 btnRight.addEventListener('click', function () {
@@ -536,10 +534,8 @@ btnRight.addEventListener('click', function () {
 	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
 	btnRight.setAttribute("disabled", "disabled");
-	setTimeout(() => btnRight.removeAttribute('disabled'), 900);
 	jumpRight();
-
-}, true);
+});
 
 
 function jumpRight() {
@@ -555,6 +551,7 @@ function jumpRight() {
 		slidess[index].id === "firstClone" ? index = 1 : index;
 		slidesBox.style.transition = "none";
 		slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+		btnRight.removeAttribute('disabled');
 	});
 	slidesBoxBottom.addEventListener('transitionend', function () {
 		slidess[index].id === "firstClone" ? indexFirst = 1 : indexFirst;
@@ -562,6 +559,6 @@ function jumpRight() {
 		slidess[index].id === "firstClone" ? index = 1 : index;
 		slidesBoxBottom.style.transition = "none";
 		slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
+		btnRight.removeAttribute('disabled');
 	});
 }
-
