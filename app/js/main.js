@@ -32,13 +32,385 @@ document.addEventListener("click", function (e) {
 });
 
 
+// const slidesTop = [
+// 	{
+// 		name: 'Gorilla in Congo',
+// 		id: 11,
+// 		idi: 'lastClone',
+// 		status: 'active',
+// 		src: "images/gorilla.png",
+// 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Chinese Alligator',
+// 		id: 12,
+
+// 		status: 'active',
+// 		src: "images/aligator.png",
+// 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 13,
+
+// 		status: 'not-active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Chinese Alligator',
+// 		id: 16,
+// 		status: 'not-active',
+// 		src: "images/aligator.png",
+// 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 1,
+// 		status: 'not-active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Madagascarian Lemur',
+// 		id: 2,
+
+// 		status: 'not-active',
+// 		src: "images/lemur.png",
+// 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Gorilla in Congo',
+// 		id: 3,
+// 		idi: 'firstClone',
+// 		status: 'not-active',
+// 		src: "images/gorilla.png",
+// 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Chinese Alligator',
+// 		id: 4,
+// 		status: 'not-active',
+// 		src: "images/aligator.png",
+// 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 9,
+// 		status: 'active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Madagascarian Lemur',
+// 		id: 10,
+// 		status: 'active',
+// 		src: "images/lemur.png",
+// 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 1,
+
+// 		status: 'not-active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Gorilla in Congo',
+// 		id: 11,
+// 		status: 'active',
+// 		src: "images/gorilla.png",
+// 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Chinese Alligator',
+// 		id: 16,
+// 		status: 'not-active',
+// 		src: "images/aligator.png",
+// 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 1,
+
+// 		status: 'not-active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Madagascarian Lemur',
+// 		id: 14,
+// 		status: 'not-active',
+// 		src: "images/lemur.png",
+// 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Gorilla in Congo',
+// 		id: 15,
+// 		status: 'not-active',
+// 		src: "images/gorilla.png",
+// 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Chinese Alligator',
+// 		id: 12,
+
+// 		status: 'active',
+// 		src: "images/aligator.png",
+// 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 13,
+
+// 		status: 'not-active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Chinese Alligator',
+// 		id: 16,
+// 		status: 'not-active',
+// 		src: "images/aligator.png",
+// 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 1,
+
+// 		status: 'not-active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Madagascarian Lemur',
+// 		id: 14,
+// 		status: 'not-active',
+// 		src: "images/lemur.png",
+// 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Gorilla in Congo',
+// 		id: 15,
+// 		status: 'not-active',
+// 		src: "images/gorilla.png",
+// 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// ];
+
+// const slidesBottom = [
+// 	{
+// 		name: 'Gorilla in Congo',
+// 		id: 11,
+// 		idi: 'lastClone',
+// 		status: 'active',
+// 		src: "images/gorilla.png",
+// 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Chinese Alligator',
+// 		id: 12,
+// 		status: 'active',
+// 		src: "images/aligator.png",
+// 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 13,
+// 		status: 'not-active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'West End Bald Eagles',
+// 		id: 5,
+// 		status: 'not-active',
+// 		src: "images/eagles.png",
+// 		description: 'Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Australian Koala',
+// 		id: 6,
+// 		status: 'not-active',
+// 		src: "images/koala.png",
+// 		description: 'The elevated walkways bring you to eye level with the koalas as they perch in their forest.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'African Lion',
+// 		id: 7,
+
+// 		status: 'not-active',
+// 		src: "images/lion.png",
+// 		description: 'Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Sumatran Tiger',
+// 		id: 8,
+// 		idi: 'firstClone',
+// 		status: 'not-active',
+// 		src: "images/tiger.png",
+// 		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Chinese Alligator',
+// 		id: 4,
+// 		status: 'not-active',
+// 		src: "images/aligator.png",
+// 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 9,
+// 		status: 'active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Madagascarian Lemur',
+// 		id: 10,
+// 		status: 'active',
+// 		src: "images/lemur.png",
+// 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'West End Bald Eagles',
+// 		id: 5,
+// 		status: 'not-active',
+// 		src: "images/eagles.png",
+// 		description: 'Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Australian Koala',
+// 		id: 6,
+// 		status: 'not-active',
+// 		src: "images/koala.png",
+// 		description: 'The elevated walkways bring you to eye level with the koalas as they perch in their forest.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'African Lion',
+// 		id: 7,
+// 		status: 'not-active',
+// 		src: "images/lion.png",
+// 		description: 'Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Sumatran Tiger',
+// 		id: 8,
+// 		status: 'not-active',
+// 		src: "images/tiger.png",
+// 		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Australian Koala',
+// 		id: 6,
+// 		status: 'not-active',
+// 		src: "images/koala.png",
+// 		description: 'The elevated walkways bring you to eye level with the koalas as they perch in their forest.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Gorilla in Congo',
+// 		id: 11,
+// 		status: 'active',
+// 		src: "images/gorilla.png",
+// 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Chinese Alligator',
+// 		id: 12,
+
+// 		status: 'active',
+// 		src: "images/aligator.png",
+// 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Giant Panda',
+// 		id: 13,
+
+// 		status: 'not-active',
+// 		src: "images/panda.png",
+// 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'West End Bald Eagles',
+// 		id: 5,
+// 		status: 'not-active',
+// 		src: "images/eagles.png",
+// 		description: 'Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Australian Koala',
+// 		id: 6,
+// 		status: 'not-active',
+// 		src: "images/koala.png",
+// 		description: 'The elevated walkways bring you to eye level with the koalas as they perch in their forest.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'African Lion',
+// 		id: 7,
+// 		status: 'not-active',
+// 		src: "images/lion.png",
+// 		description: 'Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// 	{
+// 		name: 'Sumatran Tiger',
+// 		id: 8,
+// 		status: 'not-active',
+// 		src: "images/tiger.png",
+// 		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
+// 		link: 'VIEW LIVE CAM'
+// 	},
+// ];
+
 
 const slidesTop = [
 	{
 		name: 'Gorilla in Congo',
 		id: 11,
 		idi: 'lastClone',
-		status: 'active',
 		src: "images/gorilla.png",
 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
 		link: 'VIEW LIVE CAM'
@@ -46,8 +418,6 @@ const slidesTop = [
 	{
 		name: 'Chinese Alligator',
 		id: 12,
-
-		status: 'active',
 		src: "images/aligator.png",
 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
 		link: 'VIEW LIVE CAM'
@@ -55,8 +425,6 @@ const slidesTop = [
 	{
 		name: 'Giant Panda',
 		id: 13,
-
-		status: 'not-active',
 		src: "images/panda.png",
 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
 		link: 'VIEW LIVE CAM'
@@ -64,15 +432,21 @@ const slidesTop = [
 	{
 		name: 'Chinese Alligator',
 		id: 16,
-		status: 'not-active',
 		src: "images/aligator.png",
 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
+		name: 'Gorilla in Congo',
+		id: 3,
+		idi: 'firstClone',
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
 		name: 'Giant Panda',
 		id: 1,
-		status: 'not-active',
 		src: "images/panda.png",
 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
 		link: 'VIEW LIVE CAM'
@@ -80,83 +454,6 @@ const slidesTop = [
 	{
 		name: 'Madagascarian Lemur',
 		id: 2,
-
-		status: 'not-active',
-		src: "images/lemur.png",
-		description: 'Lemurs are considered the world’s most endangered group of mammals.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Gorilla in Congo',
-		id: 3,
-		idi: 'firstClone',
-		status: 'not-active',
-		src: "images/gorilla.png",
-		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Chinese Alligator',
-		id: 4,
-		status: 'not-active',
-		src: "images/aligator.png",
-		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Giant Panda',
-		id: 9,
-		status: 'active',
-		src: "images/panda.png",
-		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Madagascarian Lemur',
-		id: 10,
-		status: 'active',
-		src: "images/lemur.png",
-		description: 'Lemurs are considered the world’s most endangered group of mammals.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Giant Panda',
-		id: 1,
-
-		status: 'not-active',
-		src: "images/panda.png",
-		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Gorilla in Congo',
-		id: 11,
-		status: 'active',
-		src: "images/gorilla.png",
-		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Chinese Alligator',
-		id: 16,
-		status: 'not-active',
-		src: "images/aligator.png",
-		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Giant Panda',
-		id: 1,
-
-		status: 'not-active',
-		src: "images/panda.png",
-		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Madagascarian Lemur',
-		id: 14,
-		status: 'not-active',
 		src: "images/lemur.png",
 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
 		link: 'VIEW LIVE CAM'
@@ -164,7 +461,6 @@ const slidesTop = [
 	{
 		name: 'Gorilla in Congo',
 		id: 15,
-		status: 'not-active',
 		src: "images/gorilla.png",
 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
 		link: 'VIEW LIVE CAM'
@@ -172,25 +468,20 @@ const slidesTop = [
 	{
 		name: 'Chinese Alligator',
 		id: 12,
-
-		status: 'active',
 		src: "images/aligator.png",
 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
-		name: 'Giant Panda',
-		id: 13,
-
-		status: 'not-active',
-		src: "images/panda.png",
-		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+		name: 'Gorilla in Congo',
+		id: 3,
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
 		name: 'Chinese Alligator',
 		id: 16,
-		status: 'not-active',
 		src: "images/aligator.png",
 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
 		link: 'VIEW LIVE CAM'
@@ -198,60 +489,52 @@ const slidesTop = [
 	{
 		name: 'Giant Panda',
 		id: 1,
-
-		status: 'not-active',
+		src: "images/panda.png",
+		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Chinese Alligator',
+		id: 16,
+		src: "images/aligator.png",
+		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		id: 3,
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Giant Panda',
+		id: 1,
 		src: "images/panda.png",
 		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
 		name: 'Madagascarian Lemur',
-		id: 14,
-		status: 'not-active',
+		id: 2,
 		src: "images/lemur.png",
 		description: 'Lemurs are considered the world’s most endangered group of mammals.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Gorilla in Congo',
-		id: 15,
-		status: 'not-active',
-		src: "images/gorilla.png",
-		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
 		link: 'VIEW LIVE CAM'
 	},
 ];
 
 const slidesBottom = [
 	{
-		name: 'Gorilla in Congo',
-		id: 11,
+		name: 'Sumatran Tiger',
+		id: 8,
 		idi: 'lastClone',
-		status: 'active',
-		src: "images/gorilla.png",
-		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Chinese Alligator',
-		id: 12,
-		status: 'active',
-		src: "images/aligator.png",
-		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Giant Panda',
-		id: 13,
-		status: 'not-active',
-		src: "images/panda.png",
-		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+		src: "images/tiger.png",
+		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
 		name: 'West End Bald Eagles',
 		id: 5,
-		status: 'not-active',
 		src: "images/eagles.png",
 		description: 'Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly.',
 		link: 'VIEW LIVE CAM'
@@ -259,65 +542,28 @@ const slidesBottom = [
 	{
 		name: 'Australian Koala',
 		id: 6,
-		status: 'not-active',
 		src: "images/koala.png",
 		description: 'The elevated walkways bring you to eye level with the koalas as they perch in their forest.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
-		name: 'African Lion',
-		id: 7,
-
-		status: 'not-active',
-		src: "images/lion.png",
-		description: 'Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.',
+		name: 'West End Bald Eagles',
+		id: 5,
+		src: "images/eagles.png",
+		description: 'Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
 		name: 'Sumatran Tiger',
 		id: 8,
 		idi: 'firstClone',
-		status: 'not-active',
 		src: "images/tiger.png",
 		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
-		name: 'Chinese Alligator',
-		id: 4,
-		status: 'not-active',
-		src: "images/aligator.png",
-		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Giant Panda',
-		id: 9,
-		status: 'active',
-		src: "images/panda.png",
-		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Madagascarian Lemur',
-		id: 10,
-		status: 'active',
-		src: "images/lemur.png",
-		description: 'Lemurs are considered the world’s most endangered group of mammals.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'West End Bald Eagles',
-		id: 5,
-		status: 'not-active',
-		src: "images/eagles.png",
-		description: 'Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
 		name: 'Australian Koala',
 		id: 6,
-		status: 'not-active',
 		src: "images/koala.png",
 		description: 'The elevated walkways bring you to eye level with the koalas as they perch in their forest.',
 		link: 'VIEW LIVE CAM'
@@ -325,31 +571,13 @@ const slidesBottom = [
 	{
 		name: 'African Lion',
 		id: 7,
-		status: 'not-active',
 		src: "images/lion.png",
 		description: 'Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
-		name: 'Sumatran Tiger',
-		id: 8,
-		status: 'not-active',
-		src: "images/tiger.png",
-		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Australian Koala',
-		id: 6,
-		status: 'not-active',
-		src: "images/koala.png",
-		description: 'The elevated walkways bring you to eye level with the koalas as they perch in their forest.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
 		name: 'Gorilla in Congo',
 		id: 11,
-		status: 'active',
 		src: "images/gorilla.png",
 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
 		link: 'VIEW LIVE CAM'
@@ -357,25 +585,20 @@ const slidesBottom = [
 	{
 		name: 'Chinese Alligator',
 		id: 12,
-
-		status: 'active',
 		src: "images/aligator.png",
 		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
-		name: 'Giant Panda',
-		id: 13,
-
-		status: 'not-active',
-		src: "images/panda.png",
-		description: 'Native to central China, giant pandas have come to symbolize vulnerable species.',
+		name: 'Sumatran Tiger',
+		id: 8,
+		src: "images/tiger.png",
+		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
 		name: 'West End Bald Eagles',
 		id: 5,
-		status: 'not-active',
 		src: "images/eagles.png",
 		description: 'Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly.',
 		link: 'VIEW LIVE CAM'
@@ -383,7 +606,27 @@ const slidesBottom = [
 	{
 		name: 'Australian Koala',
 		id: 6,
-		status: 'not-active',
+		src: "images/koala.png",
+		description: 'The elevated walkways bring you to eye level with the koalas as they perch in their forest.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'West End Bald Eagles',
+		id: 5,
+		src: "images/eagles.png",
+		description: 'Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Sumatran Tiger',
+		id: 8,
+		src: "images/tiger.png",
+		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Australian Koala',
+		id: 6,
 		src: "images/koala.png",
 		description: 'The elevated walkways bring you to eye level with the koalas as they perch in their forest.',
 		link: 'VIEW LIVE CAM'
@@ -391,17 +634,8 @@ const slidesBottom = [
 	{
 		name: 'African Lion',
 		id: 7,
-		status: 'not-active',
 		src: "images/lion.png",
 		description: 'Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.',
-		link: 'VIEW LIVE CAM'
-	},
-	{
-		name: 'Sumatran Tiger',
-		id: 8,
-		status: 'not-active',
-		src: "images/tiger.png",
-		description: 'Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.',
 		link: 'VIEW LIVE CAM'
 	},
 ];
@@ -421,7 +655,7 @@ function createListWithInnerHTML(slidesTop, slidesBottom) {
 
 	const rowsTop = slidesTop.map(animal => {
 		return `
-		<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0" id="${animal.idi}">
+		<div class="pets-bottom__card card-${animal.id}" style="left:0" id="${animal.idi}">
 			<div class="pets-bottom__card-img">
 			<img src="${animal.src}">
 			</div>
@@ -443,7 +677,7 @@ function createListWithInnerHTML(slidesTop, slidesBottom) {
 	});
 	const rowsBottom = slidesBottom.map(animal => {
 		return `
-		<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0" id="${animal.idi}">
+		<div class="pets-bottom__card card-${animal.id}" style="left:0" id="${animal.idi}">
 			<div class="pets-bottom__card-img">
 			<img src="${animal.src}">
 			</div>
@@ -540,19 +774,20 @@ function jump() {
 	slidesBox.addEventListener('transitionend', function () {
 		slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
 		slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
-		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
+		console.log(index);
+		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 13 : index;
 		slidesBox.style.transition = "none";
 		slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+		console.log(index);
 	});
 	slidesBoxBottom.addEventListener('transitionend', function () {
 		slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
 		slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
-		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
+		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 13 : index;
 		slidesBoxBottom.style.transition = "none";
 		slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
+		console.log(size);
 	});
-	console.log(indexFirst);
-	console.log(indexLast);
 }
 
 
@@ -585,7 +820,9 @@ function jumpRight() {
 	slidesBox.addEventListener('transitionend', function () {
 		slidess[index].id === "firstClone" ? indexFirst = 1 : indexFirst;
 		slidess[index].id === "firstClone" ? indexLast = 4 : indexLast;
+		console.log(index);
 		slidess[index].id === "firstClone" ? index = 1 : index;
+		console.log(index);
 		slidesBox.style.transition = "none";
 		slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	});
@@ -596,9 +833,5 @@ function jumpRight() {
 		slidesBoxBottom.style.transition = "none";
 		slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
 	});
-	console.log(indexFirst);
-	console.log(indexLast);
 }
 
-console.log(indexFirst);
-console.log(indexLast);
