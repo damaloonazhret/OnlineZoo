@@ -474,6 +474,20 @@ const slidesTop = [
 	},
 	{
 		name: 'Gorilla in Congo',
+		id: 15,
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Chinese Alligator',
+		id: 12,
+		src: "images/aligator.png",
+		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
 		id: 3,
 		src: "images/gorilla.png",
 		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
@@ -573,6 +587,20 @@ const slidesBottom = [
 		id: 7,
 		src: "images/lion.png",
 		description: 'Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the pride.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Gorilla in Congo',
+		id: 11,
+		src: "images/gorilla.png",
+		description: 'Variety of snacks very important for the healthy life of gorillas and his plenty of babies.',
+		link: 'VIEW LIVE CAM'
+	},
+	{
+		name: 'Chinese Alligator',
+		id: 12,
+		src: "images/aligator.png",
+		description: 'From nose to tail, belly to back, hard scales protect this petite alligator.',
 		link: 'VIEW LIVE CAM'
 	},
 	{
@@ -775,7 +803,7 @@ function jump() {
 		slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
 		slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
 		console.log(index);
-		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 13 : index;
+		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 14 : index;
 		slidesBox.style.transition = "none";
 		slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 		console.log(index);
@@ -783,7 +811,7 @@ function jump() {
 	slidesBoxBottom.addEventListener('transitionend', function () {
 		slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
 		slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
-		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 13 : index;
+		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 14 : index;
 		slidesBoxBottom.style.transition = "none";
 		slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
 		console.log(size);
