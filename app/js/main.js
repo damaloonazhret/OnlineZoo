@@ -475,7 +475,9 @@ function createListWithInnerHTML(slidesTop, slidesBottom) {
 createListWithInnerHTML(slidesTop, slidesBottom);
 
 let doc = document,
-	index = 1;
+	index = 1,
+	indexFirst = 1,
+	indexLast = 4;
 
 const box = doc.querySelector('.pets-top'),
 	slidesBox = doc.querySelector('.pets-bottom__row-1'),
@@ -486,7 +488,6 @@ const box = doc.querySelector('.pets-top'),
 	btnRight = doc.querySelector('.pets-bottom__arrow--right'),
 	sizeWidth = (slidesss.clientWidth),
 	marginRight = parseInt(getComputedStyle(slidesss, true).marginRight);
-console.log(marginRight);
 
 
 let slidesThree = ((sizeWidth * 3) + (marginRight * 3));
@@ -506,24 +507,22 @@ if (box.clientWidth > slidesThree) {
 }
 
 
-console.log(slidesThree);
-console.log(slidesTwo);
+
 
 
 
 btnLeft.addEventListener('click', function () {
 	slidesBox.style.transition = "transform .9s ease-in-out";
 	slidesBoxBottom.style.transition = "transform .9s ease-in-out";
-	// let size = box.clientWidth + 40;
-
 	let size = 0;
 	if (box.clientWidth > slidesThree) {
 		size = slidesTwo;
 	} else {
 		size = slidesThree;
 	}
-	console.log(size);
 	index <= 0 ? false : index--;
+	indexFirst -= 3;
+	indexLast -= 3;
 	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
 	jump();
@@ -539,15 +538,21 @@ function jump() {
 		size = slidesThree;
 	}
 	slidesBox.addEventListener('transitionend', function () {
+		slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
+		slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
 		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
 		slidesBox.style.transition = "none";
 		slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	});
 	slidesBoxBottom.addEventListener('transitionend', function () {
+		slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
+		slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
 		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
 		slidesBoxBottom.style.transition = "none";
 		slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
 	});
+	console.log(indexFirst);
+	console.log(indexLast);
 }
 
 
@@ -561,6 +566,8 @@ btnRight.addEventListener('click', function () {
 		size = slidesThree;
 	}
 	index >= 6 ? false : index++;
+	indexFirst += 3;
+	indexLast += 3;
 	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
 	jumpRight();
@@ -576,13 +583,22 @@ function jumpRight() {
 		size = slidesThree;
 	}
 	slidesBox.addEventListener('transitionend', function () {
+		slidess[index].id === "firstClone" ? indexFirst = 1 : indexFirst;
+		slidess[index].id === "firstClone" ? indexLast = 4 : indexLast;
 		slidess[index].id === "firstClone" ? index = 1 : index;
 		slidesBox.style.transition = "none";
 		slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	});
 	slidesBoxBottom.addEventListener('transitionend', function () {
+		slidess[index].id === "firstClone" ? indexFirst = 1 : indexFirst;
+		slidess[index].id === "firstClone" ? indexLast = 4 : indexLast;
 		slidess[index].id === "firstClone" ? index = 1 : index;
 		slidesBoxBottom.style.transition = "none";
 		slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
 	});
+	console.log(indexFirst);
+	console.log(indexLast);
 }
+
+console.log(indexFirst);
+console.log(indexLast);
