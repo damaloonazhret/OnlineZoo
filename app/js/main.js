@@ -494,14 +494,16 @@ buttonLefttClickEvent = btnLeft.addEventListener('click', function () {
 	jumpLeft();
 });
 
-function slideBoxLeftTransitionEnd (size) {
+function slideBoxLeftTransitionEnd(size) {
 	slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
 	slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
 	slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
 	slidesBox.style.transition = "none";
 	slidesBox.style.transform = "translateX(" + ((-index * size)) + 'px';
+	slidesBoxBottom.style.transition = "none";
+	slidesBoxBottom.style.transform = "translateX(" + ((-index * size)) + 'px';
 	btnLeft.removeAttribute('disabled');
-};
+}
 
 function jumpLeft() {
 	let size = 0;
@@ -510,14 +512,14 @@ function jumpLeft() {
 	} else {
 		size = slidesThree;
 	}
-	slidesBoxLeftTransitionEndEvent = slidesBox.addEventListener('transitionend', () => slideBoxLeftTransitionEnd (size));
-	slidesBoxLeftBottomTransitionEndEvent = slidesBoxBottom.addEventListener('transitionend', () => slideBoxLeftTransitionEnd (size));
+	slidesBoxLeftTransitionEndEvent = slidesBox.addEventListener(
+		'transitionend',
+		() => slideBoxLeftTransitionEnd(size));
+	slidesBoxLeftBottomTransitionEndEvent = slidesBoxBottom.addEventListener(
+		'transitionend',
+		() => slideBoxLeftTransitionEnd(size));
 }
 
-var transitionCompleted = function () {
-	translationComplete = true;
-
-};
 
 buttonRightClickEvent = btnRight.addEventListener('click', function () {
 	slidesBox.style.transition = "transform .9s ease-in-out";
@@ -537,14 +539,18 @@ buttonRightClickEvent = btnRight.addEventListener('click', function () {
 	jumpRight();
 });
 
+
 function slideBoxRightTransitionEnd(size) {
 	slidess[index].id === "firstClone" ? indexFirst = 1 : indexFirst;
 	slidess[index].id === "firstClone" ? indexLast = 4 : indexLast;
 	slidess[index].id === "firstClone" ? index = 1 : index;
+	slidesBox.style.transition = "none";
+	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	slidesBoxBottom.style.transition = "none";
 	slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
 	btnRight.removeAttribute('disabled');
 }
+
 
 function jumpRight() {
 	let size = 0;
@@ -553,10 +559,12 @@ function jumpRight() {
 	} else {
 		size = slidesThree;
 	}
-	slidesBoxRightTransitionEndEvent = slidesBox.addEventListener('transitionend', () => slideBoxRightTransitionEnd(size));
+	slidesBoxRightTransitionEndEvent = slidesBox.addEventListener(
+		'transitionend',
+		() => slideBoxRightTransitionEnd(size));
 	slidesBoxRightBottomTransitionEndEvent = slidesBoxBottom.addEventListener(
 		'transitionend',
-		() => slideBoxTransitionEnd(size)
+		() => slideBoxRightTransitionEnd(size)
 	);
 }
 
