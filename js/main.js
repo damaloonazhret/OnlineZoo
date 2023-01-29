@@ -456,6 +456,12 @@ const box = doc.querySelector('.pets-top'),
 	sizeWidth = (slidesss.clientWidth),
 	marginRight = parseInt(getComputedStyle(slidesss, true).marginRight);
 
+let buttonRightClickEvent,
+	buttonLefttClickEvent,
+	slidesBoxLeftTransitionEndEvent,
+	slidesBoxLeftBottomTransitionEndEvent,
+	slidesBoxRightTransitionEndEvent,
+	slidesBoxRightBottomTransitionEndEvent;
 
 let slidesThree = ((sizeWidth * 3) + (marginRight * 3));
 let slidesTwo = ((sizeWidth * 2) + (marginRight * 2));
@@ -470,7 +476,7 @@ if (box.clientWidth > slidesThree) {
 
 
 
-btnLeft.addEventListener('click', function () {
+buttonLefttClickEvent = btnLeft.addEventListener('click', function () {
 	slidesBox.style.transition = "transform .9s ease-in-out";
 	slidesBoxBottom.style.transition = "transform .9s ease-in-out";
 	let size = 0;
@@ -485,41 +491,37 @@ btnLeft.addEventListener('click', function () {
 	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
 	slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
 	btnLeft.setAttribute("disabled", "disabled");
-	jump();
+	jumpLeft();
 });
 
+function slideBoxLeftTransitionEnd(size) {
+	slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
+	slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
+	slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
+	slidesBox.style.transition = "none";
+	slidesBox.style.transform = "translateX(" + ((-index * size)) + 'px';
+	slidesBoxBottom.style.transition = "none";
+	slidesBoxBottom.style.transform = "translateX(" + ((-index * size)) + 'px';
+	btnLeft.removeAttribute('disabled');
+}
 
-function jump() {
+function jumpLeft() {
 	let size = 0;
 	if (box.clientWidth > slidesThree) {
 		size = slidesTwo;
 	} else {
 		size = slidesThree;
 	}
-	slidesBox.addEventListener('transitionend', function () {
-		slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
-		slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
-		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
-		slidesBox.style.transition = "none";
-		slidesBox.style.transform = "translateX(" + ((-index * size)) + 'px';
-		btnLeft.removeAttribute('disabled');
-	});
-	slidesBoxBottom.addEventListener('transitionend', function () {
-		slidess[index].id === "lastClone" ? indexFirst = 13 : indexFirst;
-		slidess[index].id === "lastClone" ? indexLast = 16 : indexLast;
-		slidess[index].id === "lastClone" ? index = (slidess.length / 2) - 17 : index;
-		slidesBoxBottom.style.transition = "none";
-		slidesBoxBottom.style.transform = "translateX(" + ((-index * size)) + 'px';
-		btnLeft.removeAttribute('disabled');
-	});
+	slidesBoxLeftTransitionEndEvent = slidesBox.addEventListener(
+		'transitionend',
+		() => slideBoxLeftTransitionEnd(size));
+	slidesBoxLeftBottomTransitionEndEvent = slidesBoxBottom.addEventListener(
+		'transitionend',
+		() => slideBoxLeftTransitionEnd(size));
 }
 
-var transitionCompleted = function () {
-	translationComplete = true;
 
-};
-
-btnRight.addEventListener('click', function () {
+buttonRightClickEvent = btnRight.addEventListener('click', function () {
 	slidesBox.style.transition = "transform .9s ease-in-out";
 	slidesBoxBottom.style.transition = "transform .9s ease-in-out";
 	let size = 0;
@@ -538,6 +540,18 @@ btnRight.addEventListener('click', function () {
 });
 
 
+function slideBoxRightTransitionEnd(size) {
+	slidess[index].id === "firstClone" ? indexFirst = 1 : indexFirst;
+	slidess[index].id === "firstClone" ? indexLast = 4 : indexLast;
+	slidess[index].id === "firstClone" ? index = 1 : index;
+	slidesBox.style.transition = "none";
+	slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
+	slidesBoxBottom.style.transition = "none";
+	slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
+	btnRight.removeAttribute('disabled');
+}
+
+
 function jumpRight() {
 	let size = 0;
 	if (box.clientWidth > slidesThree) {
@@ -545,20 +559,21 @@ function jumpRight() {
 	} else {
 		size = slidesThree;
 	}
-	slidesBox.addEventListener('transitionend', function () {
-		slidess[index].id === "firstClone" ? indexFirst = 1 : indexFirst;
-		slidess[index].id === "firstClone" ? indexLast = 4 : indexLast;
-		slidess[index].id === "firstClone" ? index = 1 : index;
-		slidesBox.style.transition = "none";
-		slidesBox.style.transform = "translateX(" + (-index * size) + 'px';
-		btnRight.removeAttribute('disabled');
-	});
-	slidesBoxBottom.addEventListener('transitionend', function () {
-		slidess[index].id === "firstClone" ? indexFirst = 1 : indexFirst;
-		slidess[index].id === "firstClone" ? indexLast = 4 : indexLast;
-		slidess[index].id === "firstClone" ? index = 1 : index;
-		slidesBoxBottom.style.transition = "none";
-		slidesBoxBottom.style.transform = "translateX(" + (-index * size) + 'px';
-		btnRight.removeAttribute('disabled');
-	});
+	slidesBoxRightTransitionEndEvent = slidesBox.addEventListener(
+		'transitionend',
+		() => slideBoxRightTransitionEnd(size));
+	slidesBoxRightBottomTransitionEndEvent = slidesBoxBottom.addEventListener(
+		'transitionend',
+		() => slideBoxRightTransitionEnd(size)
+	);
 }
+
+
+// window.addEventListener("resize", function (event) {
+// 	if (window.innerWidth < 780) {
+// 		buttonRightClickEvent.removeEventListener()
+// 		buttonLefttClickEvent.removeEventListener()
+// 		slidesBoxTransitionEndEvent.removeEventListener()
+// 		slidesBoxBottomTransitionEndEvent.removeEventListener()
+// 	}
+// });
