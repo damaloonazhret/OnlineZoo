@@ -983,8 +983,8 @@ body {
 
 	&__box-slider-container {
 		display: grid;
-		grid-template-columns: 515px 515px;
-		grid-template-rows: 463px 464px;
+		grid-template-columns: repeat(4, 515px);
+		grid-template-rows: 463px;
 		gap: 30px;
 	}
 
@@ -997,16 +997,10 @@ body {
 	.container__3 {
 		grid-column: 3 / 4;
 	}
-	.container__4 {
-		grid-column: 4 / 5;
-	}
-	.container__5 {
-		grid-column: 5 / 6;
-	}
 
 	&__box-slider-strip {
 		display: grid;
-		grid-template-columns: repeat(5, 1060px);
+		grid-template-columns: repeat(3, 1060px);
 		grid-template-rows: 464px;
 		gap: 30px;
 	}
@@ -1018,7 +1012,7 @@ body {
 		// grid-template-columns: repeat(2, 515px);
 		// grid-template-rows: 463px 464px;
 		width: 1060px;
-		height: 958px;
+		height: 463px;
 		gap: 30px;
 		position: relative;
 		overflow: hidden;
