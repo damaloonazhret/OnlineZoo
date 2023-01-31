@@ -911,6 +911,8 @@ body {
 	}
 }
 
+
+
 .pets-think {
 	font-family: "Montserrat";
 	background-image: url(../images/panda-lang.png);
@@ -922,6 +924,7 @@ body {
 		grid-template-columns: 560px 1060px;
 		gap: 40px;
 		padding-top: 109px;
+
 	}
 
 	&__box-btn {
@@ -983,28 +986,15 @@ body {
 
 	&__box-slider-container {
 		display: grid;
-		grid-template-columns: repeat(4, 515px);
+		grid-template-columns: repeat(12, 515px);
 		grid-template-rows: 463px;
 		gap: 30px;
 	}
 
-	.container__1 {
-		grid-column: 1 / 2;
-	}
-	.container__2 {
-		grid-column: 2 / 3;
-	}
-	.container__3 {
-		grid-column: 3 / 4;
-	}
-
 	&__box-slider-strip {
-		display: grid;
-		grid-template-columns: repeat(3, 1060px);
-		grid-template-rows: 464px;
-		gap: 30px;
+		width: 1060px;
+		overflow: hidden;
 	}
-
 
 	&__box-slider {
 		display: grid;
@@ -1014,61 +1004,88 @@ body {
 		width: 1060px;
 		height: 463px;
 		gap: 30px;
-		position: relative;
-		overflow: hidden;
+		// position: relative;
+		// overflow: hidden;
 		justify-self: end;
-
-		
 	}
 
-	.pets-btn {
+	.pets-toddler {
 		grid-column: 2 / 3;
-		display: grid;
-		grid-template-columns: repeat(2, 90px);
-	}
+		display: block;
+		justify-self: start;
+		width: 100%;
 
-	.pets-btn-left {
-		width: 60px;
-		height: 60px;
-		// position: absolute;
-		// left: 0;
-		// top: 1024px;
-		transition: 0.8s;
-		cursor: pointer;
-
-		&:hover {
-			background-color: #fff;
-			border-radius: 4px;
+		input[type="range"] {
+			display: block;
+			-webkit-appearance: none;
+			background-color: #8da6b7;
+			justify-self: center;
+			height: 5px;
+			border-radius: 5px;
+			outline: 0;
+			width: 50vw;
+			margin-left: 50px;
 		}
-
-		&:hover .pets-voilet {
-			fill: #20113d;
+		input[type="range"]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			background-color: #F58021;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: 2px solid rgb(255, 255, 255);
+			cursor: pointer;
+			transition: 0.3s ease-in-out;
 		}
-	}
-
-
-	.pets-voilet {
-		transition: 1.2s;
-	}
-
-	.pets-btn-right {
-		width: 60px;
-		height: 60px;
-		// position: absolute;
-		// left: 119px;
-		// top: 1024px;
-		transition: 0.8s;
-		cursor: pointer;
-
-		&:hover {
-			background-color: #fff;
-			border-radius: 4px;
+		​ input[type="range"]::-webkit-slider-thumb:hover {
+			background-color: white;
+			border: 2px solid #e74c3c;
 		}
-
-		&:hover .pets-voilet {
-			fill: #20113d;
+		input[type="range"]::-webkit-slider-thumb:active {
+			transform: scale(1.6);
 		}
 	}
+
+	// .pets-btn-left {
+	// 	width: 60px;
+	// 	height: 60px;
+	// 	// position: absolute;
+	// 	// left: 0;
+	// 	// top: 1024px;
+	// 	transition: 0.8s;
+	// 	cursor: pointer;
+
+	// 	&:hover {
+	// 		background-color: #fff;
+	// 		border-radius: 4px;
+	// 	}
+
+	// 	&:hover .pets-voilet {
+	// 		fill: #20113d;
+	// 	}
+	// }
+
+	// .pets-voilet {
+	// 	transition: 1.2s;
+	// }
+
+	// .pets-btn-right {
+	// 	width: 60px;
+	// 	height: 60px;
+	// 	// position: absolute;
+	// 	// left: 119px;
+	// 	// top: 1024px;
+	// 	transition: 0.8s;
+	// 	cursor: pointer;
+
+	// 	&:hover {
+	// 		background-color: #fff;
+	// 		border-radius: 4px;
+	// 	}
+
+	// 	&:hover .pets-voilet {
+	// 		fill: #20113d;
+	// 	}
+	// }
 
 	&__box-slider-box {
 		background-color: #fff;

@@ -1,15 +1,29 @@
-// let indexR = 2;
 
-// const arrowLeftReview = doc.querySelector('.pets-btn-left'),
-//     arrowRightReviev = doc.querySelector('.pets-btn-right'),
-//     sliderStrip = doc.querySelector('.pets-think__box-slider-strip'),
-//     grid = doc.querySelector('.pets-think__box-slider-container'),
-//     gridChild = doc.querySelector('.pets-think__box-slider-box'),
-//     slidesReview = doc.querySelectorAll('.pets-think__box-slider-container'),
-//     gridChildWidth = (gridChild.clientWidth),
-//     gridWidth = (grid.clientWidth),
-//     gap = (gridWidth - (gridChildWidth * 2)),
-//     translateWidth = (gap + gridWidth);
+
+
+function slideList () {
+    const range = document.getElementById('range'),
+    boxSlide = document.querySelector('.pets-think__box-slider-box'),
+    boxContainer = document.querySelector('.pets-think__box-slider-container'),
+    gap = (boxContainer.clientWidth - (boxSlide.clientWidth * 2)),
+    translateWidth = (boxSlide.clientWidth + (gap));
+
+    let indexR = range.value;
+    boxContainer.style.transition = "transform .7s ease-in-out";
+    boxContainer.style.transform = "translateX(" + (-indexR * translateWidth) + 'px';
+
+
+
+
+
+
+}
+
+
+
+
+
+
 
 
 // sliderStrip.style.transform = 'translateX(' + (-indexR * translateWidth) + 'px';
