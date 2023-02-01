@@ -11,12 +11,6 @@ function slideList () {
     let indexR = range.value;
     boxContainer.style.transition = "transform .7s ease-in-out";
     boxContainer.style.transform = "translateX(" + (-indexR * translateWidth) + 'px';
-
-
-
-
-
-
 }
 
 

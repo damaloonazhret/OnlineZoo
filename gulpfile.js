@@ -51,7 +51,7 @@ gulp.task('js-include', () => {
   return gulp.src('app/js/main.js')
     .pipe(include())
     .on('error', console.log)
-    .pipe(gulp.dest('app/global/js'));
+    .pipe(gulp.dest('app/dist/js'));
 })
 
 gulp.task('js', function () {
@@ -61,7 +61,7 @@ gulp.task('js', function () {
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('app/global/js'))
+    .pipe(gulp.dest('app/dist/js'))
     .pipe(browserSync.reload({stream: true}));
 });
 
@@ -81,7 +81,7 @@ gulp.task('export', async function () {
     .pipe(gulp.dest('dist/css'));
 
   let BuildJs = await gulp.src('app/dist/js/**/*.js')
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist/dist/js'));
 
   let BuildFonts = await gulp.src('app/fonts/**/*.*')
     .pipe(gulp.dest('dist/fonts'));
