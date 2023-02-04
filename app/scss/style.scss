@@ -3024,6 +3024,10 @@ body {
 		display: grid;
 	}
 
+	&-body-two {
+		grid-template-rows: 65px 65px 65px 65px 65px 65px 65px;
+	}
+
 	&-name {
 		font-size: 18px;
 		line-height: 150%;
@@ -3077,6 +3081,7 @@ body {
 			color: white;
 		}
 	}
+
 }
 
 @import "media";
