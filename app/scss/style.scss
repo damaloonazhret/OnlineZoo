@@ -2830,6 +2830,8 @@ body {
 
     &-special-clear-block {
         position: relative;
+        z-index: 1;
+
 
         &::after {
             content: "";
@@ -2887,7 +2889,7 @@ body {
         height: 452px;
         background: #ffffff;
         border: 1px solid #000000;
-        border-radius: 0px;
+        border-radius: 5px;
         display: grid;
         grid-template-rows: repeat(8, 1fr);
         grid-template-columns: 405px 32px;
@@ -2914,7 +2916,7 @@ body {
             }
         }
 
-        display: none;
+        // display: none;
     }
 
     &-choise-panel {
@@ -2929,9 +2931,21 @@ body {
         height: 11px;
         align-self: center;
         justify-self: center;
-        grid-row: 8 / 9;
         display: grid;
         margin-top: 7px;
+    }
+
+    &-choise-arrow-bottom-box {
+        cursor: pointer;
+        align-self: end;
+        justify-self: center;
+        grid-row: 8 / 9;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        &:hover {
+            background-color: rgba(173, 173, 173, 0.288);
+        }
     }
 
     &-choise-arrow-top {
@@ -2944,12 +2958,29 @@ body {
         margin-bottom: 7px;
     }
 
+    &-choise-arrow-top-box {
+        cursor: pointer;
+        align-self: start;
+        justify-self: center;
+        grid-row: 1 / 2;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        &:hover {
+            background-color: rgba(173, 173, 173, 0.288);
+        }
+    }
+
     &-choise-jaw {
         width: 33px;
         height: 72px;
         background: #80cfc8;
         align-self: center;
         justify-self: center;
+        transition: 0.5s;
+        &:hover {
+            background: #05786e;
+        }
     }
 
     &-special-block {
@@ -3342,7 +3373,7 @@ body {
         border-radius: 5px;
         display: grid;
         grid-template-rows: repeat(12, 60px);
-        grid-template-columns: 165px 32px;
+        grid-template-columns: 165px 35px;
         background-color: #fff;
 
         button {
@@ -3384,7 +3415,6 @@ body {
         align-self: center;
         justify-self: center;
         margin-top: 7px;
-        grid-row: 12 / 13;
     }
 
     &-choise-arrow-top-three-box {
@@ -3416,6 +3446,10 @@ body {
         background: #80cfc8;
         align-self: center;
         justify-self: center;
+        transition: 0.5s;
+        &:hover {
+            background: #05786e;
+        }
     }
 
     &-date-input-choise-three-six {
@@ -3424,8 +3458,41 @@ body {
         z-index: 3;
     }
 
-    &-choise-arrow-bottom-three-six {
+    &-choise-arrow-top-three-six-box {
+        cursor: pointer;
+        align-self: start;
+        justify-self: center;
+        grid-row: 1 / 2;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        &:hover {
+            background-color: rgba(173, 173, 173, 0.288);
+        }
+    }
+
+    &-choise-arrow-top-three-six {
+        align-self: center;
+        justify-self: center;
+    }
+
+    &-choise-arrow-bottom-three-six-box {
+        cursor: pointer;
+        align-self: end;
+        justify-self: center;
         grid-row: 6 / 7;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        &:hover {
+            background-color: rgba(173, 173, 173, 0.288);
+        }
+    }
+
+    &-choise-arrow-bottom-three-six {
+        align-self: center;
+        justify-self: center;
+        grid-row: 1 / 2;
     }
 }
 
