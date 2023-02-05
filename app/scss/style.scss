@@ -3215,12 +3215,8 @@ body {
         }
     }
 
-    &-date-input-container {
+    &-date-input-container-box {
         position: relative;
-        width: 201px;
-        height: 65px;
-        grid-row: 2 / 3;
-
         &::after {
             content: "";
             position: absolute;
@@ -3243,6 +3239,7 @@ body {
             content: "";
             position: absolute;
             background-image: url(../images/popup/arrow-down.png);
+            background-repeat: no-repeat;
             right: 8px;
             top: 25px;
             width: 16px;
@@ -3251,12 +3248,22 @@ body {
         }
     }
 
-    &-month-input-container {
-        position: relative;
+    &-date-input-container {
         width: 201px;
         height: 65px;
         grid-row: 2 / 3;
+        z-index: 2;
+    }
 
+    &-month-input-container {
+        width: 201px;
+        height: 65px;
+        grid-row: 2 / 3;
+        z-index: 2;
+    }
+
+    &-month-input-container-box {
+        position: relative;
         &::after {
             content: "";
             position: absolute;
@@ -3279,6 +3286,7 @@ body {
             content: "";
             position: absolute;
             background-image: url(../images/popup/arrow-down.png);
+            background-repeat: no-repeat;
             right: 8px;
             top: 25px;
             width: 16px;
@@ -3292,7 +3300,6 @@ body {
         height: 65px;
         border: 1px solid #000000;
         border-radius: 5px;
-
         &::placeholder {
             padding: 60px;
         }
@@ -3335,16 +3342,90 @@ body {
         border-radius: 5px;
         display: grid;
         grid-template-rows: repeat(12, 60px);
-		background-color: #fff;
+        grid-template-columns: 165px 32px;
+        background-color: #fff;
 
-        div {
+        button {
             justify-self: center;
             align-self: center;
             font-size: 18px;
             line-height: 150%;
-			cursor: pointer;
-            color: #A4A8AE;
+            cursor: pointer;
+            color: #a4a8ae;
+            grid-column: 1 / 2;
         }
+    }
+
+    &-choise-panel-three {
+        grid-column: 2/3;
+        display: grid;
+        grid-row: 1 / 13;
+        grid-template-rows: repeat(12, 1fr);
+    }
+
+    &-choise-arrow-bottom-three-box {
+        cursor: pointer;
+        align-self: end;
+        justify-self: center;
+        grid-row: 12 / 13;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        &:hover {
+            background-color: rgba(173, 173, 173, 0.288);
+        }
+    }
+
+    &-choise-arrow-bottom-three {
+        background-image: url(../images/popup/arrow-down-mini.png);
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 11px;
+        align-self: center;
+        justify-self: center;
+        margin-top: 7px;
+        grid-row: 12 / 13;
+    }
+
+    &-choise-arrow-top-three-box {
+        cursor: pointer;
+        align-self: start;
+        justify-self: center;
+        grid-row: 1 / 2;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        &:hover {
+            background-color: rgba(173, 173, 173, 0.288);
+        }
+    }
+
+    &-choise-arrow-top-three {
+        background-image: url(../images//popup/arrow-up-mini.png);
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 11px;
+        align-self: center;
+        justify-self: center;
+        margin-bottom: 7px;
+    }
+
+    &-choise-jaw-three {
+        width: 33px;
+        height: 72px;
+        background: #80cfc8;
+        align-self: center;
+        justify-self: center;
+    }
+
+    &-date-input-choise-three-six {
+        grid-row: 1 / 7;
+        grid-template-rows: repeat(6, 60px);
+        z-index: 3;
+    }
+
+    &-choise-arrow-bottom-three-six {
+        grid-row: 6 / 7;
     }
 }
 
