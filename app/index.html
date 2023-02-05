@@ -14,6 +14,8 @@
 </head>
 
 <body>
+<div class="urapper">
+
 
   <header class="header-page">
     <div class="container">
@@ -81,10 +83,10 @@
     </div>
   </header>
 
-  <section class="panda__view">
+  <section class="panda__view lock-padding">
     <div class="wrapper">
       <div class="container">
-        <div class="panda__view-box">
+        <div class="panda__view-box lock-padding">
           <h1 class="panda__view-box-header">Watch your favorite animal online</h1>
           <div class="panda__view-box-text">Explore the exciting and mysterious world of wild animals in a natural
             setting
@@ -155,7 +157,7 @@
             <div class="donation-box__right-quick">Quick Donate</div>
             <div class="donation-box__right-amount">
               <input type="number" placeholder="Donation Amount" class="donation-box__right-amount-don">
-              <a href="#">
+              <a class="popup-link" href="#popup">
                 <img src="images/arrow-right.svg" alt="">
               </a>
             </div>
@@ -936,7 +938,7 @@
     </div>
   </footer>
 
-  <div class="donation__popup">
+  <div id="popup" class="donation__popup">
     <div class="donation__popup-box">
       <div class="donation__popup-header">make your donation</div>
       <div class="donation__popup-container">
@@ -958,13 +960,14 @@
           </div>
           <div class="donation__popup-other">
             <div class="donation__popup-other-block">Other amount</div>
-            <input type="text" class="donation__popup-clear-block"></input>
+            <input type="number" class="donation__popup-clear-block"></input>
           </div>
           <div class="donation__popup-special">
             <div class="donation__popup-special-block">for special pet</div>
             <div class="donation__popup-special-clear-block">
-              <input class="donation__popup-basic" placeholder="Choose your favourite " type="text" list="list"></input>
-              <div class="donation__popup-choise">
+              <input class="donation__popup-basic" readonly placeholder="Choose your favourite " type="text" list="list"></input>
+              <div class="donation__popup-choise-container">
+                <div class="donation__popup-choise">
                 <div class="donation__popup-choise-panel">
                   <div class="donation__popup-choise-arrow-top-box">
                     <div class="donation__popup-choise-arrow-top"></div>
@@ -983,6 +986,8 @@
                 <button>Shake the Lion</button>
                 <button>Senja the Tiger</button>
               </div>
+              </div>
+              
             </div>
           </div>
           <div class="donation__popup-checkbox">
@@ -991,11 +996,11 @@
           </div>
           <div class="donation__popup-nav">
             <div class="donation__popup-points">
-              <div class="active"></div>
-              <div></div>
-              <div></div>
+              <button class="active"></button>
+              <button></button>
+              <button></button>
             </div>
-            <button class="donation__popup-btn">next</button>
+            <a href="#popup_2" class="donation__popup-btn popup-link">next</a>
           </div>
 
         </div>
@@ -1004,7 +1009,7 @@
     </div>
   </div>
 
-  <div class="donation__popup">
+  <div id="popup_2" class="donation__popup">
     <div class="donation__popup-box donation__popup-box-two">
       <div class="donation__popup-header">make your donation</div>
       <div class="donation__popup-container">
@@ -1023,12 +1028,12 @@
 
           <div class="donation__popup-nav-two">
             <div class="donation__popup-points">
-              <div class="active"></div>
-              <div class="active"></div>
-              <div></div>
+              <button class="active"></button>
+              <button class="active"></button>
+              <button></button>
             </div>
-            <button class="donation__popup-backup">Back</button>
-            <button class="donation__popup-btn">next</button>
+            <a href="#popup" class="donation__popup-backup popup-link">Back</a>
+            <a href="#popup_3" class="donation__popup-btn popup-link">next</a>
           </div>
 
         </div>
@@ -1038,9 +1043,7 @@
   </div>
 
 
-
-
-  <div class="donation__popup">
+  <div id="popup_3" class="donation__popup">
     <div class="donation__popup-box donation__popup-box-two">
       <div class="donation__popup-header">make your donation</div>
       <div class="donation__popup-container">
@@ -1051,11 +1054,11 @@
             <div class="donation__popup-card">
               <p>*</p> Credit Card Number
             </div>
-            <input type="text" class="donation__popup-card-input"></input>
+            <input type="number" class="donation__popup-card-input"></input>
             <div class="donation__popup-cvv">
               <p>*</p> CVV Number
             </div>
-            <input type="text" class="donation__popup-cvv-input"></input>
+            <input type="number" class="donation__popup-cvv-input"></input>
           </div>
           <div class="donation__popup-expiration">
             <div class="donation__popup-text">
@@ -1063,7 +1066,7 @@
             </div>
             <div class="donation__popup-date-input-container">
               <div class="donation__popup-date-input-container-box">
-                <input type="text" placeholder="Month" class="donation__popup-date-input"></input>
+                <input type="number" readonly placeholder="Month" class="donation__popup-date-input"></input>
               </div>
               <div class="donation__popup-date-input-choise">
                 <div class="donation__popup-choise-panel-three">
@@ -1091,7 +1094,7 @@
             </div>
             <div class="donation__popup-month-input-container">
               <div class="donation__popup-month-input-container-box">
-                <input type="text" placeholder="Year" class="donation__popup-month-input"></input>
+                <input type="number" readonly placeholder="Year" class="donation__popup-month-input"></input>
               </div>
 
               <div class="donation__popup-date-input-choise donation__popup-date-input-choise-three-six">
@@ -1116,12 +1119,12 @@
 
           <div class="donation__popup-nav-two">
             <div class="donation__popup-points">
-              <div class="active"></div>
-              <div class="active"></div>
-              <div class="active"></div>
+              <button class="active"></button>
+              <button class="active"></button>
+              <button class="active"></button>
             </div>
-            <button class="donation__popup-backup">Back</button>
-            <button class="donation__popup-btn-three">complete donation</button>
+            <a href="#popup_2" class="donation__popup-backup popup-link">Back</a>
+            <a class="donation__popup-btn-three">complete donation</a>
           </div>
 
         </div>
@@ -1131,9 +1134,8 @@
   </div>
 
 
-
-
   <script src="dist/js/main.js"></script>
+</div>
 </body>
 
 </html>
