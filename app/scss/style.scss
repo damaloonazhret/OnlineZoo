@@ -2951,6 +2951,10 @@ html.lock {
         transition: 1s;
         transform: translateY(-100%);
         opacity: 0;
+    }
+
+    &-choise-container {
+        overflow: hidden;
         visibility: hidden;
     }
 
