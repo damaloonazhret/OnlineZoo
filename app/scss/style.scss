@@ -2713,6 +2713,17 @@ html.lock {
 .donation__popup.open {
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+}
+
+.donation__popup-choise.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
 }
 
 .donation__popup {
@@ -2722,7 +2733,7 @@ html.lock {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.134);
+    background-color: rgba(0, 0, 0, 0.637);
     top: 0;
     left: 0;
     justify-content: center;
@@ -2858,6 +2869,7 @@ html.lock {
         position: relative;
         z-index: 1;
         height: 65px;
+        
 
         &::after {
             content: "";
@@ -2921,6 +2933,15 @@ html.lock {
         display: grid;
         grid-template-rows: repeat(8, 1fr);
         grid-template-columns: 405px 32px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 30%;
+        height: 30%;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        
 
         button {
             display: grid;
@@ -2956,12 +2977,22 @@ html.lock {
     &-choise-container {
         overflow: hidden;
         visibility: hidden;
+        // position: fixed;
+        // width: 100%;
+        // height: 100%;
+        // left: 0;
+        // top: 0;
+        // display: grid;
+        // justify-content: center;
+        // align-content: center;
+        // background-color: rgba(0, 0, 0, 0.905);
     }
 
     &-choise.visible-popup {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+        
     }
 
     &-choise-panel {

@@ -555,12 +555,12 @@ if (popupLinks.length > 0) {
 
 function popupOpen(curentPopup) {
     if (curentPopup && unlock) {
-        const popupActive = document.querySelector('.donation__popup.open');
-        if (popupActive) {
-            popupClose(popupActive, false);
-        } else {
-            bodyLock();
-        }
+        // const popupActive = document.querySelector('.donation__popup.open');
+        // if (popupActive) {
+        //     popupClose(popupActive, false);
+        // } else {
+        //     bodyLock();
+        // }
         curentPopup.classList.add('open');
         curentPopup.addEventListener("click", function (e) {
             if (!e.target.closest('.donation__popup-box')) {
@@ -625,28 +625,28 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-const favorite = document.querySelector('.popup-link-in');
-const favoreteVisible = document.querySelector('.donation__popup-choise');
+// const favorite = document.querySelector('.popup-link-in');
+// const favoreteVisible = document.querySelector('.donation__popup-choise');
 
 
 
 
-favorite.addEventListener("click", function (e) {
-    const popupNameIn = favorite.getAttribute('href').replace('#', '');
-    const curentPopupIn = document.getElementById(popupNameIn);
-    popupOpenIn(curentPopupIn);
-    e.preventDefault();
-});
+// favorite.addEventListener("click", function (e) {
+//     const popupNameIn = favorite.getAttribute('href').replace('#', '');
+//     const curentPopupIn = document.getElementById(popupNameIn);
+//     popupOpenIn(curentPopupIn);
+//     e.preventDefault();
+// });
 
-function popupOpenIn(curentPopupIn) {
-    favoreteVisible.classList.add('visible-popup');
-    favoreteVisible.addEventListener("click", function (e) {
-            if (e.target.closest('.donation__popup-choise-container')) {
-                popupCloseIn(favoreteVisible);
-            }
-        });
-}
+// function popupOpenIn(curentPopupIn) {
+//     favoreteVisible.classList.add('visible-popup');
+//     favoreteVisible.addEventListener("click", function (e) {
+//             if (!e.target.closest('.donation__popup-choise-container')) {
+//                 popupCloseIn(favoreteVisible);
+//             }
+//         });
+// }
 
-function popupCloseIn(x) {
-    favoreteVisible.classList.remove('visible-popup');
-}
+// function popupCloseIn(x) {
+//     favoreteVisible.classList.remove('visible-popup');
+// }

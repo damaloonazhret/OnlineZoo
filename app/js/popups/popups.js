@@ -23,12 +23,12 @@ if (popupLinks.length > 0) {
 
 function popupOpen(curentPopup) {
     if (curentPopup && unlock) {
-        const popupActive = document.querySelector('.donation__popup.open');
-        if (popupActive) {
-            popupClose(popupActive, false);
-        } else {
-            bodyLock();
-        }
+        // const popupActive = document.querySelector('.donation__popup.open');
+        // if (popupActive) {
+        //     popupClose(popupActive, false);
+        // } else {
+        //     bodyLock();
+        // }
         curentPopup.classList.add('open');
         curentPopup.addEventListener("click", function (e) {
             if (!e.target.closest('.donation__popup-box')) {
