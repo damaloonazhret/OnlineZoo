@@ -2714,16 +2714,17 @@ html.lock {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
-.donation__popup-choise.open {
+.donation__popup-choise-content.openNC {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+    opacity: 1;
+    visibility: visible;
+    z-index: 7;
 }
 
 .donation__popup {
@@ -2869,7 +2870,7 @@ html.lock {
         position: relative;
         z-index: 1;
         height: 65px;
-        
+
 
         &::after {
             content: "";
@@ -2924,6 +2925,20 @@ html.lock {
         }
     }
 
+    &-choise-content {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.8s ease-in-out;
+    }
+
     &-choise {
         width: 440px;
         height: 452px;
@@ -2933,15 +2948,8 @@ html.lock {
         display: grid;
         grid-template-rows: repeat(8, 1fr);
         grid-template-columns: 405px 32px;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 30%;
-        height: 30%;
-        display: grid;
-        justify-content: center;
-        align-content: center;
-        
+
+
 
         button {
             display: grid;
@@ -2965,13 +2973,11 @@ html.lock {
             }
         }
 
-        
+
     }
 
     &-choise {
         transition: 1s;
-        transform: translateY(-100%);
-        opacity: 0;
     }
 
     &-choise-container {
@@ -2992,7 +2998,7 @@ html.lock {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
-        
+
     }
 
     &-choise-panel {
@@ -3474,8 +3480,8 @@ html.lock {
         grid-template-rows: repeat(12, 60px);
         grid-template-columns: 165px 35px;
         background-color: #fff;
-        opacity: 0;
-        visibility: hidden;
+        // opacity: 0;
+        // visibility: hidden;
 
         button {
             justify-self: center;
