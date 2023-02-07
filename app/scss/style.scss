@@ -2718,14 +2718,11 @@ html.lock {
     visibility: visible;
 }
 
-.donation__popup-choise-content.openNC {
+.donation__popup-choise-content.open {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-    z-index: 7;
-}
+    // z-index: 9;
+    transition: all 0.8s ease-in-out;}
 
 .donation__popup {
     display: grid;
@@ -2820,7 +2817,7 @@ html.lock {
             display: grid;
             justify-content: center;
             align-content: center;
-            transition: 1s;
+            transition: all 0.8s ease-in-out;
 
             &:hover {
                 background: #00a092;
@@ -2847,7 +2844,7 @@ html.lock {
         justify-content: center;
         align-content: center;
         color: #ffffff;
-        transition: 0.5s;
+        transition: all 0.8s ease-in-out;
 
         &:hover {
             background: #05786e;
@@ -2871,7 +2868,6 @@ html.lock {
         z-index: 1;
         height: 65px;
 
-
         &::after {
             content: "";
             position: absolute;
@@ -2882,7 +2878,7 @@ html.lock {
             background: #80cfc8;
             border: 1px solid #000000;
             border-radius: 0px 5px 5px 0px;
-            transition: 1s;
+            transition: all 0.8s ease-in-out;
             cursor: pointer;
         }
 
@@ -2925,6 +2921,10 @@ html.lock {
         }
     }
 
+    .popup-link-not-close {
+        position: relative;
+    }
+
     &-choise-content {
         position: fixed;
         left: 0;
@@ -2937,9 +2937,15 @@ html.lock {
         opacity: 0;
         visibility: hidden;
         transition: all 0.8s ease-in-out;
+        overflow: hidden;
     }
 
+    
+
     &-choise {
+        position: absolute;
+        // left: 604px;
+        // top: 647px;
         width: 440px;
         height: 452px;
         background: #ffffff;
@@ -2948,8 +2954,7 @@ html.lock {
         display: grid;
         grid-template-rows: repeat(8, 1fr);
         grid-template-columns: 405px 32px;
-
-
+        // transform: translateY(-100%);
 
         button {
             display: grid;
@@ -2972,33 +2977,16 @@ html.lock {
                 align-self: center;
             }
         }
-
-
     }
 
     &-choise {
-        transition: 1s;
-    }
-
-    &-choise-container {
-        overflow: hidden;
-        visibility: hidden;
-        // position: fixed;
-        // width: 100%;
-        // height: 100%;
-        // left: 0;
-        // top: 0;
-        // display: grid;
-        // justify-content: center;
-        // align-content: center;
-        // background-color: rgba(0, 0, 0, 0.905);
+        transition: all 0.8s ease-in-out;
     }
 
     &-choise.visible-popup {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
-
     }
 
     &-choise-panel {
@@ -3061,7 +3049,7 @@ html.lock {
         background: #80cfc8;
         align-self: center;
         justify-self: center;
-        transition: 0.5s;
+        transition: all 0.8s ease-in-out;
 
         &:hover {
             background: #05786e;
@@ -3081,7 +3069,7 @@ html.lock {
         justify-content: center;
         align-content: center;
         color: #ffffff;
-        transition: 1s;
+        transition: all 0.8s ease-in-out;
 
         &:hover {
             background: #00a092;
@@ -3357,7 +3345,7 @@ html.lock {
             background: #80cfc8;
             border: 1px solid #000000;
             border-radius: 0px 5px 5px 0px;
-            transition: 1s;
+            transition: all 0.8s ease-in-out;
             cursor: pointer;
         }
 
@@ -3382,18 +3370,19 @@ html.lock {
         width: 201px;
         height: 65px;
         grid-row: 2 / 3;
-        z-index: 2;
+        // z-index: 2;
     }
 
     &-month-input-container {
         width: 201px;
         height: 65px;
         grid-row: 2 / 3;
-        z-index: 2;
+        // z-index: 2;
     }
 
     &-month-input-container-box {
         position: relative;
+        z-index: 11;
 
         &::after {
             content: "";
@@ -3405,7 +3394,7 @@ html.lock {
             background: #80cfc8;
             border: 1px solid #000000;
             border-radius: 0px 5px 5px 0px;
-            transition: 1s;
+            transition: all 0.8s ease-in-out;
             cursor: pointer;
         }
 
@@ -3474,15 +3463,17 @@ html.lock {
     }
 
     &-date-input-choise {
+        position: fixed;
+        left: 364px;
+        top: 640px;
         border: 1px solid #000000;
         border-radius: 5px;
         display: grid;
         grid-template-rows: repeat(12, 60px);
         grid-template-columns: 165px 35px;
         background-color: #fff;
-        // opacity: 0;
-        // visibility: hidden;
-
+        transition: all 0.8s ease-in-out;
+        z-index: 15;
         button {
             justify-self: center;
             align-self: center;
@@ -3555,17 +3546,20 @@ html.lock {
         background: #80cfc8;
         align-self: center;
         justify-self: center;
-        transition: 0.5s;
-
+        transition: all 0.8s ease-in-out;
         &:hover {
             background: #05786e;
         }
     }
 
     &-date-input-choise-three-six {
+        position: fixed;
+        left: 605px;
+        top: 640px;
         grid-row: 1 / 7;
         grid-template-rows: repeat(6, 60px);
-        z-index: 3;
+        z-index: 17;
+        transition: all 0.8s ease-in-out;
     }
 
     &-choise-arrow-top-three-six-box {
@@ -3607,5 +3601,11 @@ html.lock {
         grid-row: 1 / 2;
     }
 }
+
+.content-three {
+        left: 2px;
+        top: 350px;
+        transition: all 0.8s ease-in-out;
+    }
 
 @import "media";

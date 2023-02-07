@@ -1,25 +1,29 @@
-// const favorite = document.querySelector('.popup-link-in');
-// const favoreteVisible = document.querySelector('.donation__popup-choise');
+const openPanels = document.querySelectorAll('.popup-link-not-close');
+
+if (openPanels.length > 0) {
+    for (let index = 0; index < openPanels.length; index++) {
+        const openPanel = openPanels[index];
+        openPanel.addEventListener("click", function (e) {
+            const openPanelName = openPanel.getAttribute('href').replace('#', '');
+            const curentopenPanel = document.getElementById(openPanelName);
+            OpenPanele(curentopenPanel);
+            e.preventDefault();
+        });
+    }
+}
 
 
+function OpenPanele(curentopenPanel) {
+    if (curentopenPanel) {
+        curentopenPanel.classList.add('open');
+        curentopenPanel.addEventListener("click", function (e) {
+            if (!e.target.closest('.donation__popup-choise')) {
+                ClosePanele(e.target.closest('.donation__popup-choise-content'));
+            } 
+        });
+    }
+}
 
-
-// favorite.addEventListener("click", function (e) {
-//     const popupNameIn = favorite.getAttribute('href').replace('#', '');
-//     const curentPopupIn = document.getElementById(popupNameIn);
-//     popupOpenIn(curentPopupIn);
-//     e.preventDefault();
-// });
-
-// function popupOpenIn(curentPopupIn) {
-//     favoreteVisible.classList.add('visible-popup');
-//     favoreteVisible.addEventListener("click", function (e) {
-//             if (!e.target.closest('.donation__popup-choise-container')) {
-//                 popupCloseIn(favoreteVisible);
-//             }
-//         });
-// }
-
-// function popupCloseIn(x) {
-//     favoreteVisible.classList.remove('visible-popup');
-// }
+function ClosePanele(curentopenPanel) {
+    curentopenPanel.classList.remove('open');
+}
