@@ -25,6 +25,10 @@ document.addEventListener("click", function (e) {
 	const itsMenu = target == menu || menu.contains(target);
 	const itsBtnMenu = target == btnMenu;
 	const menuIsActive = menu.classList.contains("active");
+	// console.log(target);
+	// console.log(itsMenu);
+	// console.log(itsBtnMenu);
+	// console.log(menuIsActive);
 
 	if (!itsMenu && !itsBtnMenu && menuIsActive) {
 		toggleMenu();

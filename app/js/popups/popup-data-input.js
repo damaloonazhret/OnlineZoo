@@ -1,6 +1,7 @@
 const openPanels = document.querySelectorAll('.popup-link-not-close');
 const menuPanel = document.querySelector('.donation__popup-choise-content');
 const menuList = document.querySelector('.menu__list-overlay');
+const btnMenuPanel = document.querySelector('.donation__popup-basic');
 
 if (openPanels.length > 0) {
     for (let index = 0; index < openPanels.length; index++) {
@@ -14,36 +15,29 @@ if (openPanels.length > 0) {
     }
 }
 
-
 function OpenPanele(curentopenPanel) {
     if (curentopenPanel) {
         curentopenPanel.classList.add('open');
-        menuList.classList.toggle("active");
-        // curentopenPanel.addEventListener("click", function (e) {
-        //     if (!e.target.closest('.donation__popup-choise')) {
-        //         ClosePanele(e.target.closest('.donation__popup-choise-content'));
-        //     } 
-        // });
+        menuList.classList.add("active");
+        curentopenPanel.addEventListener("click", function (e) {
+            if (!e.target.closest('.donation__popup-choise')) {
+                ClosePanele(e.target.closest('.donation__popup-choise-content'));
+            }
+        });
     }
 }
 
 function ClosePanele() {
     menuPanel.classList.remove('open');
-    
-    // curentopenPanel.classList.remove('open');
+    menuList.classList.remove("active");
 }
 
 document.addEventListener("click", function (e) {
-	const target = e.target;
-    console.log(target);
-	const itsMenu = target == menuPanel || menuPanel.contains(target);
-    console.log(itsMenu);
-	const itsBtnMenu = target;
-    console.log(itsBtnMenu);
-	const menuIsActive = menuPanel.classList.contains("open");
-    console.log(menuIsActive);
-
-	if (!itsMenu && !itsBtnMenu && menuIsActive) {
-		ClosePanele();
-	}
+    const target = e.target;
+    const itsMenu = target == menuPanel || menuPanel.contains(target);
+    const itsBtnMenu = target == btnMenuPanel;
+    const menuIsActive = menuPanel.classList.contains("open");
+    if (!itsMenu && !itsBtnMenu && menuIsActive) {
+        ClosePanele();
+    }
 });
