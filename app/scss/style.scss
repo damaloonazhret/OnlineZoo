@@ -2908,25 +2908,37 @@ html.lock {
     &-special {
         display: grid;
         grid-template-columns: 200px auto;
+        grid-template-rows: 1fr;
         gap: 40px;
         height: 65px;
     }
 
-    &-basic {
-        width: 440px;
+    &-input {
+        width: 201px;
         height: 65px;
         border: 1px solid #000000;
         border-radius: 5px;
         outline: none;
         cursor: pointer;
-
+        
         &::placeholder {
             font-size: 18px;
             line-height: 150%;
             color: #a4a8ae;
-            padding-left: 90px;
+            // padding-left: 90px;
+            // display: grid;
+            // align-content: center;
+            // justify-content: center;
+            text-align: center;
+            padding-right: 32px;
         }
     }
+
+    &-input-basic {
+        width: 440px;
+        height: 65px;
+    }
+
 
     .popup-link-not-close {
         position: relative;
@@ -2941,11 +2953,9 @@ html.lock {
         display: grid;
         justify-content: center;
         align-content: center;
-        opacity: 0;
-        visibility: hidden;
+        opacity: 1;
+        visibility: visible;
         transition: all 0.8s ease-in-out;
-        // overflow: hidden;
-        z-index: 400;
     }
 
     &-choise {
@@ -3324,19 +3334,7 @@ html.lock {
         }
     }
 
-    &-date-input {
-        width: 201px;
-        height: 65px;
-        border: 1px solid #000000;
-        border-radius: 5px;
-        outline: none;
-
-        &::placeholder {
-            padding: 55px;
-        }
-    }
-
-    &-date-input-container-box {
+    &-input-container-box {
         position: relative;
 
         &::after {
@@ -3367,69 +3365,25 @@ html.lock {
             width: 16px;
             height: 11px;
             z-index: 1;
-        }
-    }
-
-    &-date-input-container {
-        width: 201px;
-        height: 65px;
-        grid-row: 2 / 3;
-        // z-index: 2;
-    }
-
-    &-month-input-container {
-        width: 201px;
-        height: 65px;
-        grid-row: 2 / 3;
-        // z-index: 2;
-    }
-
-    &-month-input-container-box {
-        position: relative;
-        z-index: 11;
-
-        &::after {
-            content: "";
-            position: absolute;
-            width: 32px;
-            height: 65px;
-            right: 0;
-            top: 0;
-            background: #80cfc8;
-            border: 1px solid #000000;
-            border-radius: 0px 5px 5px 0px;
-            transition: all 0.8s ease-in-out;
             cursor: pointer;
         }
-
-        &:hover::after {
-            background: #00a092;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            background-image: url(../images/popup/arrow-down.png);
-            background-repeat: no-repeat;
-            right: 8px;
-            top: 25px;
-            width: 16px;
-            height: 11px;
-            z-index: 1;
-        }
     }
 
-    &-month-input {
-        width: 201px;
-        height: 65px;
-        border: 1px solid #000000;
-        border-radius: 5px;
-        outline: none;
 
-        &::placeholder {
-            padding: 60px;
-        }
+
+    &-input-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        grid-row: 2 / 3;
     }
+
+    &-input-container-1 {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+
 
     &-expiration {
         display: grid;
@@ -3466,146 +3420,146 @@ html.lock {
         }
     }
 
-    &-date-input-choise {
-        position: fixed;
-        left: 364px;
-        top: 640px;
-        border: 1px solid #000000;
-        border-radius: 5px;
-        display: grid;
-        grid-template-rows: repeat(12, 60px);
-        grid-template-columns: 165px 35px;
-        background-color: #fff;
-        transition: all 0.8s ease-in-out;
-        z-index: 15;
+    // &-date-input-choise {
+    //     position: fixed;
+    //     left: 364px;
+    //     top: 640px;
+    //     border: 1px solid #000000;
+    //     border-radius: 5px;
+    //     display: grid;
+    //     grid-template-rows: repeat(12, 60px);
+    //     grid-template-columns: 165px 35px;
+    //     background-color: #fff;
+    //     transition: all 0.8s ease-in-out;
+    //     z-index: 15;
 
-        button {
-            justify-self: center;
-            align-self: center;
-            font-size: 18px;
-            line-height: 150%;
-            cursor: pointer;
-            color: #a4a8ae;
-            grid-column: 1 / 2;
-        }
-    }
+    //     button {
+    //         justify-self: center;
+    //         align-self: center;
+    //         font-size: 18px;
+    //         line-height: 150%;
+    //         cursor: pointer;
+    //         color: #a4a8ae;
+    //         grid-column: 1 / 2;
+    //     }
+    // }
 
-    &-choise-panel-three {
-        grid-column: 2/3;
-        display: grid;
-        grid-row: 1 / 13;
-        grid-template-rows: repeat(12, 1fr);
-    }
+    // &-choise-panel-three {
+    //     grid-column: 2/3;
+    //     display: grid;
+    //     grid-row: 1 / 13;
+    //     grid-template-rows: repeat(12, 1fr);
+    // }
 
-    &-choise-arrow-bottom-three-box {
-        cursor: pointer;
-        align-self: end;
-        justify-self: center;
-        grid-row: 12 / 13;
-        display: grid;
-        width: 34px;
-        height: 34px;
+    // &-choise-arrow-bottom-three-box {
+    //     cursor: pointer;
+    //     align-self: end;
+    //     justify-self: center;
+    //     grid-row: 12 / 13;
+    //     display: grid;
+    //     width: 34px;
+    //     height: 34px;
 
-        &:hover {
-            background-color: rgba(173, 173, 173, 0.288);
-        }
-    }
+    //     &:hover {
+    //         background-color: rgba(173, 173, 173, 0.288);
+    //     }
+    // }
 
-    &-choise-arrow-bottom-three {
-        background-image: url(../images/popup/arrow-down-mini.png);
-        background-repeat: no-repeat;
-        width: 16px;
-        height: 11px;
-        align-self: center;
-        justify-self: center;
-        margin-top: 7px;
-    }
+    // &-choise-arrow-bottom-three {
+    //     background-image: url(../images/popup/arrow-down-mini.png);
+    //     background-repeat: no-repeat;
+    //     width: 16px;
+    //     height: 11px;
+    //     align-self: center;
+    //     justify-self: center;
+    //     margin-top: 7px;
+    // }
 
-    &-choise-arrow-top-three-box {
-        cursor: pointer;
-        align-self: start;
-        justify-self: center;
-        grid-row: 1 / 2;
-        display: grid;
-        width: 34px;
-        height: 34px;
+    // &-choise-arrow-top-three-box {
+    //     cursor: pointer;
+    //     align-self: start;
+    //     justify-self: center;
+    //     grid-row: 1 / 2;
+    //     display: grid;
+    //     width: 34px;
+    //     height: 34px;
 
-        &:hover {
-            background-color: rgba(173, 173, 173, 0.288);
-        }
-    }
+    //     &:hover {
+    //         background-color: rgba(173, 173, 173, 0.288);
+    //     }
+    // }
 
-    &-choise-arrow-top-three {
-        background-image: url(../images//popup/arrow-up-mini.png);
-        background-repeat: no-repeat;
-        width: 16px;
-        height: 11px;
-        align-self: center;
-        justify-self: center;
-        margin-bottom: 7px;
-    }
+    // &-choise-arrow-top-three {
+    //     background-image: url(../images//popup/arrow-up-mini.png);
+    //     background-repeat: no-repeat;
+    //     width: 16px;
+    //     height: 11px;
+    //     align-self: center;
+    //     justify-self: center;
+    //     margin-bottom: 7px;
+    // }
 
-    &-choise-jaw-three {
-        width: 33px;
-        height: 72px;
-        background: #80cfc8;
-        align-self: center;
-        justify-self: center;
-        transition: all 0.8s ease-in-out;
+    // &-choise-jaw-three {
+    //     width: 33px;
+    //     height: 72px;
+    //     background: #80cfc8;
+    //     align-self: center;
+    //     justify-self: center;
+    //     transition: all 0.8s ease-in-out;
 
-        &:hover {
-            background: #05786e;
-        }
-    }
+    //     &:hover {
+    //         background: #05786e;
+    //     }
+    // }
 
-    &-date-input-choise-three-six {
-        position: fixed;
-        left: 605px;
-        top: 640px;
-        grid-row: 1 / 7;
-        grid-template-rows: repeat(6, 60px);
-        z-index: 17;
-        transition: all 0.8s ease-in-out;
-    }
+    // &-date-input-choise-three-six {
+    //     position: fixed;
+    //     left: 605px;
+    //     top: 640px;
+    //     grid-row: 1 / 7;
+    //     grid-template-rows: repeat(6, 60px);
+    //     z-index: 17;
+    //     transition: all 0.8s ease-in-out;
+    // }
 
-    &-choise-arrow-top-three-six-box {
-        cursor: pointer;
-        align-self: start;
-        justify-self: center;
-        grid-row: 1 / 2;
-        display: grid;
-        width: 34px;
-        height: 34px;
+    // &-choise-arrow-top-three-six-box {
+    //     cursor: pointer;
+    //     align-self: start;
+    //     justify-self: center;
+    //     grid-row: 1 / 2;
+    //     display: grid;
+    //     width: 34px;
+    //     height: 34px;
 
-        &:hover {
-            background-color: rgba(173, 173, 173, 0.288);
-        }
-    }
+    //     &:hover {
+    //         background-color: rgba(173, 173, 173, 0.288);
+    //     }
+    // }
 
-    &-choise-arrow-top-three-six {
-        align-self: center;
-        justify-self: center;
-    }
+    // &-choise-arrow-top-three-six {
+    //     align-self: center;
+    //     justify-self: center;
+    // }
 
-    &-choise-arrow-bottom-three-six-box {
-        cursor: pointer;
-        align-self: end;
-        justify-self: center;
-        grid-row: 6 / 7;
-        display: grid;
-        width: 34px;
-        height: 34px;
+    // &-choise-arrow-bottom-three-six-box {
+    //     cursor: pointer;
+    //     align-self: end;
+    //     justify-self: center;
+    //     grid-row: 6 / 7;
+    //     display: grid;
+    //     width: 34px;
+    //     height: 34px;
 
-        &:hover {
-            background-color: rgba(173, 173, 173, 0.288);
-        }
-    }
+    //     &:hover {
+    //         background-color: rgba(173, 173, 173, 0.288);
+    //     }
+    // }
 
-    &-choise-arrow-bottom-three-six {
-        align-self: center;
-        justify-self: center;
-        grid-row: 1 / 2;
-    }
+    // &-choise-arrow-bottom-three-six {
+    //     align-self: center;
+    //     justify-self: center;
+    //     grid-row: 1 / 2;
+    // }
 }
 
 
