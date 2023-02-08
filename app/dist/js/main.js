@@ -533,7 +533,6 @@ function slideList () {
 const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('html');
 const lockPadding = document.querySelectorAll('.lock-padding');
-console.log(lockPadding);
 
 let unlock = true;
 
@@ -583,7 +582,6 @@ function popupClose(popupActive, doUnlock = true) {
 
 function bodyLock() {
     const lockPaddingValue = window.innerWidth - document.querySelector('.urapper').offsetWidth + 'px';
-    console.log(lockPaddingValue);
 
     if (true) {
         for (let index = 0; index < lockPadding.length; index++) {
@@ -626,6 +624,8 @@ document.addEventListener('keydown', function (e) {
 
 
 const openPanels = document.querySelectorAll('.popup-link-not-close');
+const menuPanel = document.querySelector('.donation__popup-choise-content');
+const menuList = document.querySelector('.menu__list-overlay');
 
 if (openPanels.length > 0) {
     for (let index = 0; index < openPanels.length; index++) {
@@ -643,14 +643,32 @@ if (openPanels.length > 0) {
 function OpenPanele(curentopenPanel) {
     if (curentopenPanel) {
         curentopenPanel.classList.add('open');
-        curentopenPanel.addEventListener("click", function (e) {
-            if (!e.target.closest('.donation__popup-choise')) {
-                ClosePanele(e.target.closest('.donation__popup-choise-content'));
-            } 
-        });
+        menuList.classList.toggle("active");
+        // curentopenPanel.addEventListener("click", function (e) {
+        //     if (!e.target.closest('.donation__popup-choise')) {
+        //         ClosePanele(e.target.closest('.donation__popup-choise-content'));
+        //     } 
+        // });
     }
 }
 
-function ClosePanele(curentopenPanel) {
-    curentopenPanel.classList.remove('open');
+function ClosePanele() {
+    menuPanel.classList.remove('open');
+    
+    // curentopenPanel.classList.remove('open');
 }
+
+document.addEventListener("click", function (e) {
+	const target = e.target;
+    console.log(target);
+	const itsMenu = target == menuPanel || menuPanel.contains(target);
+    console.log(itsMenu);
+	const itsBtnMenu = target;
+    console.log(itsBtnMenu);
+	const menuIsActive = menuPanel.classList.contains("open");
+    console.log(menuIsActive);
+
+	if (!itsMenu && !itsBtnMenu && menuIsActive) {
+		ClosePanele();
+	}
+});

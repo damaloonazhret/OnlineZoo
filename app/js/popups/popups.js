@@ -1,7 +1,6 @@
 const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('html');
 const lockPadding = document.querySelectorAll('.lock-padding');
-console.log(lockPadding);
 
 let unlock = true;
 
@@ -51,7 +50,6 @@ function popupClose(popupActive, doUnlock = true) {
 
 function bodyLock() {
     const lockPaddingValue = window.innerWidth - document.querySelector('.urapper').offsetWidth + 'px';
-    console.log(lockPaddingValue);
 
     if (true) {
         for (let index = 0; index < lockPadding.length; index++) {

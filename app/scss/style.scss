@@ -2967,6 +2967,7 @@ html.lock {
         display: grid;
         grid-template-rows: repeat(8, 1fr);
         grid-template-columns: 405px 32px;
+        z-index: 50;
 
         button {
             display: grid;
@@ -3617,6 +3618,24 @@ html.lock {
     left: 2px;
     top: 350px;
     transition: all 0.8s ease-in-out;
+}
+
+.menu__list-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    background-color: #1f1f1f73;
+    transition: 1.8s;
+}
+
+
+.menu__list-overlay.active {
+display: block;
+transition: 1.8s;
 }
 
 @import "media";
