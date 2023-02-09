@@ -2939,17 +2939,15 @@ html.lock {
         align-content: center;
         opacity: 0;
         visibility: hidden;
-        transition: all .9s ease-in-out;
-        z-index: 3;
-        transform: perspective(346px) rotateX(-40deg);
+        transition: all .4s ease-in-out;
+        z-index: 1;
     }
     
     &-choise-content.open {
-        opacity: 1;
+        opacity: 4;
         visibility: visible;
         cursor: pointer;
-        transition: all .9s ease-in-out;
-        transform: perspective(0) rotateX(0deg);
+        transition: all .4s ease-in-out;
     }
 
     &-choise {
@@ -2963,7 +2961,7 @@ html.lock {
         display: grid;
         grid-template-rows: repeat(8, 56px);
         grid-template-columns: auto 32px;
-        z-index: 3;
+        z-index: 4;
         transition: all 0.4s ease-in-out;
 
         button {
@@ -3429,6 +3427,7 @@ html.lock {
     opacity: 1;
     visibility: visible;
     z-index: 1;
+    cursor: pointer;
 }
 
 

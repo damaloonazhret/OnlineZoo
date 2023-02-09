@@ -631,11 +631,40 @@ const openPanels = document.querySelectorAll('.popup-link-not-close');
 const menuPanel = document.querySelectorAll('.donation__popup-choise-content');
 const overlay = document.querySelectorAll('.menu__list-overlay');
 const btnMenuPanel = document.querySelectorAll('.donation__popup-input');
+const myDoc = document.querySelectorAll('.donation__popup-choise');
 
-console.log(openPanels);
-console.log(menuPanel);
-console.log(overlay);
-console.log(btnMenuPanel);
+
+
+
+for (let i = 0; i < myDoc.length; i++) {
+    for (let i = 0; i < btnMenuPanel.length; i++){
+        myDoc[i].addEventListener("click", function (e) {
+        const target = e.target;
+        const tex = target.firstChild.textContent.trim();
+        const aliment = btnMenuPanel[i];
+            // setPlaceholder(tex, aliment);
+            aliment.placeholder = tex;
+        });
+    }
+}
+// myDoc.forEach(elem => {
+//     btnMenuPanel.forEach(element => {
+//     elem.addEventListener("click", function (e) {
+//         const target = e.target;
+//         const tex = target.firstChild.textContent.trim();
+//         const aliment = element;
+//             setPlaceholder(tex, aliment);
+//             e.preventDefault();
+//         });
+//     });
+// });
+
+function setPlaceholder(tex, aliment) {
+    aliment.placeholder = tex;
+}
+
+
+
 
 for (let i = 0; i < openPanels.length; i++) {
     const openPanelActive = openPanels[i];
@@ -695,3 +724,4 @@ function openPanel(curentopenPanel, overlayActive) {
 //         ClosePanele();
 //     }
 // });
+
