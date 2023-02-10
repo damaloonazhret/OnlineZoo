@@ -2718,8 +2718,6 @@ html.lock {
     visibility: visible;
 }
 
-
-
 .donation__popup {
     display: grid;
     font-family: "Montserrat";
@@ -2771,7 +2769,7 @@ html.lock {
         display: grid;
         grid-template-rows: 122px 42px 101px 121px 94px 82px 65px;
         height: 100%;
-        background-color: #e5e5e5;
+        background-color: #ffffff;
         padding: 0 120px;
     }
 
@@ -2857,6 +2855,7 @@ html.lock {
         font-weight: 600;
         font-size: 18px;
         line-height: 22px;
+        background-color: transparent;
     }
 
     &-special-clear-block {
@@ -2911,11 +2910,13 @@ html.lock {
         cursor: pointer;
         font-size: 18px;
         text-align: center;
+        background-color: transparent;
+        z-index: 1;
+        position: relative;
 
         &::placeholder {
             font-size: 18px;
             line-height: 150%;
-            color: #a4a8ae;
             text-align: center;
             padding-right: 32px;
         }
@@ -2941,7 +2942,7 @@ html.lock {
         align-content: center;
         opacity: 0;
         visibility: hidden;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
         z-index: 1;
     }
 
@@ -2949,7 +2950,7 @@ html.lock {
         opacity: 4;
         visibility: visible;
         cursor: pointer;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
     }
 
     &-choise {
@@ -2957,6 +2958,7 @@ html.lock {
         left: 0;
         top: 65px;
         width: 100%;
+        height: 24vh;
         background: #ffffff;
         border: 1px solid #000000;
         border-radius: 5px;
@@ -2964,7 +2966,58 @@ html.lock {
         grid-template-rows: repeat(8, 56px);
         grid-template-columns: auto 32px;
         z-index: 4;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.01s;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: 31px;
+        }
+
+        &::-webkit-scrollbar-track {
+            box-shadow: none;
+        }
+
+
+        &::-webkit-scrollbar-button:single-button:vertical:decrement {
+            background-image: url(../images//popup/arrow-up-mini.png);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            width: 16px;
+            height: 30px;
+        }
+
+        &::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+            background-color: rgb(203, 203, 203);
+        }
+
+        &::-webkit-scrollbar-button:single-button:vertical:increment {
+            background-image: url(../images//popup/arrow-down-mini.png);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            width: 16px;
+            height: 30px;
+        }
+
+        &::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+            background-color: rgb(203, 203, 203);
+        }
+
+
+        ::-webkit-scrollbar-button:vertical:increment {
+            display: block;
+            background-image: url(../images//popup/arrow-up-mini.png);
+        }
+        ::-webkit-scrollbar-button:vertical:decrement {
+            display: block;
+            background-image: url(../images//popup/arrow-down-mini.png);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            width: 33px;
+            height: 72px;
+            background: #80cfc8;
+        }
 
         button {
             display: grid;
@@ -3007,6 +3060,7 @@ html.lock {
         grid-row: 1 / end;
         grid-column: 2 / 3;
         display: grid;
+        display: none;
     }
 
     &-choise-arrow-bottom {
@@ -3031,15 +3085,15 @@ html.lock {
         }
     }
 
-    &-choise-arrow-top {
-        background-image: url(../images//popup/arrow-up-mini.png);
-        width: 16px;
-        height: 11px;
-        grid-row: 1 / 2;
-        align-self: center;
-        justify-self: center;
-        margin-bottom: 7px;
-    }
+    // &-choise-arrow-top {
+    //     background-image: url(../images//popup/arrow-up-mini.png);
+    //     width: 16px;
+    //     height: 11px;
+    //     grid-row: 1 / 2;
+    //     align-self: center;
+    //     justify-self: center;
+    //     margin-bottom: 7px;
+    // }
 
     &-choise-arrow-top-box {
         cursor: pointer;
@@ -3331,6 +3385,12 @@ html.lock {
         }
     }
 
+    &-input-container-box.active {
+        &::before {
+            transform: rotate(180deg);
+        }
+    }
+
     &-input-container-box {
         position: relative;
 
@@ -3346,6 +3406,7 @@ html.lock {
             border-radius: 0px 5px 5px 0px;
             transition: all 0.4s ease-in-out;
             cursor: pointer;
+            z-index: 0;
         }
 
         &:hover::after {
@@ -3363,6 +3424,7 @@ html.lock {
             height: 11px;
             z-index: 1;
             cursor: pointer;
+            transition: 0.5s;
         }
     }
 
@@ -3431,6 +3493,5 @@ html.lock {
     z-index: 1;
     cursor: pointer;
 }
-
 
 @import "media";

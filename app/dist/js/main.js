@@ -632,20 +632,27 @@ const menuPanel = document.querySelectorAll('.donation__popup-choise-content');
 const overlay = document.querySelectorAll('.menu__list-overlay');
 const btnMenuPanel = document.querySelectorAll('.donation__popup-input');
 const popups = document.querySelectorAll('.donation__popup-choise');
+const arrowBox = document.querySelectorAll('.donation__popup-input-container-box');
 
 const donationInformationPopup = document.querySelector('#donation_information');
+const donationInformationPopupTwo = document.querySelector('#donation_information_2');
+const donationInformationPopupThree = document.querySelector('#donation_information_3');
 const donationInformationInput = donationInformationPopup.querySelector('input[data-input]');
+const donationInformationInputTwo = donationInformationPopupThree.querySelector('input[data-input]');
+const donationInformationInputThree = donationInformationPopupThree.querySelector('input[data-input]');
 
 const select = (popup, input) => {
-  popup.addEventListener('click', (e) => {
-    const target = e.target;
-    if (target.tagName === 'BUTTON') {
-      input.value = target.textContent;
-    }
-  })
-}
+    popup.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.tagName === 'BUTTON') {
+            input.value = target.textContent;
+        }
+    });
+};
 
 select(donationInformationPopup, donationInformationInput);
+select(donationInformationPopupTwo, donationInformationInputTwo);
+select(donationInformationPopupThree, donationInformationInputThree);
 
 
 // for (let i = 0; i < popups.length; i++) {
@@ -672,28 +679,38 @@ select(donationInformationPopup, donationInformationInput);
 // });
 
 function setPlaceholder(tex, aliment) {
-  aliment.placeholder = tex;
+    aliment.placeholder = tex;
 }
 
 
 for (let i = 0; i < openPanels.length; i++) {
-  const openPanelActive = openPanels[i];
-  const overlayActive = overlay[i];
-  openPanelActive.addEventListener("click", function (e) {
-    const openPanelName = openPanelActive.getAttribute('href').replace('#', '');
-    const curentopenPanel = document.getElementById(openPanelName);
-    openPanel(curentopenPanel, overlayActive);
-    e.preventDefault();
-  });
+    const openPanelActive = openPanels[i],
+            overlayActive = overlay[i],
+            arrowBoxActive = arrowBox[i];
+            
+    openPanelActive.addEventListener("click", function (e) {
+        const openPanelName = openPanelActive.getAttribute('href').replace('#', ''),
+                curentopenPanel = document.getElementById(openPanelName);
+
+        openPanel(curentopenPanel, overlayActive, arrowBoxActive);
+        e.preventDefault();
+    });
 }
 
-function openPanel(curentopenPanel, overlayActive) {
-  curentopenPanel.classList.add('open');
-  overlayActive.classList.add('active');
-  overlayActive.addEventListener('click', function () {
-    curentopenPanel.classList.remove('open');
-    overlayActive.classList.remove('active');
-  });
+function openPanel(curentopenPanel, overlayActive, arrowBoxActive) {
+    curentopenPanel.classList.add('open');
+    overlayActive.classList.add('active');
+    arrowBoxActive.classList.add('active');
+    overlayActive.addEventListener('click', function () {
+        curentopenPanel.classList.remove('open');
+        overlayActive.classList.remove('active');
+        arrowBoxActive.classList.remove('active');
+    });
+    curentopenPanel.addEventListener('click', function () {
+        curentopenPanel.classList.remove('open');
+        overlayActive.classList.remove('active');
+        arrowBoxActive.classList.remove('active');
+    });
 }
 
 // if (openPanels.length > 0) {
