@@ -2909,6 +2909,8 @@ html.lock {
         border-radius: 5px;
         outline: none;
         cursor: pointer;
+        font-size: 18px;
+        text-align: center;
 
         &::placeholder {
             font-size: 18px;
@@ -2942,7 +2944,7 @@ html.lock {
         transition: all .4s ease-in-out;
         z-index: 1;
     }
-    
+
     &-choise-content.open {
         opacity: 4;
         visibility: visible;
@@ -2991,7 +2993,7 @@ html.lock {
     &-choise-5 {
         grid-template-rows: repeat(12, 56px);
     }
-    
+
     &-choise-6 {
         grid-template-rows: repeat(6, 56px);
     }

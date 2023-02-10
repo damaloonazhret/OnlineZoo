@@ -2,23 +2,35 @@ const openPanels = document.querySelectorAll('.popup-link-not-close');
 const menuPanel = document.querySelectorAll('.donation__popup-choise-content');
 const overlay = document.querySelectorAll('.menu__list-overlay');
 const btnMenuPanel = document.querySelectorAll('.donation__popup-input');
-const myDoc = document.querySelectorAll('.donation__popup-choise');
+const popups = document.querySelectorAll('.donation__popup-choise');
 
+const donationInformationPopup = document.querySelector('#donation_information');
+const donationInformationInput = donationInformationPopup.querySelector('input[data-input]');
 
-
-
-for (let i = 0; i < myDoc.length; i++) {
-    for (let i = 0; i < btnMenuPanel.length; i++){
-        myDoc[i].addEventListener("click", function (e) {
-        const target = e.target;
-        const tex = target.firstChild.textContent.trim();
-        const aliment = btnMenuPanel[i];
-            // setPlaceholder(tex, aliment);
-            aliment.placeholder = tex;
-        });
+const select = (popup, input) => {
+  popup.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.tagName === 'BUTTON') {
+      input.value = target.textContent;
     }
+  })
 }
-// myDoc.forEach(elem => {
+
+select(donationInformationPopup, donationInformationInput);
+
+
+// for (let i = 0; i < popups.length; i++) {
+//   for (let i = 0; i < btnMenuPanel.length; i++) {
+//     popups[i].addEventListener("click", function (e) {
+//       const target = e.target;
+//       const tex = target.firstChild.textContent.trim();
+//       const aliment = btnMenuPanel[i];
+//       // setPlaceholder(tex, aliment);
+//       aliment.placeholder = tex;
+//     });
+//   }
+// }
+// popups.forEach(elem => {
 //     btnMenuPanel.forEach(element => {
 //     elem.addEventListener("click", function (e) {
 //         const target = e.target;
@@ -31,30 +43,28 @@ for (let i = 0; i < myDoc.length; i++) {
 // });
 
 function setPlaceholder(tex, aliment) {
-    aliment.placeholder = tex;
+  aliment.placeholder = tex;
 }
-
-
 
 
 for (let i = 0; i < openPanels.length; i++) {
-    const openPanelActive = openPanels[i];
-    const overlayActive = overlay[i];
-    openPanelActive.addEventListener("click", function (e) {
-        const openPanelName = openPanelActive.getAttribute('href').replace('#', '');
-        const curentopenPanel = document.getElementById(openPanelName);
-        openPanel(curentopenPanel, overlayActive);
-        e.preventDefault();
-    });
+  const openPanelActive = openPanels[i];
+  const overlayActive = overlay[i];
+  openPanelActive.addEventListener("click", function (e) {
+    const openPanelName = openPanelActive.getAttribute('href').replace('#', '');
+    const curentopenPanel = document.getElementById(openPanelName);
+    openPanel(curentopenPanel, overlayActive);
+    e.preventDefault();
+  });
 }
 
 function openPanel(curentopenPanel, overlayActive) {
-    curentopenPanel.classList.add('open');
-    overlayActive.classList.add('active');
-    overlayActive.addEventListener('click', function () {
-        curentopenPanel.classList.remove('open');
-        overlayActive.classList.remove('active');
-    });
+  curentopenPanel.classList.add('open');
+  overlayActive.classList.add('active');
+  overlayActive.addEventListener('click', function () {
+    curentopenPanel.classList.remove('open');
+    overlayActive.classList.remove('active');
+  });
 }
 
 // if (openPanels.length > 0) {

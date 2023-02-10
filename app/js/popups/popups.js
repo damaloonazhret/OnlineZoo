@@ -31,7 +31,7 @@ function popupOpen(curentPopup) {
         curentPopup.addEventListener("click", function (e) {
             if (!e.target.closest('.donation__popup-box')) {
                 popupClose(e.target.closest('.donation__popup'));
-            } 
+            }
         });
     }
 }
@@ -63,7 +63,7 @@ function bodyLock() {
             setTimeout(function () {
                 unlock = true;
             }, timeout);
-        
+
     }
 }
 
