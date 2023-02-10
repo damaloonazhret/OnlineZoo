@@ -500,7 +500,6 @@
           </div>
         </div>
       </div>
-  </div>
   </section>
 
   <section class="pets-think">
@@ -974,17 +973,22 @@
           <div class="donation__popup-special">
             <div class="donation__popup-special-block">for special pet</div>
 
-
-            <div class="donation__popup-input-container donation__popup-input-container-1">
+            <div id="donation_information" class="donation__popup-input-container donation__popup-input-container-1">
               <div class="donation__popup-input-container-box">
-                <a class="popup-link-not-close" href="#popup_4"><input type="number" readonly placeholder="Choose your favourite"
-                    class="donation__popup-input donation__popup-input-basic"></a>
+                <a class="popup-link-not-close" href="#popup_4">
+                  <input
+                    data-input
+                    readonly
+                    placeholder="Choose your favourite"
+                    class="donation__popup-input donation__popup-input-basic"
+                  >
+                </a>
               </div>
 
               <div class="menu__list-overlay"></div>
 
               <div id="popup_4" class="donation__popup-choise-content">
-                <div i class="donation__popup-choise">
+                <div class="donation__popup-choise">
                   <div class="donation__popup-choise-panel">
                     <div class="donation__popup-choise-arrow-top-box">
                       <div class="donation__popup-choise-arrow-top"></div>
