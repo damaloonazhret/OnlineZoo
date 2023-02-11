@@ -4,6 +4,36 @@ const overlay = document.querySelectorAll('.menu__list-overlay');
 const btnMenuPanel = document.querySelectorAll('.donation__popup-input');
 const popups = document.querySelectorAll('.donation__popup-choise');
 const arrowBox = document.querySelectorAll('.donation__popup-input-container-box');
+const buttonDollars = document.querySelectorAll('.donation__popup-price input');
+const clearInput = document.querySelector('.donation__popup-clear-block');
+
+buttonDollars.forEach(el => {
+    el.addEventListener('click', function () {
+        if (!el.classList.contains('active')) {
+            searchButton();
+            el.classList.add('active');
+            el.setAttribute('name', 'donationAmount');
+        }
+    });
+});
+
+function searchButton() {
+    buttonDollars.forEach(el => {
+        if (el.classList.contains('active')) {
+            el.classList.remove('active');
+            el.removeAttribute('name');
+            clearInput.removeAttribute('name');
+        }
+    });
+}
+
+clearInput.addEventListener('click', function () {
+    clearInput.setAttribute('name', 'donationAmount');
+    searchButton();
+});
+
+
+
 
 const donationInformationSelect = document.querySelector('#donation_information');
 const donationInformationSelectTwo = document.querySelector('#donation_information_2');
@@ -32,32 +62,68 @@ function serializeForm(formNode) {
 
 function handleFormSubmit(event) {
     event.preventDefault();
-    serializeForm(applicantForm);
-    serializeForm(applicantForm2);
-    serializeForm(applicantForm3);
+    for (let i = 0; i < applicantForms.length; i++) {
+        const el = applicantForms[i];
+        serializeForm(el);
+    }
+
 }
 
 
 
 
-const applicantForm = document.querySelector('form');
-const applicantForm2 = document.getElementById('popup_2');
-const applicantForm3 = document.getElementById('popup_3');
-applicantForm.addEventListener('submit', handleFormSubmit);
-applicantForm2.addEventListener('submit', handleFormSubmit);
-applicantForm3.addEventListener('submit', handleFormSubmit);
+const applicantForms = document.querySelectorAll('.save-data');
+
+for (let i = 0; i < applicantForms.length; i++) {
+    const applicantForm = applicantForms[i];
+    applicantForm.addEventListener('submit', function (e) {
+        handleFormSubmit(e);
+    });
+}
+
+
+
+
 
 
 function serializeForm(formNode) {
     const { elements } = formNode;
 
+    const data = Array.from(elements)
+        .map((element) => {
+            const { name, type } = element;
+            const value = type === 'checkbox' ? element.checked : element.value
+
+            return { name, value };
+        })
+        .filter((item) => !!item.name);
+    const obj = Object.assign({}, data);
+    console.log(obj);
+}
+
+function serializeForm(formNode) {
+    const { elements } = formNode;
+
     Array.from(elements)
-        .forEach((element) => {
-            const { name, value } = element;
+        .map((element) => {
+            const { name, type } = element;
+            const value = type === 'checkbox' ? element.checked : element.value
             formData[name] = value;
-        });
+            return { name, value };
+        })
+        .filter((item) => !!item.name);
     console.log(formData);
 }
+// function serializeForm(formNode) {
+//     const { elements } = formNode;
+
+//     Array.from(elements)
+//         .forEach((element) => {
+//             const { name, value } = element;
+//             formData[name] = value;
+//         });
+//     console.log(formData);
+// }
 
 const formData = {
     donationAmount: '',

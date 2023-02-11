@@ -2787,7 +2787,7 @@ html.lock {
         grid-template-rows: 65px;
         margin-bottom: -5px;
 
-        p {
+        input[type=button] {
             font-weight: 600;
             font-size: 18px;
             line-height: 22px;
@@ -2801,10 +2801,15 @@ html.lock {
             justify-content: center;
             align-content: center;
             transition: all 0.4s ease-in-out;
+            border: none;
 
             &:hover {
                 background: #00a092;
             }
+        }
+
+        input[type=button].active {
+            background: #00a092;
         }
     }
 
