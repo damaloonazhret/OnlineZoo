@@ -534,99 +534,6 @@ function slideList () {
 // arrowRightReviev.addEventListener('click', onButtonClickReview('right'));
 // arrowLeftReview.addEventListener('click', onButtonClickReview('left'));
 // sliderStrip.addEventListener('transitionend', onSlidesBoxTransitionEndReview);
-const popupLinks = document.querySelectorAll('.popup-link');
-const body = document.querySelector('html');
-const lockPadding = document.querySelectorAll('.lock-padding');
-
-let unlock = true;
-
-const timeout = 800;
-
-
-if (popupLinks.length > 0) {
-    for (let index = 0; index < popupLinks.length; index++) {
-        const popupLink = popupLinks[index];
-        popupLink.addEventListener("click", function (e) {
-            const popupName = popupLink.getAttribute('href').replace('#', '');
-            const curentPopup = document.getElementById(popupName);
-            popupOpen(curentPopup);
-            e.preventDefault();
-        });
-    }
-}
-
-function popupOpen(curentPopup) {
-    if (curentPopup && unlock) {
-        const popupActive = document.querySelector('.donation__popup.open');
-        if (popupActive) {
-            popupClose(popupActive, false);
-        } else {
-            bodyLock();
-        }
-        curentPopup.classList.add('open');
-        curentPopup.addEventListener("click", function (e) {
-            if (!e.target.closest('.donation__popup-box')) {
-                popupClose(e.target.closest('.donation__popup'));
-            }
-        });
-    }
-}
-
-
-function popupClose(popupActive, doUnlock = true) {
-    if (unlock) {
-        popupActive.classList.remove('open');
-        if (doUnlock) {
-            bodyUnLock();
-        }
-    }
-}
-
-
-
-function bodyLock() {
-    const lockPaddingValue = window.innerWidth - document.querySelector('.urapper').offsetWidth + 'px';
-
-    if (true) {
-        for (let index = 0; index < lockPadding.length; index++) {
-            const el = lockPadding[index];
-            el.style.paddingRight = lockPaddingValue;
-        }
-        body.style.paddingRight = lockPaddingValue;
-        body.classList.add('lock');
-
-            unlock = false;
-            setTimeout(function () {
-                unlock = true;
-            }, timeout);
-
-    }
-}
-
-function bodyUnLock() {
-    setTimeout(function () {
-        for (let index = 0; index < lockPadding.length; index++) {
-            const el = lockPadding[index];
-            el.style.paddingRight = '0px';
-        }
-        body.style.paddingRight = '0px';
-        body.classList.remove('lock');
-    }, timeout);
-
-    unlock = false;
-    setTimeout(function () {
-        unlock = true;
-    }, timeout);
-}
-
-document.addEventListener('keydown', function (e) {
-    if (e.which === 27) {
-        const popupActive = document.querySelector('.donation__popup.open');
-        popupClose(popupActive);
-    }
-});
-
-
 const openPanels = document.querySelectorAll('.popup-link-not-close');
 const menuPanel = document.querySelectorAll('.donation__popup-choise-content');
 const overlay = document.querySelectorAll('.menu__list-overlay');
@@ -647,7 +554,6 @@ const selectItem = (popup, input) => {
         if (target.tagName === 'P') {
             input.value = target.textContent;
             formData.fullName = target.textContent;
-            // console.log(formData);
         }
     });
 };
@@ -663,12 +569,20 @@ function serializeForm(formNode) {
 function handleFormSubmit(event) {
     event.preventDefault();
     serializeForm(applicantForm);
+    serializeForm(applicantForm2);
+    serializeForm(applicantForm3);
 }
 
-const applicantForm = document.querySelector('.save-data');
-// for (let i = 0; i < applicantForm.length; i++) {
-    applicantForm.addEventListener('submit', handleFormSubmit);
-// }
+
+
+
+const applicantForm = document.querySelector('form');
+const applicantForm2 = document.getElementById('popup_2');
+const applicantForm3 = document.getElementById('popup_3');
+applicantForm.addEventListener('submit', handleFormSubmit);
+applicantForm2.addEventListener('submit', handleFormSubmit);
+applicantForm3.addEventListener('submit', handleFormSubmit);
+
 
 function serializeForm(formNode) {
     const { elements } = formNode;
@@ -676,33 +590,10 @@ function serializeForm(formNode) {
     Array.from(elements)
         .forEach((element) => {
             const { name, value } = element;
-            console.log({ name, value });
+            formData[name] = value;
         });
+    console.log(formData);
 }
-
-function serializeForm(formNode) {
-    const { elements } = formNode;
-    const data = Array.from(elements)
-        .filter((item) => !!item.name)
-        .map((element) => {
-            const { name, value } = element;
-
-            return { name, value };
-        });
-
-    console.log(data);
-}
-
-
-
-
-// document.querySelector('.donation__popup-choise button').addEventListener("click", function(e) {
-//     const target = e.target;
-//     // formData.fullName = this.value.target.textContent;
-//     console.log(formData);
-// });
-
-
 
 const formData = {
     donationAmount: '',
@@ -749,4 +640,96 @@ function openPanel(curentopenPanel, overlayActive, arrowBoxActive) {
 
 
 
+
+
+const popupLinks = document.querySelectorAll('.popup-link');
+const body = document.querySelector('html');
+const lockPadding = document.querySelectorAll('.lock-padding');
+
+let unlock = true;
+
+const timeout = 400;
+
+
+if (popupLinks.length > 0) {
+    for (let index = 0; index < popupLinks.length; index++) {
+        const popupLink = popupLinks[index];
+        popupLink.addEventListener("click", function (e) {
+            const popupName = popupLink.getAttribute('href').replace('#', '');
+            const curentPopup = document.getElementById(popupName);
+            popupOpen(curentPopup);
+        });
+    }
+}
+
+function popupOpen(curentPopup) {
+    if (curentPopup && unlock) {
+        const popupActive = document.querySelector('.donation__popup.open');
+        if (popupActive) {
+            popupClose(popupActive, false);
+        } else {
+            bodyLock();
+        }
+        curentPopup.classList.add('open');
+        curentPopup.addEventListener("click", function (e) {
+            if (!e.target.closest('.donation__popup-box')) {
+                popupClose(e.target.closest('.donation__popup'));
+            }
+        });
+    }
+}
+
+
+function popupClose(popupActive, doUnlock = true) {
+    if (unlock) {
+        popupActive.classList.remove('open');
+        if (doUnlock) {
+            bodyUnLock();
+        }
+    }
+}
+
+
+
+function bodyLock() {
+    const lockPaddingValue = window.innerWidth - document.querySelector('.urapper').offsetWidth + 'px';
+
+    if (true) {
+        for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = lockPaddingValue;
+        }
+        body.style.paddingRight = lockPaddingValue;
+        body.classList.add('lock');
+
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timeout);
+
+    }
+}
+
+function bodyUnLock() {
+    setTimeout(function () {
+        for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = '0px';
+        }
+        body.style.paddingRight = '0px';
+        body.classList.remove('lock');
+    }, timeout);
+
+    unlock = false;
+    setTimeout(function () {
+        unlock = true;
+    }, timeout);
+}
+
+document.addEventListener('keydown', function (e) {
+    if (e.which === 27) {
+        const popupActive = document.querySelector('.donation__popup.open');
+        popupClose(popupActive);
+    }
+});
 

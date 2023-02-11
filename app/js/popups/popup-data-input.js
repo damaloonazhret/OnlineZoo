@@ -18,7 +18,6 @@ const selectItem = (popup, input) => {
         if (target.tagName === 'P') {
             input.value = target.textContent;
             formData.fullName = target.textContent;
-            // console.log(formData);
         }
     });
 };
@@ -34,12 +33,20 @@ function serializeForm(formNode) {
 function handleFormSubmit(event) {
     event.preventDefault();
     serializeForm(applicantForm);
+    serializeForm(applicantForm2);
+    serializeForm(applicantForm3);
 }
 
-const applicantForm = document.querySelector('.save-data');
-// for (let i = 0; i < applicantForm.length; i++) {
-    applicantForm.addEventListener('submit', handleFormSubmit);
-// }
+
+
+
+const applicantForm = document.querySelector('form');
+const applicantForm2 = document.getElementById('popup_2');
+const applicantForm3 = document.getElementById('popup_3');
+applicantForm.addEventListener('submit', handleFormSubmit);
+applicantForm2.addEventListener('submit', handleFormSubmit);
+applicantForm3.addEventListener('submit', handleFormSubmit);
+
 
 function serializeForm(formNode) {
     const { elements } = formNode;
@@ -47,33 +54,10 @@ function serializeForm(formNode) {
     Array.from(elements)
         .forEach((element) => {
             const { name, value } = element;
-            console.log({ name, value });
+            formData[name] = value;
         });
+    console.log(formData);
 }
-
-function serializeForm(formNode) {
-    const { elements } = formNode;
-    const data = Array.from(elements)
-        .filter((item) => !!item.name)
-        .map((element) => {
-            const { name, value } = element;
-
-            return { name, value };
-        });
-
-    console.log(data);
-}
-
-
-
-
-// document.querySelector('.donation__popup-choise button').addEventListener("click", function(e) {
-//     const target = e.target;
-//     // formData.fullName = this.value.target.textContent;
-//     console.log(formData);
-// });
-
-
 
 const formData = {
     donationAmount: '',

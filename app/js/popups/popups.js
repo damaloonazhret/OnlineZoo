@@ -4,7 +4,7 @@ const lockPadding = document.querySelectorAll('.lock-padding');
 
 let unlock = true;
 
-const timeout = 800;
+const timeout = 400;
 
 
 if (popupLinks.length > 0) {
@@ -14,7 +14,6 @@ if (popupLinks.length > 0) {
             const popupName = popupLink.getAttribute('href').replace('#', '');
             const curentPopup = document.getElementById(popupName);
             popupOpen(curentPopup);
-            e.preventDefault();
         });
     }
 }
@@ -59,10 +58,10 @@ function bodyLock() {
         body.style.paddingRight = lockPaddingValue;
         body.classList.add('lock');
 
-            unlock = false;
-            setTimeout(function () {
-                unlock = true;
-            }, timeout);
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timeout);
 
     }
 }

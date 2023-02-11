@@ -2692,18 +2692,6 @@ html.lock {
     }
 }
 
-// .pets-top__arrows {
-// 	&-my{
-// 		display: grid;
-// 	grid-template-columns: repeat(2, auto);
-// 	}
-
-// 	.left {
-// 		justify-self: end;
-// 		align-self: end;
-// 	}
-
-// }
 
 .pets-top__arrows {
     display: grid;
@@ -2717,6 +2705,7 @@ html.lock {
     opacity: 1;
     visibility: visible;
 }
+
 
 .donation__popup {
     display: grid;
@@ -2978,7 +2967,6 @@ html.lock {
             box-shadow: none;
         }
 
-
         &::-webkit-scrollbar-button:single-button:vertical:decrement {
             background-image: url(../images//popup/arrow-up-mini.png);
             background-repeat: no-repeat;
@@ -3002,7 +2990,6 @@ html.lock {
         &::-webkit-scrollbar-button:single-button:vertical:increment:hover {
             background-color: rgb(203, 203, 203);
         }
-
 
         ::-webkit-scrollbar-button:vertical:increment {
             display: block;
@@ -3492,6 +3479,14 @@ html.lock {
     visibility: visible;
     z-index: 1;
     cursor: pointer;
+}
+
+form .error {
+    display: none;
+    color: red;
+}
+.error.active {
+    display: block;
 }
 
 @import "media";
