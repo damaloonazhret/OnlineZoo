@@ -542,6 +542,12 @@ const popups = document.querySelectorAll('.donation__popup-choise');
 const arrowBox = document.querySelectorAll('.donation__popup-input-container-box');
 const buttonDollars = document.querySelectorAll('.donation__popup-price input');
 const clearInput = document.querySelector('.donation__popup-clear-block');
+const donationInformationSelect = document.querySelector('#donation_information');
+const donationInformationSelectTwo = document.querySelector('#donation_information_2');
+const donationInformationSelectThree = document.querySelector('#donation_information_3');
+const donationInformationInput = donationInformationSelect.querySelector('input[data-input]');
+const donationInformationInputTwo = donationInformationSelectTwo.querySelector('input[data-input]');
+const donationInformationInputThree = donationInformationSelectThree.querySelector('input[data-input]');
 
 buttonDollars.forEach(el => {
     el.addEventListener('click', function () {
@@ -568,15 +574,6 @@ clearInput.addEventListener('click', function () {
     searchButton();
 });
 
-
-
-
-const donationInformationSelect = document.querySelector('#donation_information');
-const donationInformationSelectTwo = document.querySelector('#donation_information_2');
-const donationInformationSelectThree = document.querySelector('#donation_information_3');
-const donationInformationInput = donationInformationSelect.querySelector('input[data-input]');
-const donationInformationInputTwo = donationInformationSelectTwo.querySelector('input[data-input]');
-const donationInformationInputThree = donationInformationSelectThree.querySelector('input[data-input]');
 
 const selectItem = (popup, input) => {
     popup.addEventListener('click', (e) => {
@@ -605,9 +602,6 @@ function handleFormSubmit(event) {
 
 }
 
-
-
-
 const applicantForms = document.querySelectorAll('.save-data');
 
 for (let i = 0; i < applicantForms.length; i++) {
@@ -616,11 +610,6 @@ for (let i = 0; i < applicantForms.length; i++) {
         handleFormSubmit(e);
     });
 }
-
-
-
-
-
 
 function serializeForm(formNode) {
     const { elements } = formNode;
