@@ -36,8 +36,10 @@ function handleFormSubmit(event) {
     serializeForm(applicantForm);
 }
 
-const applicantForm = document.getElementById('popup_3');
-applicantForm.addEventListener('submit', handleFormSubmit);
+const applicantForm = document.querySelector('.save-data');
+// for (let i = 0; i < applicantForm.length; i++) {
+    applicantForm.addEventListener('submit', handleFormSubmit);
+// }
 
 function serializeForm(formNode) {
     const { elements } = formNode;
@@ -47,6 +49,19 @@ function serializeForm(formNode) {
             const { name, value } = element;
             console.log({ name, value });
         });
+}
+
+function serializeForm(formNode) {
+    const { elements } = formNode;
+    const data = Array.from(elements)
+        .filter((item) => !!item.name)
+        .map((element) => {
+            const { name, value } = element;
+
+            return { name, value };
+        });
+
+    console.log(data);
 }
 
 

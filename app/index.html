@@ -953,7 +953,7 @@
       </div>
     </footer>
 
-    <div id="popup" class="donation__popup">
+    <form id="popup" class="donation__popup">
       <div class="donation__popup-box">
         <div class="donation__popup-header">make your donation</div>
         <div class="donation__popup-container">
@@ -963,16 +963,16 @@
             <div class="donation__popup-choose">
               <p>*</p>Choose your donation amount:
             </div>
-            <div class="donation__popup-price">
+            <select name="price" class="donation__popup-price">
 
-              <p>$10</p>
-              <p>$20</p>
-              <p>$30</p>
-              <p>$50</p>
-              <p>$80</p>
-              <p>$100</p>
+              <option value="10">$10</option>
+              <option value="20">$20</option>
+              <option value="30">$30</option>
+              <option value="50">$50</option>
+              <option value="80">$80</option>
+              <option value="100" selected>$100</option>
 
-            </div>
+            </select>
             <div class="donation__popup-other">
               <div class="donation__popup-other-block">Other amount</div>
               <input type="number" class="donation__popup-clear-block"></input>
@@ -1031,7 +1031,7 @@
         </div>
 
       </div>
-    </div>
+    </form>
 
 
 
@@ -1040,7 +1040,7 @@
 
 
 
-    <div id="popup_2" class="donation__popup">
+    <form id="popup_2" class="donation__popup">
       <div class="donation__popup-box donation__popup-box-two">
         <div class="donation__popup-header">make your donation</div>
         <div class="donation__popup-container">
@@ -1049,11 +1049,11 @@
             <div class="donation__popup-name">
               <p>*</p> Your Name
             </div>
-            <input class="donation__popup-name-input" placeholder="First and last name" type="text">
+            <input name="Name" class="donation__popup-name-input" placeholder="First and last name" type="text" required>
             <div class="donation__popup-email">
               <p>*</p> Your Email Address
             </div>
-            <input class="donation__popup-email-input" placeholder="Enter your email" type="text" name="" id="">
+            <input name="email" class="donation__popup-email-input" placeholder="Enter your email" type="text" id="" required>
             <div class="donation__popup-information">You will receive emails from the Online Zoo, including updates and
               news on the latest discoveries and translations. You can unsubscribe at any time.</div>
 
@@ -1071,10 +1071,10 @@
         </div>
 
       </div>
-    </div>
+    </form>
 
 
-    <form id="popup_3" class="donation__popup">
+    <form id="popup_3" class="donation__popup save-data">
       <div class="donation__popup-box donation__popup-box-two">
         <div class="donation__popup-header">make your donation</div>
         <div class="donation__popup-container">
@@ -1085,27 +1085,21 @@
               <div class="donation__popup-card">
                 <p>*</p> Credit Card Number
               </div>
-              <input type="number" class="donation__popup-card-input" required>
+              <input name="cardNumber" type="number" class="donation__popup-card-input" required>
               <div class="donation__popup-cvv">
                 <p>*</p> CVV Number
               </div>
-              <input type="number" class="donation__popup-cvv-input" required>
+              <input name="cardCVV" type="number" class="donation__popup-cvv-input" required>
             </div>
             <div class="donation__popup-expiration">
               <div class="donation__popup-text">
                 <p>*</p> Expiration Date
               </div>
 
-
-
-
-
-
-
-
               <div id="donation_information_2" class="donation__popup-input-container">
                 <div class="donation__popup-input-container-box">
-                  <a class="popup-link-not-close" href="#popup_5"><input data-input type="number" readonly
+                  <a class="popup-link-not-close" href="#popup_5">
+                    <input name="month" data-input type="number" readonly
                       placeholder="Month" class="donation__popup-input">
                   </a>
                 </div>
@@ -1139,12 +1133,10 @@
                 </div>
               </div>
 
-
-
               <div id="donation_information_3" class="donation__popup-input-container">
                 <div class="donation__popup-input-container-box">
                   <a class="popup-link-not-close" href="#popup_6">
-                    <input data-input type="number" readonly placeholder="Year" class="donation__popup-input">
+                    <input name="year" data-input type="number" readonly placeholder="Year" class="donation__popup-input">
                   </a>
                 </div>
 
@@ -1172,9 +1164,6 @@
               </div>
 
 
-
-
-
             </div>
 
             <div class="donation__popup-nav-two">
@@ -1191,7 +1180,7 @@
         </div>
 
       </div>
-  </div>
+  </form>
 
 
   <script src="dist/js/main.js"></script>
