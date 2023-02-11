@@ -2798,7 +2798,7 @@ html.lock {
         grid-template-rows: 65px;
         margin-bottom: -5px;
 
-        button {
+        p {
             font-weight: 600;
             font-size: 18px;
             line-height: 22px;
@@ -3019,7 +3019,7 @@ html.lock {
             background: #80cfc8;
         }
 
-        button {
+        p {
             display: grid;
             justify-content: start;
             align-content: center;
@@ -3176,7 +3176,7 @@ html.lock {
         gap: 10px;
         align-self: center;
 
-        button {
+        p {
             width: 10px;
             height: 10px;
             background: #ffffff;
@@ -3184,7 +3184,7 @@ html.lock {
             border-radius: 50%;
         }
 
-        button.active {
+        p.active {
             background: #00a092;
         }
     }

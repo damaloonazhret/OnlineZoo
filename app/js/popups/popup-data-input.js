@@ -5,63 +5,82 @@ const btnMenuPanel = document.querySelectorAll('.donation__popup-input');
 const popups = document.querySelectorAll('.donation__popup-choise');
 const arrowBox = document.querySelectorAll('.donation__popup-input-container-box');
 
-const donationInformationPopup = document.querySelector('#donation_information');
-const donationInformationPopupTwo = document.querySelector('#donation_information_2');
-const donationInformationPopupThree = document.querySelector('#donation_information_3');
-const donationInformationInput = donationInformationPopup.querySelector('input[data-input]');
-const donationInformationInputTwo = donationInformationPopupThree.querySelector('input[data-input]');
-const donationInformationInputThree = donationInformationPopupThree.querySelector('input[data-input]');
+const donationInformationSelect = document.querySelector('#donation_information');
+const donationInformationSelectTwo = document.querySelector('#donation_information_2');
+const donationInformationSelectThree = document.querySelector('#donation_information_3');
+const donationInformationInput = donationInformationSelect.querySelector('input[data-input]');
+const donationInformationInputTwo = donationInformationSelectTwo.querySelector('input[data-input]');
+const donationInformationInputThree = donationInformationSelectThree.querySelector('input[data-input]');
 
-const select = (popup, input) => {
+const selectItem = (popup, input) => {
     popup.addEventListener('click', (e) => {
         const target = e.target;
-        if (target.tagName === 'BUTTON') {
+        if (target.tagName === 'P') {
             input.value = target.textContent;
+            formData.fullName = target.textContent;
+            // console.log(formData);
         }
     });
 };
+selectItem(donationInformationSelect, donationInformationInput);
+selectItem(donationInformationSelectTwo, donationInformationInputTwo);
+selectItem(donationInformationSelectThree, donationInformationInputThree);
 
-select(donationInformationPopup, donationInformationInput);
-select(donationInformationPopupTwo, donationInformationInputTwo);
-select(donationInformationPopupThree, donationInformationInputThree);
+
+function serializeForm(formNode) {
+    console.log(formNode.elements);
+}
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+    serializeForm(applicantForm);
+}
+
+const applicantForm = document.getElementById('popup_3');
+applicantForm.addEventListener('submit', handleFormSubmit);
+
+function serializeForm(formNode) {
+    const { elements } = formNode;
+
+    Array.from(elements)
+        .forEach((element) => {
+            const { name, value } = element;
+            console.log({ name, value });
+        });
+}
 
 
-// for (let i = 0; i < popups.length; i++) {
-//   for (let i = 0; i < btnMenuPanel.length; i++) {
-//     popups[i].addEventListener("click", function (e) {
-//       const target = e.target;
-//       const tex = target.firstChild.textContent.trim();
-//       const aliment = btnMenuPanel[i];
-//       // setPlaceholder(tex, aliment);
-//       aliment.placeholder = tex;
-//     });
-//   }
-// }
-// popups.forEach(elem => {
-//     btnMenuPanel.forEach(element => {
-//     elem.addEventListener("click", function (e) {
-//         const target = e.target;
-//         const tex = target.firstChild.textContent.trim();
-//         const aliment = element;
-//             setPlaceholder(tex, aliment);
-//             e.preventDefault();
-//         });
-//     });
+
+
+// document.querySelector('.donation__popup-choise button').addEventListener("click", function(e) {
+//     const target = e.target;
+//     // formData.fullName = this.value.target.textContent;
+//     console.log(formData);
 // });
 
-function setPlaceholder(tex, aliment) {
-    aliment.placeholder = tex;
-}
+
+
+const formData = {
+    donationAmount: '',
+    specialPet: '',
+    isGift: false,
+    fullName: '',
+    email: '',
+    cardNumber: '',
+    cvv: '',
+    expMonth: '',
+    expYear: '',
+};
 
 
 for (let i = 0; i < openPanels.length; i++) {
     const openPanelActive = openPanels[i],
-            overlayActive = overlay[i],
-            arrowBoxActive = arrowBox[i];
-            
+        overlayActive = overlay[i],
+        arrowBoxActive = arrowBox[i];
+
     openPanelActive.addEventListener("click", function (e) {
         const openPanelName = openPanelActive.getAttribute('href').replace('#', ''),
-                curentopenPanel = document.getElementById(openPanelName);
+            curentopenPanel = document.getElementById(openPanelName);
 
         openPanel(curentopenPanel, overlayActive, arrowBoxActive);
         e.preventDefault();
@@ -84,42 +103,6 @@ function openPanel(curentopenPanel, overlayActive, arrowBoxActive) {
     });
 }
 
-// if (openPanels.length > 0) {
-//     for (let index = 0; index < openPanels.length; index++) {
-//         const openPanel = openPanels[index];
-//         openPanel.addEventListener("click", function (e) {
-//             const openPanelName = openPanel.getAttribute('href').replace('#', '');
-//             const curentopenPanel = document.getElementById(openPanelName);
-//             OpenPanele(curentopenPanel);
-//             e.preventDefault();
-//         });
-//     }
-// }
 
-// function OpenPanele(curentopenPanel) {
-//     if (curentopenPanel) {
-//         curentopenPanel.classList.add('open');
-//         menuList.classList.add("active");
-//         curentopenPanel.addEventListener("click", function (e) {
-//             if (!e.target.closest('.donation__popup-choise')) {
-//                 ClosePanele(e.target.closest('.donation__popup-choise-content'));
-//             }
-//         });
-//     }
-// }
 
-// function ClosePanele() {
-//     menuPanel.classList.remove('open');
-//     menuList.classList.remove("active");
-// }
-
-// document.addEventListener("click", function (e) {
-//     const target = e.target;
-//     const itsMenu = target == menuPanel || menuPanel.contains(target);
-//     const itsBtnMenu = target == btnMenuPanel;
-//     const menuIsActive = menuPanel.classList.contains("open");
-//     if (!itsMenu && !itsBtnMenu && menuIsActive) {
-//         ClosePanele();
-//     }
-// });
 
