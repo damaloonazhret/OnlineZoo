@@ -13,23 +13,33 @@ const donationInformationInput = donationInformationSelect.querySelector('input[
 const donationInformationInputTwo = donationInformationSelectTwo.querySelector('input[data-input]');
 const donationInformationInputThree = donationInformationSelectThree.querySelector('input[data-input]');
 const linkBottomPopup = document.querySelectorAll('.donation__popup-live-info-button a');
+const inputParent = document.querySelector('.donation-box__right-amount-don');
+const inputLink = document.querySelector('.donation-box__right-amount a');
+
+inputLink.addEventListener('click', function() {
+    searchButton();
+    clearInput.value = inputParent.value;
+    inputParent.value = '';
+});
 
 buttonDollars.forEach(el2 => {
     linkBottomPopup.forEach(el => {
         el.addEventListener('click', function () {
 
             if (el.textContent == 'Other amount') {
-
+                searchButton();
             }
             if (el.textContent == el2.value) {
                 searchButton();
                 el2.classList.add('active');
                 el2.setAttribute('name', 'donationAmount');
-                clearInput.setAttribute('value', el2.value);
+                clearInput.value = '';
+                clearInput.value = el2.value.replace(/\D/g, "");
             }
         });
         el2.addEventListener('click', function() {
-            clearInput.setAttribute('value', el2.value);
+            clearInput.value = '';
+            clearInput.value = el2.value.replace(/\D/g, "");
         });
     });
 });
