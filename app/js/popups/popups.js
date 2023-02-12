@@ -4,17 +4,16 @@ const lockPadding = document.querySelectorAll('.lock-padding');
 const popupBottomBtn = document.querySelector('.pets-paf__info-box-moreinfo-btn');
 const popupBottom = document.getElementById('popup_bottom');
 
-console.log(popupBottom);
 
 
 let unlock = true;
 
 const timeout = 400;
 
-popupBottomBtn.addEventListener('click', function (e) {
-    popupBottom.classList.add('open');
-    e.preventDefault();
-});
+// popupBottomBtn.addEventListener('click', function (e) {
+//     popupBottom.classList.add('open');
+//     e.preventDefault();
+// });
 
 if (popupLinks.length > 0) {
     for (let index = 0; index < popupLinks.length; index++) {

@@ -548,6 +548,28 @@ const donationInformationSelectThree = document.querySelector('#donation_informa
 const donationInformationInput = donationInformationSelect.querySelector('input[data-input]');
 const donationInformationInputTwo = donationInformationSelectTwo.querySelector('input[data-input]');
 const donationInformationInputThree = donationInformationSelectThree.querySelector('input[data-input]');
+const linkBottomPopup = document.querySelectorAll('.donation__popup-live-info-button a');
+
+buttonDollars.forEach(el2 => {
+    linkBottomPopup.forEach(el => {
+        el.addEventListener('click', function () {
+
+            if (el.textContent == 'Other amount') {
+
+            }
+            if (el.textContent == el2.value) {
+                searchButton();
+                el2.classList.add('active');
+                el2.setAttribute('name', 'donationAmount');
+                clearInput.setAttribute('value', el2.value);
+            }
+        });
+        el2.addEventListener('click', function() {
+            clearInput.setAttribute('value', el2.value);
+        });
+    });
+});
+
 
 buttonDollars.forEach(el => {
     el.addEventListener('click', function () {
@@ -564,7 +586,7 @@ function searchButton() {
         if (el.classList.contains('active')) {
             el.classList.remove('active');
             el.removeAttribute('name');
-            clearInput.removeAttribute('name');
+            // clearInput.removeAttribute('name');
         }
     });
 }
@@ -709,17 +731,16 @@ const lockPadding = document.querySelectorAll('.lock-padding');
 const popupBottomBtn = document.querySelector('.pets-paf__info-box-moreinfo-btn');
 const popupBottom = document.getElementById('popup_bottom');
 
-console.log(popupBottom);
 
 
 let unlock = true;
 
 const timeout = 400;
 
-popupBottomBtn.addEventListener('click', function (e) {
-    popupBottom.classList.add('open');
-    e.preventDefault();
-});
+// popupBottomBtn.addEventListener('click', function (e) {
+//     popupBottom.classList.add('open');
+//     e.preventDefault();
+// });
 
 if (popupLinks.length > 0) {
     for (let index = 0; index < popupLinks.length; index++) {

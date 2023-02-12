@@ -2718,6 +2718,13 @@ html.lock {
     opacity: 1;
     visibility: visible;
 }
+.donation__popup.openq {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
 
 .donation__popup {
     display: grid;
@@ -2745,6 +2752,14 @@ html.lock {
         display: grid;
         grid-template-rows: 135px auto;
     }
+
+    #box-null {
+        justify-content: center;
+        width: auto;
+        height: auto;
+        grid-template-rows: auto;
+    }
+
 
     &-header {
         width: 518px;
@@ -2861,7 +2876,7 @@ html.lock {
         font-weight: 600;
         font-size: 18px;
         line-height: 22px;
-        background-color: transparent;
+        // background-color: transparent;
     }
 
     &-special-clear-block {
@@ -3614,6 +3629,10 @@ form {
     position: fixed;
     left: 0;
     top: 0;
+}
+
+#popup_bottom {
+    z-index: 10;
 }
 
 @import "media";
