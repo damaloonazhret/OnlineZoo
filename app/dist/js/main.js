@@ -553,15 +553,17 @@ const inputParent = document.querySelector('.donation-box__right-amount-don');
 const inputLink = document.querySelector('.donation-box__right-amount a');
 const otherAmountBlock = document.querySelector('.donation__popup-other-block');
 
+console.log(donationInformationInput);
+
 otherAmountBlock.addEventListener('click', function () {
-    asyncTimeoutInput()
+    asyncTimeoutInput();
 });
 
 inputLink.addEventListener('click', function () {
     searchButton();
     clearInput.value = inputParent.value;
     inputParent.value = '';
-    asyncTimeoutInput()
+    asyncTimeoutInput();
 });
 
 function asyncTimeoutInput() {
@@ -622,7 +624,7 @@ const selectItem = (popup, input) => {
     popup.addEventListener('click', (e) => {
         const target = e.target;
         if (target.tagName === 'P') {
-            input.value = target.textContent;
+            input.placeholder = target.textContent;
             formData.fullName = target.textContent;
         }
     });
@@ -666,7 +668,7 @@ function serializeForm(formNode) {
     const data = Array.from(elements)
         .map((element) => {
             const { name, type } = element;
-            const value = type === 'checkbox' ? element.checked : element.value
+            const value = type === 'checkbox' ? element.checked : element.value;
 
             return { name, value };
         })
@@ -681,7 +683,7 @@ function serializeForm(formNode) {
     Array.from(elements)
         .map((element) => {
             const { name, type } = element;
-            const value = type === 'checkbox' ? element.checked : element.value
+            const value = type === 'checkbox' ? element.checked : element.value;
             formData[name] = value;
             return { name, value };
         })
@@ -754,20 +756,20 @@ const lockPadding = document.querySelectorAll('.lock-padding');
 const popupBottomBtn = document.querySelector('.pets-paf__info-box-moreinfo-btn');
 const popupBottom = document.getElementById('popup_bottom');
 
-const inputbasic = document.querySelector('.donation__popup-input-basic');
+const myin = document.querySelector('.donation__popup-input');
+const myinbl = document.querySelector('.block');
 
-const btnsesses = document.querySelectorAll('form button');
-console.log(inputbasic.placeholder);
 
-function checkBtnValidate() {
-    btnsesses.forEach(el => {
-        el.addEventListener('click', function(e) {
-            if(inputbasic.placeholder == 'Choose your favourite') {
-                return false;
-            }
-        });
-    });
-}
+
+const htmll = document.querySelector('html');
+htmll.addEventListener('click', function () {
+    if (myin.placeholder !== 'Choose your favourite') {
+        myinbl.classList.add('hidden');
+    }
+});
+// while (myin.placeholder !== 'Choose your favourite') {
+//     myinbl.classList.add('hidden');
+// }
 
 let unlock = true;
 
@@ -785,7 +787,6 @@ if (popupLinks.length > 0) {
             e.preventDefault();
             const popupName = popupLink.getAttribute('href').replace('#', '');
             const curentPopup = document.getElementById(popupName);
-            // checkBtnValidate();
             popupOpen(curentPopup);
         });
     }

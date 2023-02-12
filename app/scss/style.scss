@@ -2718,6 +2718,7 @@ html.lock {
     opacity: 1;
     visibility: visible;
 }
+
 .donation__popup.openq {
     opacity: 1;
     visibility: visible;
@@ -2863,6 +2864,33 @@ html.lock {
 
         &:hover {
             background: #05786e;
+        }
+    }
+
+
+    .block {
+        width: 200px;
+        height: 74px;
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: #ff6e6e;
+            opacity: 0.5;
+        }
+    }
+
+    .block.hidden {
+        &::after{
+            visibility: hidden;
         }
     }
 
@@ -3027,6 +3055,7 @@ html.lock {
             display: block;
             background-image: url(../images//popup/arrow-up-mini.png);
         }
+
         ::-webkit-scrollbar-button:vertical:decrement {
             display: block;
             background-image: url(../images//popup/arrow-down-mini.png);
@@ -3482,7 +3511,7 @@ html.lock {
         display: grid;
         align-content: center;
         justify-content: center;
-        
+
         &::after {
             content: "";
             background-image: url(../images/arrow-right.svg);
@@ -3497,14 +3526,14 @@ html.lock {
     &-btn-three.disabled {
         background: #ff7300;
     }
-    
+
     &-bg {
         background-image: url(../images/popup/popup-bg.png);
         width: 1160px;
         height: 387px;
         position: relative;
     }
-    
+
     &-close-modal {
         position: absolute;
         top: 34px;
@@ -3530,16 +3559,17 @@ html.lock {
         &::before {
             transform: rotate(45deg);
         }
-        
+
         &::after {
             transform: rotate(-45deg);
         }
 
         &:hover {
-            &::after{
+            &::after {
                 transform: rotate(135deg);
             }
-            &::before{
+
+            &::before {
                 transform: rotate(-135deg);
             }
         }
@@ -3573,6 +3603,7 @@ html.lock {
         padding-top: 18px;
         margin-bottom: -18px;
     }
+
     &-live-info-text {
         font-weight: 400;
         font-size: 18px;
@@ -3581,6 +3612,7 @@ html.lock {
         color: black;
         text-align: center;
     }
+
     &-live-info-button {
         display: grid;
         grid-template-columns: 120px 120px 120px 120px 120px 200px;
@@ -3601,10 +3633,12 @@ html.lock {
             text-transform: uppercase;
             color: #ffffff;
             transition: 0.5s ease-in-out;
+
             &:hover {
                 background-color: #05786e;
             }
         }
+
         a.active {
             background-color: #05786e;
         }
