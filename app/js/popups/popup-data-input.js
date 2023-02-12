@@ -57,23 +57,29 @@ function serializeForm(formNode) {
     console.log(formNode.elements);
 }
 
+
 function handleFormSubmit(event) {
     event.preventDefault();
-    for (let i = 0; i < applicantForms.length; i++) {
-        const el = applicantForms[i];
-        serializeForm(el);
-    }
-
+    serializeForm(applicantForms);
+    // for (let i = 0; i < applicantForms.length; i++) {
+    //     const el = applicantForms[i];
+    //     serializeForm(el);
+    // }
 }
 
-const applicantForms = document.querySelectorAll('.save-data');
 
-for (let i = 0; i < applicantForms.length; i++) {
-    const applicantForm = applicantForms[i];
-    applicantForm.addEventListener('submit', function (e) {
-        handleFormSubmit(e);
-    });
-}
+
+// const applicantForms = document.querySelectorAll('.save-data');
+// for (let i = 0; i < applicantForms.length; i++) {
+//     const applicantForm = applicantForms[i];
+//     applicantForm.addEventListener('submit', function (e) {
+//         handleFormSubmit(e);
+//     });
+// }
+const applicantForms = document.querySelector('form');
+applicantForms.addEventListener('submit', handleFormSubmit);
+
+
 
 function serializeForm(formNode) {
     const { elements } = formNode;

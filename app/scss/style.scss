@@ -889,11 +889,14 @@ html.lock {
         height: 74px;
         background: #f58021;
         border-radius: 5px;
-        display: flex;
-        align-items: center;
-        padding-left: 30px;
+        // display: flex;
+        // align-items: center;
+        display: grid;
+        justify-content: center;
+        align-content: center;
         font-family: "Montserrat";
         font-weight: 600;
+        padding-right: 30px;
         font-size: 18px;
         line-height: 22px;
         text-transform: uppercase;
@@ -902,6 +905,16 @@ html.lock {
         margin-top: 50px;
         transition: 1s;
         cursor: pointer;
+
+        // a {
+        //     width: 100%;
+        //     height: 100%;
+        //     display: grid;
+        //     align-content: center;
+        //     justify-content: center;
+        //     // margin-right: 57px;
+        //     padding-right: 57px;
+        // }
 
         &:hover {
             background: #ac4f03;
@@ -914,6 +927,7 @@ html.lock {
             background-image: url(../images/arrow-right.svg);
             position: absolute;
             right: 30px;
+            top: 24px;
         }
     }
 }
@@ -2692,7 +2706,6 @@ html.lock {
     }
 }
 
-
 .pets-top__arrows {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -2705,7 +2718,6 @@ html.lock {
     opacity: 1;
     visibility: visible;
 }
-
 
 .donation__popup {
     display: grid;
@@ -2787,7 +2799,7 @@ html.lock {
         grid-template-rows: 65px;
         margin-bottom: -5px;
 
-        input[type=button] {
+        input[type="button"] {
             font-weight: 600;
             font-size: 18px;
             line-height: 22px;
@@ -2808,7 +2820,7 @@ html.lock {
             }
         }
 
-        input[type=button].active {
+        input[type="button"].active {
             background: #00a092;
         }
     }
@@ -3455,7 +3467,7 @@ html.lock {
         display: grid;
         align-content: center;
         justify-content: center;
-
+        
         &::after {
             content: "";
             background-image: url(../images/arrow-right.svg);
@@ -3464,6 +3476,118 @@ html.lock {
             position: absolute;
             right: 58px;
             top: 25px;
+        }
+    }
+    
+    &-bg {
+        background-image: url(../images/popup/popup-bg.png);
+        width: 1160px;
+        height: 387px;
+        position: relative;
+    }
+    
+    &-close-modal {
+        position: absolute;
+        top: 34px;
+        right: 38px;
+        width: 24px;
+        height: 24px;
+        opacity: 1;
+        cursor: pointer;
+        transition: opacity ease 0.5s;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            display: block;
+            width: 35px;
+            height: 3px;
+            background: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+        
+        &::after {
+            transform: rotate(-45deg);
+        }
+
+        &:hover {
+            &::after{
+                transform: rotate(135deg);
+            }
+            &::before{
+                transform: rotate(-135deg);
+            }
+        }
+    }
+
+    &-live {
+        width: 1160px;
+        height: 815px;
+        background: #ffffff;
+        box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        font-family: "Montserrat";
+        display: grid;
+        grid-template-rows: 385px auto;
+    }
+
+    &-live-info {
+        display: grid;
+        justify-items: center;
+    }
+
+
+    &-live-info-head {
+        font-weight: 600;
+        font-size: 54px;
+        line-height: 66px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #f58021;
+        width: 678px;
+        padding-top: 18px;
+        margin-bottom: -18px;
+    }
+    &-live-info-text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        width: 570px;
+        color: black;
+        text-align: center;
+    }
+    &-live-info-button {
+        display: grid;
+        grid-template-columns: 120px 120px 120px 120px 120px 200px;
+        column-gap: 40px;
+        width: 1000px;
+
+        a {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            width: 100%;
+            height: 65px;
+            background: #00a092;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            text-transform: uppercase;
+            color: #ffffff;
+            transition: 0.5s ease-in-out;
+            &:hover {
+                background-color: #05786e;
+            }
+        }
+        a.active {
+            background-color: #05786e;
         }
     }
 }
@@ -3486,12 +3610,10 @@ html.lock {
     cursor: pointer;
 }
 
-form .error {
-    display: none;
-    color: red;
-}
-.error.active {
-    display: block;
+form {
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 @import "media";
