@@ -4,7 +4,20 @@ const lockPadding = document.querySelectorAll('.lock-padding');
 const popupBottomBtn = document.querySelector('.pets-paf__info-box-moreinfo-btn');
 const popupBottom = document.getElementById('popup_bottom');
 
+const inputbasic = document.querySelector('.donation__popup-input-basic');
 
+const btnsesses = document.querySelectorAll('form button');
+console.log(inputbasic.placeholder);
+
+function checkBtnValidate() {
+    btnsesses.forEach(el => {
+        el.addEventListener('click', function(e) {
+            if(inputbasic.placeholder == 'Choose your favourite') {
+                return false;
+            }
+        });
+    });
+}
 
 let unlock = true;
 
@@ -22,6 +35,7 @@ if (popupLinks.length > 0) {
             e.preventDefault();
             const popupName = popupLink.getAttribute('href').replace('#', '');
             const curentPopup = document.getElementById(popupName);
+            // checkBtnValidate();
             popupOpen(curentPopup);
         });
     }

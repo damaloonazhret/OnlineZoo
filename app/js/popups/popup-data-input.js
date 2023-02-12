@@ -15,19 +15,30 @@ const donationInformationInputThree = donationInformationSelectThree.querySelect
 const linkBottomPopup = document.querySelectorAll('.donation__popup-live-info-button a');
 const inputParent = document.querySelector('.donation-box__right-amount-don');
 const inputLink = document.querySelector('.donation-box__right-amount a');
+const otherAmountBlock = document.querySelector('.donation__popup-other-block');
 
-inputLink.addEventListener('click', function() {
+otherAmountBlock.addEventListener('click', function () {
+    asyncTimeoutInput()
+});
+
+inputLink.addEventListener('click', function () {
     searchButton();
     clearInput.value = inputParent.value;
     inputParent.value = '';
+    asyncTimeoutInput()
 });
+
+function asyncTimeoutInput() {
+    setTimeout(() => {
+        clearInput.focus();
+    }, 100);
+}
 
 buttonDollars.forEach(el2 => {
     linkBottomPopup.forEach(el => {
         el.addEventListener('click', function () {
-
             if (el.textContent == 'Other amount') {
-                searchButton();
+                asyncTimeoutInput();
             }
             if (el.textContent == el2.value) {
                 searchButton();
@@ -37,7 +48,7 @@ buttonDollars.forEach(el2 => {
                 clearInput.value = el2.value.replace(/\D/g, "");
             }
         });
-        el2.addEventListener('click', function() {
+        el2.addEventListener('click', function () {
             clearInput.value = '';
             clearInput.value = el2.value.replace(/\D/g, "");
         });
@@ -60,7 +71,7 @@ function searchButton() {
         if (el.classList.contains('active')) {
             el.classList.remove('active');
             el.removeAttribute('name');
-            // clearInput.removeAttribute('name');
+            clearInput.removeAttribute('name');
         }
     });
 }
@@ -141,6 +152,8 @@ function serializeForm(formNode) {
         .filter((item) => !!item.name);
     console.log(formData);
 }
+
+
 // function serializeForm(formNode) {
 //     const { elements } = formNode;
 
