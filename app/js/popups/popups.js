@@ -4,20 +4,7 @@ const lockPadding = document.querySelectorAll('.lock-padding');
 const popupBottomBtn = document.querySelector('.pets-paf__info-box-moreinfo-btn');
 const popupBottom = document.getElementById('popup_bottom');
 
-const myin = document.querySelector('.donation__popup-input');
-const myinbl = document.querySelector('.block');
 
-
-
-const htmll = document.querySelector('html');
-htmll.addEventListener('click', function () {
-    if (myin.placeholder !== 'Choose your favourite') {
-        myinbl.classList.add('hidden');
-    }
-});
-// while (myin.placeholder !== 'Choose your favourite') {
-//     myinbl.classList.add('hidden');
-// }
 
 let unlock = true;
 

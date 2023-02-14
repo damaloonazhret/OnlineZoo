@@ -17,17 +17,28 @@ const inputParent = document.querySelector('.donation-box__right-amount-don');
 const inputLink = document.querySelector('.donation-box__right-amount a');
 const otherAmountBlock = document.querySelector('.donation__popup-other-block');
 
-console.log(donationInformationInput);
+// console.log(donationInformationInput);
 
 otherAmountBlock.addEventListener('click', function () {
     asyncTimeoutInput();
 });
 
 inputLink.addEventListener('click', function () {
-    searchButton();
-    clearInput.value = inputParent.value;
-    inputParent.value = '';
-    asyncTimeoutInput();
+    buttonDollars.forEach(el => {
+        if (!el.classList.contains('active')) {
+            buttonDollars[0].classList.add('active');
+        }
+    });
+    if (inputParent.value == '') {
+        clearInput.value = inputParent.value;
+        inputParent.value = '';
+        asyncTimeoutInput();
+    } else {
+        searchButton();
+        asyncTimeoutInput();
+        clearInput.value = inputParent.value;
+        inputParent.value = '';
+    }
 });
 
 function asyncTimeoutInput() {
