@@ -64,6 +64,8 @@ buttonDollars.forEach(el2 => {
         el2.addEventListener('click', function () {
             clearInput.value = '';
             clearInput.value = el2.value.replace(/\D/g, "");
+            clearInput.style.border = '1px solid #000000';
+            firstPageInput.classList.remove('active');
         });
     });
 });

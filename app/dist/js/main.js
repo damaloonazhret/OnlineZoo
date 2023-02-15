@@ -600,6 +600,8 @@ buttonDollars.forEach(el2 => {
         el2.addEventListener('click', function () {
             clearInput.value = '';
             clearInput.value = el2.value.replace(/\D/g, "");
+            clearInput.style.border = '1px solid #000000';
+            firstPageInput.classList.remove('active');
         });
     });
 });
@@ -766,6 +768,7 @@ const checkBoxEmail = document.querySelector('.donation__popup-email-input');
 const checkBoxCard = document.querySelector('.donation__popup-card-input');
 const checkBoxCVV = document.querySelector('.donation__popup-cvv-input');
 const checkDate = document.querySelectorAll('.donation__popup-input');
+const inputBorder = document.querySelectorAll('.input-border');
 console.log(checkDate);
 
 
@@ -831,6 +834,13 @@ function popupClose(popupActive, doUnlock = true) {
                     checkBoxCard.value = '';
                     checkBoxCVV.value = '';
                     searchButton();
+                    spanAll.forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    inputBorder.forEach(el => {
+                        el.style.border = '1px solid #000000';
+                    });
+                    validadion();
                 }
         }, 100);
 
@@ -897,6 +907,13 @@ const firstPageInput = document.querySelector('.donation__popup-clear-block-cont
 const firstPageSelect = document.querySelector('.donation__popup-input-container-box-content span');
 const secondPageName = document.querySelector('.donation__popup-name span');
 const secondPageEmail = document.querySelector('.donation__popup-email span');
+
+const spanAll = [
+    firstPageInput,
+    firstPageSelect,
+    secondPageName,
+    secondPageEmail
+];
 
 popupFirstValidate.addEventListener('click', function () {
     if (inputPopupValidate.placeholder !== 'Choose your favourite') {

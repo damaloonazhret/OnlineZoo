@@ -11,6 +11,13 @@ const firstPageSelect = document.querySelector('.donation__popup-input-container
 const secondPageName = document.querySelector('.donation__popup-name span');
 const secondPageEmail = document.querySelector('.donation__popup-email span');
 
+const spanAll = [
+    firstPageInput,
+    firstPageSelect,
+    secondPageName,
+    secondPageEmail
+];
+
 popupFirstValidate.addEventListener('click', function () {
     if (inputPopupValidate.placeholder !== 'Choose your favourite') {
         btnMenuPanel[0].style.border = '1px solid #000000';

@@ -11,6 +11,7 @@ const checkBoxEmail = document.querySelector('.donation__popup-email-input');
 const checkBoxCard = document.querySelector('.donation__popup-card-input');
 const checkBoxCVV = document.querySelector('.donation__popup-cvv-input');
 const checkDate = document.querySelectorAll('.donation__popup-input');
+const inputBorder = document.querySelectorAll('.input-border');
 console.log(checkDate);
 
 
@@ -76,6 +77,13 @@ function popupClose(popupActive, doUnlock = true) {
                     checkBoxCard.value = '';
                     checkBoxCVV.value = '';
                     searchButton();
+                    spanAll.forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    inputBorder.forEach(el => {
+                        el.style.border = '1px solid #000000';
+                    });
+                    validadion();
                 }
         }, 100);
 
