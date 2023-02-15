@@ -969,7 +969,7 @@
               </div>
               <div name="price" class="donation__popup-price">
 
-                <input name="donationAmount" type="button" value="$10" class="active">
+                <input name="donationAmount" type="button" value="$10">
                 <input type="button" value="$20">
                 <input type="button" value="$30">
                 <input type="button" value="$50">
@@ -980,8 +980,10 @@
               </div>
               <div class="donation__popup-other">
                 <div class="donation__popup-other-block">Other amount</div>
-
-                <input autofocus required type="number" class="donation__popup-clear-block">
+                <div class="donation__popup-clear-block-container">
+                  <input autofocus required type="number" class="donation__popup-clear-block">
+                  <span>Please enter the donation amount or select a quick donation.</span>
+                </div>
 
               </div>
               <div class="donation__popup-special">
@@ -989,12 +991,16 @@
 
                 <div id="donation_information"
                   class="donation__popup-input-container donation__popup-input-container-1">
-                  <div class="donation__popup-input-container-box">
-                    <a class="popup-link-not-close" href="#popup_4">
-                      <input data-input readonly name="specialPet" required placeholder="Choose your favourite"
-                        class="donation__popup-input donation__popup-input-basic">
-                    </a>
+                  <div class="donation__popup-input-container-box-content">
+                    <span>Please select for which animal donation</span>
+                    <div class="donation__popup-input-container-box">
+                      <a class="popup-link-not-close" href="#popup_4">
+                        <input data-input readonly name="specialPet" required placeholder="Choose your favourite"
+                          class="donation__popup-input donation__popup-input-basic">
+                      </a>
+                    </div>
                   </div>
+
 
                   <div class="menu__list-overlay"></div>
 
@@ -1033,7 +1039,7 @@
                   <p></p>
                 </div>
                 <div class="block">
-                  <button  id="mybtn" href="#popup_2" class="donation__popup-btn popup-link">next</button>
+                  <button id="mybtn" href="#popup_2" class="donation__popup-btn popup-link">next</button>
 
                 </div>
               </div>
@@ -1053,12 +1059,14 @@
             <div class="donation__popup-body donation__popup-body-two">
               <div class="donation__popup-info">Billing Information:</div>
               <div class="donation__popup-name">
-                <p>*</p> Your Name
+                <p>*</p> Your Name 
+                <span>Please enter your first and last name</span>
               </div>
-              <input name="fullName" class="donation__popup-name-input" placeholder="First and last name" type="text"
+                <input name="fullName" class="donation__popup-name-input" placeholder="First and last name" type="text"
                 required>
               <div class="donation__popup-email">
                 <p>*</p> Your Email Address
+                <span>Please enter your email</span>
               </div>
               <input name="email" class="donation__popup-email-input" placeholder="Enter your email" type="text" id=""
                 required>
@@ -1111,7 +1119,7 @@
                 <div id="donation_information_2" class="donation__popup-input-container">
                   <div class="donation__popup-input-container-box">
                     <a class="popup-link-not-close" href="#popup_5">
-                      <input name="expMonth" data-input type="number" readonly placeholder="Month"
+                      <input name="expMonth" data-input type="number" readonly required placeholder="Month"
                         class="donation__popup-input">
                     </a>
                   </div>
@@ -1148,7 +1156,7 @@
                 <div id="donation_information_3" class="donation__popup-input-container">
                   <div class="donation__popup-input-container-box">
                     <a class="popup-link-not-close" href="#popup_6">
-                      <input name="expYear" data-input type="number" readonly placeholder="Year"
+                      <input name="expYear" data-input type="number" readonly required placeholder="Year"
                         class="donation__popup-input">
                     </a>
                   </div>
@@ -1198,24 +1206,26 @@
       <div id="popup_bottom" class="donation__popup">
         <div id="box-null" class="donation__popup-box">
           <div class="donation__popup-live">
-          <div class="donation__popup-bg">
-            <div class="donation__popup-close-modal"></div>
-          </div>
-          <div class="donation__popup-live-info">
-            <div class="donation__popup-live-info-head">together we care, save and protect!</div>
-            <div class="donation__popup-live-info-text">Your most generous gift not only cares for countless animals, but it also offers hope and a vital lifeline to the world’s most endangered wildlife relying on us to survive.</div>
-            <div class="donation__popup-live-info-button">
-              <a class="popup-link active" href="#popup">$20</a>
-              <a class="popup-link" href="#popup">$30</a>
-              <a class="popup-link" href="#popup">$50</a>
-              <a class="popup-link" href="#popup">$80</a>
-              <a class="popup-link" href="#popup">$100</a>
-              <a class="popup-link" href="#popup">Other amount</a>
+            <div class="donation__popup-bg">
+              <div class="donation__popup-close-modal"></div>
+            </div>
+            <div class="donation__popup-live-info">
+              <div class="donation__popup-live-info-head">together we care, save and protect!</div>
+              <div class="donation__popup-live-info-text">Your most generous gift not only cares for countless animals,
+                but it also offers hope and a vital lifeline to the world’s most endangered wildlife relying on us to
+                survive.</div>
+              <div class="donation__popup-live-info-button">
+                <a class="popup-link active" href="#popup">$20</a>
+                <a class="popup-link" href="#popup">$30</a>
+                <a class="popup-link" href="#popup">$50</a>
+                <a class="popup-link" href="#popup">$80</a>
+                <a class="popup-link" href="#popup">$100</a>
+                <a class="popup-link" href="#popup">Other amount</a>
+              </div>
             </div>
           </div>
         </div>
-        </div>
-        
+
       </div>
 
     </form>

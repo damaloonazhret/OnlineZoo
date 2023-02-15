@@ -2761,7 +2761,6 @@ html.lock {
         grid-template-rows: auto;
     }
 
-
     &-header {
         width: 518px;
         height: 51px;
@@ -2867,7 +2866,6 @@ html.lock {
         }
     }
 
-
     .block {
         width: 200px;
         height: 74px;
@@ -2907,7 +2905,7 @@ html.lock {
     // }
 
     .block.hidden {
-        &::after{
+        &::after {
             display: none;
         }
         z-index: 0;
@@ -2923,7 +2921,20 @@ html.lock {
         font-weight: 600;
         font-size: 18px;
         line-height: 22px;
-        // background-color: transparent;
+    }
+
+    &-clear-block-container {
+        position: relative;
+        span {
+            position: absolute;
+            left: -240px;
+            top: -29px;
+            color: red;
+            display: none;
+        }
+        span.active {
+            display: block;
+        }
     }
 
     &-special-clear-block {
@@ -3306,13 +3317,27 @@ html.lock {
         font-size: 18px;
         line-height: 150%;
         display: grid;
-        grid-template-columns: 12px auto;
+        grid-template-columns: 120px;
+        padding-left: 14px;
+        position: relative;
 
         p {
+            position: absolute;
             color: #00a092;
             width: 20px;
             margin: 0;
             padding: 0;
+        }
+
+        span {
+            position: absolute;
+            left: 177px;
+            top: 0;
+            color: red;
+            display: none;
+        }
+        span.active {
+            display: block;
         }
     }
 
@@ -3321,12 +3346,24 @@ html.lock {
         line-height: 150%;
         display: grid;
         grid-template-columns: 12px auto;
+        position: relative;
 
         p {
             color: #00a092;
             width: 20px;
             margin: 0;
             padding: 0;
+        }
+
+        span {
+            position: absolute;
+            left: 226px;
+            top: 0;
+            color: red;
+            display: none;
+        }
+        span.active {
+            display: block;
         }
     }
 
@@ -3498,6 +3535,20 @@ html.lock {
         }
     }
 
+    &-input-container-box-content {
+        position: relative;
+        span {
+            position: absolute;
+            left: -240px;
+            top: -35px;
+            color: red;
+            display: none;
+        }
+        span.active {
+            display: block;
+        }
+    }
+
     &-input-container {
         position: relative;
         width: 100%;
@@ -3612,7 +3663,6 @@ html.lock {
         display: grid;
         justify-items: center;
     }
-
 
     &-live-info-head {
         font-weight: 600;

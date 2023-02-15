@@ -560,11 +560,11 @@ otherAmountBlock.addEventListener('click', function () {
 });
 
 inputLink.addEventListener('click', function () {
-    buttonDollars.forEach(el => {
-        if (!el.classList.contains('active')) {
-            buttonDollars[0].classList.add('active');
-        }
-    });
+    // buttonDollars.forEach(el => {
+    //     if (!el.classList.contains('active')) {
+    //         buttonDollars[0].classList.add('active');
+    //     }
+    // });
     if (inputParent.value == '') {
         clearInput.value = inputParent.value;
         inputParent.value = '';
@@ -631,18 +631,7 @@ clearInput.addEventListener('click', function () {
 });
 
 
-const selectItem = (popup, input) => {
-    popup.addEventListener('click', (e) => {
-        const target = e.target;
-        if (target.tagName === 'P') {
-            input.placeholder = target.textContent;
-            formData.fullName = target.textContent;
-        }
-    });
-};
-selectItem(donationInformationSelect, donationInformationInput);
-selectItem(donationInformationSelectTwo, donationInformationInputTwo);
-selectItem(donationInformationSelectThree, donationInformationInputThree);
+
 
 
 function serializeForm(formNode) {
@@ -653,40 +642,27 @@ function serializeForm(formNode) {
 function handleFormSubmit(event) {
     event.preventDefault();
     serializeForm(applicantForms);
-    // for (let i = 0; i < applicantForms.length; i++) {
-    //     const el = applicantForms[i];
-    //     serializeForm(el);
-    // }
 }
 
-
-
-// const applicantForms = document.querySelectorAll('.save-data');
-// for (let i = 0; i < applicantForms.length; i++) {
-//     const applicantForm = applicantForms[i];
-//     applicantForm.addEventListener('submit', function (e) {
-//         handleFormSubmit(e);
-//     });
-// }
 const applicantForms = document.querySelector('form');
 applicantForms.addEventListener('submit', handleFormSubmit);
 
 
 
-function serializeForm(formNode) {
-    const { elements } = formNode;
+// function serializeForm(formNode) {
+//     const { elements } = formNode;
 
-    const data = Array.from(elements)
-        .map((element) => {
-            const { name, type } = element;
-            const value = type === 'checkbox' ? element.checked : element.value;
+//     const data = Array.from(elements)
+//         .map((element) => {
+//             const { name, type } = element;
+//             const value = type === 'checkbox' ? element.checked : element.value;
 
-            return { name, value };
-        })
-        .filter((item) => !!item.name);
-    const obj = Object.assign({}, data);
-    console.log(obj);
-}
+//             return { name, value };
+//         })
+//         .filter((item) => !!item.name);
+//     const obj = Object.assign({}, data);
+//     console.log(obj);
+// }
 
 function serializeForm(formNode) {
     const { elements } = formNode;
@@ -707,12 +683,26 @@ function serializeForm(formNode) {
 //     const { elements } = formNode;
 
 //     Array.from(elements)
-//         .forEach((element) => {
+//     .forEach((element) => {
+//             console.log(element);
 //             const { name, value } = element;
 //             formData[name] = value;
 //         });
 //     console.log(formData);
 // }
+
+const selectItem = (popup, input) => {
+    popup.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.tagName === 'P') {
+            input.value = target.textContent;
+            input.placeholder = '';
+        }
+    });
+};
+selectItem(donationInformationSelect, donationInformationInput);
+selectItem(donationInformationSelectTwo, donationInformationInputTwo);
+selectItem(donationInformationSelectThree, donationInformationInputThree);
 
 const formData = {
     donationAmount: '',
@@ -725,6 +715,8 @@ const formData = {
     expMonth: '',
     expYear: '',
 };
+
+
 
 
 for (let i = 0; i < openPanels.length; i++) {
@@ -766,6 +758,16 @@ const body = document.querySelector('html');
 const lockPadding = document.querySelectorAll('.lock-padding');
 const popupBottomBtn = document.querySelector('.pets-paf__info-box-moreinfo-btn');
 const popupBottom = document.getElementById('popup_bottom');
+const allPopups = document.querySelectorAll('.donation__popup');
+
+const checkBoxFirst = document.querySelector('.donation__popup-checkbox-daw');
+const checkBoxName = document.querySelector('.donation__popup-name-input');
+const checkBoxEmail = document.querySelector('.donation__popup-email-input');
+const checkBoxCard = document.querySelector('.donation__popup-card-input');
+const checkBoxCVV = document.querySelector('.donation__popup-cvv-input');
+const checkDate = document.querySelectorAll('.donation__popup-input');
+console.log(checkDate);
+
 
 
 
@@ -811,6 +813,27 @@ function popupOpen(curentPopup) {
 function popupClose(popupActive, doUnlock = true) {
     if (unlock) {
         popupActive.classList.remove('open');
+        setTimeout(() => {
+                if (!allPopups[0].classList.contains('open') &&
+                !allPopups[1].classList.contains('open') && 
+                !allPopups[2].classList.contains('open') && 
+                !allPopups[3].classList.contains('open')) {
+                    checkDate[0].placeholder = 'Choose your favourite';
+                    checkDate[1].placeholder = 'Month';
+                    checkDate[2].placeholder = 'Year';
+                    checkDate[0].value = '';
+                    checkDate[1].value = '';
+                    checkDate[2].value = '';
+                    clearInput.value = '';
+                    checkBoxFirst.checked = false;
+                    checkBoxName.value = '';
+                    checkBoxEmail.value = '';
+                    checkBoxCard.value = '';
+                    checkBoxCVV.value = '';
+                    searchButton();
+                }
+        }, 100);
+
         if (doUnlock) {
             bodyUnLock();
         }
@@ -870,10 +893,15 @@ const inputName = document.querySelector('.donation__popup-name-input');
 const inputEmail = document.querySelector('.donation__popup-email-input');
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 const htmll = document.querySelector('html');
+const firstPageInput = document.querySelector('.donation__popup-clear-block-container span');
+const firstPageSelect = document.querySelector('.donation__popup-input-container-box-content span');
+const secondPageName = document.querySelector('.donation__popup-name span');
+const secondPageEmail = document.querySelector('.donation__popup-email span');
 
 popupFirstValidate.addEventListener('click', function () {
     if (inputPopupValidate.placeholder !== 'Choose your favourite') {
         btnMenuPanel[0].style.border = '1px solid #000000';
+        firstPageSelect.classList.remove('active');
     }
     if (inputPopupValidate.placeholder !== 'Choose your favourite' && clearInput.value !== '') {
         buttonBlock[0].classList.add('hidden');
@@ -883,6 +911,7 @@ popupFirstValidate.addEventListener('click', function () {
 popupFirstValidate.addEventListener('keyup', function () {
     if (clearInput.value !== '') {
         clearInput.style.border = '1px solid #000000';
+        firstPageInput.classList.remove('active');
     }
     if (inputPopupValidate.placeholder !== 'Choose your favourite' && clearInput.value !== '') {
         buttonBlock[0].classList.add('hidden');
@@ -893,9 +922,17 @@ popupFirstValidate.addEventListener('keyup', function () {
 buttonBlock[0].addEventListener('click', function () {
     if (inputPopupValidate.placeholder == 'Choose your favourite') {
         btnMenuPanel[0].style.border = '2px solid #ff8400';
+        firstPageSelect.classList.add('active');
     } if (clearInput.value == '') {
         clearInput.style.border = '2px solid #ff8400';
-        buttonDollars[0].classList.add('active');
+        asyncTimeoutInput();
+        firstPageInput.classList.add('active');
+    }
+});
+
+popupFirstValidate.addEventListener('mousemove', function() {
+    if (inputPopupValidate.placeholder == 'Choose your favourite' || clearInput.value == '') {
+        buttonBlock[0].classList.remove('hidden');
     }
 });
 
@@ -918,11 +955,11 @@ popupTwoValidate.addEventListener('mousemove', function () {
 popupTwoValidate.addEventListener('keyup', function () {
     if (validateName(inputName)) {
         inputName.style.border = '1px solid #000000';
+        secondPageName.classList.remove('active');
     }
     if (validateEmail(inputEmail)) {
-        // validateEmail(inputName);
-        // console.log(validateEmail(inputEmail.value));
         inputEmail.style.border = '1px solid #000000';
+        secondPageEmail.classList.remove('active');
     }
     if (inputName.value !== '' && inputEmail.value !== '') {
         buttonBlock[1].classList.add('hidden');
@@ -932,7 +969,9 @@ popupTwoValidate.addEventListener('keyup', function () {
 buttonBlock[1].addEventListener('click', function () {
     if (!validateName(inputName)) {
         inputName.style.border = '2px solid #ff8400';
+        secondPageName.classList.add('active');
     } if (!validateEmail(inputEmail)) {
         inputEmail.style.border = '2px solid #ff8400';
+        secondPageEmail.classList.add('active');
     }
 });

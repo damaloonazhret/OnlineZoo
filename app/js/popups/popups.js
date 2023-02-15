@@ -3,6 +3,16 @@ const body = document.querySelector('html');
 const lockPadding = document.querySelectorAll('.lock-padding');
 const popupBottomBtn = document.querySelector('.pets-paf__info-box-moreinfo-btn');
 const popupBottom = document.getElementById('popup_bottom');
+const allPopups = document.querySelectorAll('.donation__popup');
+
+const checkBoxFirst = document.querySelector('.donation__popup-checkbox-daw');
+const checkBoxName = document.querySelector('.donation__popup-name-input');
+const checkBoxEmail = document.querySelector('.donation__popup-email-input');
+const checkBoxCard = document.querySelector('.donation__popup-card-input');
+const checkBoxCVV = document.querySelector('.donation__popup-cvv-input');
+const checkDate = document.querySelectorAll('.donation__popup-input');
+console.log(checkDate);
+
 
 
 
@@ -48,6 +58,27 @@ function popupOpen(curentPopup) {
 function popupClose(popupActive, doUnlock = true) {
     if (unlock) {
         popupActive.classList.remove('open');
+        setTimeout(() => {
+                if (!allPopups[0].classList.contains('open') &&
+                !allPopups[1].classList.contains('open') && 
+                !allPopups[2].classList.contains('open') && 
+                !allPopups[3].classList.contains('open')) {
+                    checkDate[0].placeholder = 'Choose your favourite';
+                    checkDate[1].placeholder = 'Month';
+                    checkDate[2].placeholder = 'Year';
+                    checkDate[0].value = '';
+                    checkDate[1].value = '';
+                    checkDate[2].value = '';
+                    clearInput.value = '';
+                    checkBoxFirst.checked = false;
+                    checkBoxName.value = '';
+                    checkBoxEmail.value = '';
+                    checkBoxCard.value = '';
+                    checkBoxCVV.value = '';
+                    searchButton();
+                }
+        }, 100);
+
         if (doUnlock) {
             bodyUnLock();
         }

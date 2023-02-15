@@ -24,11 +24,11 @@ otherAmountBlock.addEventListener('click', function () {
 });
 
 inputLink.addEventListener('click', function () {
-    buttonDollars.forEach(el => {
-        if (!el.classList.contains('active')) {
-            buttonDollars[0].classList.add('active');
-        }
-    });
+    // buttonDollars.forEach(el => {
+    //     if (!el.classList.contains('active')) {
+    //         buttonDollars[0].classList.add('active');
+    //     }
+    // });
     if (inputParent.value == '') {
         clearInput.value = inputParent.value;
         inputParent.value = '';
@@ -95,18 +95,7 @@ clearInput.addEventListener('click', function () {
 });
 
 
-const selectItem = (popup, input) => {
-    popup.addEventListener('click', (e) => {
-        const target = e.target;
-        if (target.tagName === 'P') {
-            input.placeholder = target.textContent;
-            formData.fullName = target.textContent;
-        }
-    });
-};
-selectItem(donationInformationSelect, donationInformationInput);
-selectItem(donationInformationSelectTwo, donationInformationInputTwo);
-selectItem(donationInformationSelectThree, donationInformationInputThree);
+
 
 
 function serializeForm(formNode) {
@@ -117,40 +106,27 @@ function serializeForm(formNode) {
 function handleFormSubmit(event) {
     event.preventDefault();
     serializeForm(applicantForms);
-    // for (let i = 0; i < applicantForms.length; i++) {
-    //     const el = applicantForms[i];
-    //     serializeForm(el);
-    // }
 }
 
-
-
-// const applicantForms = document.querySelectorAll('.save-data');
-// for (let i = 0; i < applicantForms.length; i++) {
-//     const applicantForm = applicantForms[i];
-//     applicantForm.addEventListener('submit', function (e) {
-//         handleFormSubmit(e);
-//     });
-// }
 const applicantForms = document.querySelector('form');
 applicantForms.addEventListener('submit', handleFormSubmit);
 
 
 
-function serializeForm(formNode) {
-    const { elements } = formNode;
+// function serializeForm(formNode) {
+//     const { elements } = formNode;
 
-    const data = Array.from(elements)
-        .map((element) => {
-            const { name, type } = element;
-            const value = type === 'checkbox' ? element.checked : element.value;
+//     const data = Array.from(elements)
+//         .map((element) => {
+//             const { name, type } = element;
+//             const value = type === 'checkbox' ? element.checked : element.value;
 
-            return { name, value };
-        })
-        .filter((item) => !!item.name);
-    const obj = Object.assign({}, data);
-    console.log(obj);
-}
+//             return { name, value };
+//         })
+//         .filter((item) => !!item.name);
+//     const obj = Object.assign({}, data);
+//     console.log(obj);
+// }
 
 function serializeForm(formNode) {
     const { elements } = formNode;
@@ -171,12 +147,26 @@ function serializeForm(formNode) {
 //     const { elements } = formNode;
 
 //     Array.from(elements)
-//         .forEach((element) => {
+//     .forEach((element) => {
+//             console.log(element);
 //             const { name, value } = element;
 //             formData[name] = value;
 //         });
 //     console.log(formData);
 // }
+
+const selectItem = (popup, input) => {
+    popup.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.tagName === 'P') {
+            input.value = target.textContent;
+            input.placeholder = '';
+        }
+    });
+};
+selectItem(donationInformationSelect, donationInformationInput);
+selectItem(donationInformationSelectTwo, donationInformationInputTwo);
+selectItem(donationInformationSelectThree, donationInformationInputThree);
 
 const formData = {
     donationAmount: '',
@@ -189,6 +179,8 @@ const formData = {
     expMonth: '',
     expYear: '',
 };
+
+
 
 
 for (let i = 0; i < openPanels.length; i++) {
