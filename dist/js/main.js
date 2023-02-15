@@ -548,6 +548,62 @@ const donationInformationSelectThree = document.querySelector('#donation_informa
 const donationInformationInput = donationInformationSelect.querySelector('input[data-input]');
 const donationInformationInputTwo = donationInformationSelectTwo.querySelector('input[data-input]');
 const donationInformationInputThree = donationInformationSelectThree.querySelector('input[data-input]');
+const linkBottomPopup = document.querySelectorAll('.donation__popup-live-info-button a');
+const inputParent = document.querySelector('.donation-box__right-amount-don');
+const inputLink = document.querySelector('.donation-box__right-amount a');
+const otherAmountBlock = document.querySelector('.donation__popup-other-block');
+
+// console.log(donationInformationInput);
+
+otherAmountBlock.addEventListener('click', function () {
+    asyncTimeoutInput();
+});
+
+inputLink.addEventListener('click', function () {
+    // buttonDollars.forEach(el => {
+    //     if (!el.classList.contains('active')) {
+    //         buttonDollars[0].classList.add('active');
+    //     }
+    // });
+    if (inputParent.value == '') {
+        clearInput.value = inputParent.value;
+        inputParent.value = '';
+        asyncTimeoutInput();
+    } else {
+        searchButton();
+        asyncTimeoutInput();
+        clearInput.value = inputParent.value;
+        inputParent.value = '';
+    }
+});
+
+function asyncTimeoutInput() {
+    setTimeout(() => {
+        clearInput.focus();
+    }, 100);
+}
+
+buttonDollars.forEach(el2 => {
+    linkBottomPopup.forEach(el => {
+        el.addEventListener('click', function () {
+            if (el.textContent == 'Other amount') {
+                asyncTimeoutInput();
+            }
+            if (el.textContent == el2.value) {
+                searchButton();
+                el2.classList.add('active');
+                el2.setAttribute('name', 'donationAmount');
+                clearInput.value = '';
+                clearInput.value = el2.value.replace(/\D/g, "");
+            }
+        });
+        el2.addEventListener('click', function () {
+            clearInput.value = '';
+            clearInput.value = el2.value.replace(/\D/g, "");
+        });
+    });
+});
+
 
 buttonDollars.forEach(el => {
     el.addEventListener('click', function () {
@@ -575,56 +631,38 @@ clearInput.addEventListener('click', function () {
 });
 
 
-const selectItem = (popup, input) => {
-    popup.addEventListener('click', (e) => {
-        const target = e.target;
-        if (target.tagName === 'P') {
-            input.value = target.textContent;
-            formData.fullName = target.textContent;
-        }
-    });
-};
-selectItem(donationInformationSelect, donationInformationInput);
-selectItem(donationInformationSelectTwo, donationInformationInputTwo);
-selectItem(donationInformationSelectThree, donationInformationInputThree);
+
 
 
 function serializeForm(formNode) {
     console.log(formNode.elements);
 }
 
+
 function handleFormSubmit(event) {
     event.preventDefault();
-    for (let i = 0; i < applicantForms.length; i++) {
-        const el = applicantForms[i];
-        serializeForm(el);
-    }
-
+    serializeForm(applicantForms);
 }
 
-const applicantForms = document.querySelectorAll('.save-data');
+const applicantForms = document.querySelector('form');
+applicantForms.addEventListener('submit', handleFormSubmit);
 
-for (let i = 0; i < applicantForms.length; i++) {
-    const applicantForm = applicantForms[i];
-    applicantForm.addEventListener('submit', function (e) {
-        handleFormSubmit(e);
-    });
-}
 
-function serializeForm(formNode) {
-    const { elements } = formNode;
 
-    const data = Array.from(elements)
-        .map((element) => {
-            const { name, type } = element;
-            const value = type === 'checkbox' ? element.checked : element.value
+// function serializeForm(formNode) {
+//     const { elements } = formNode;
 
-            return { name, value };
-        })
-        .filter((item) => !!item.name);
-    const obj = Object.assign({}, data);
-    console.log(obj);
-}
+//     const data = Array.from(elements)
+//         .map((element) => {
+//             const { name, type } = element;
+//             const value = type === 'checkbox' ? element.checked : element.value;
+
+//             return { name, value };
+//         })
+//         .filter((item) => !!item.name);
+//     const obj = Object.assign({}, data);
+//     console.log(obj);
+// }
 
 function serializeForm(formNode) {
     const { elements } = formNode;
@@ -632,23 +670,39 @@ function serializeForm(formNode) {
     Array.from(elements)
         .map((element) => {
             const { name, type } = element;
-            const value = type === 'checkbox' ? element.checked : element.value
+            const value = type === 'checkbox' ? element.checked : element.value;
             formData[name] = value;
             return { name, value };
         })
         .filter((item) => !!item.name);
     console.log(formData);
 }
+
+
 // function serializeForm(formNode) {
 //     const { elements } = formNode;
 
 //     Array.from(elements)
-//         .forEach((element) => {
+//     .forEach((element) => {
+//             console.log(element);
 //             const { name, value } = element;
 //             formData[name] = value;
 //         });
 //     console.log(formData);
 // }
+
+const selectItem = (popup, input) => {
+    popup.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.tagName === 'P') {
+            input.value = target.textContent;
+            input.placeholder = '';
+        }
+    });
+};
+selectItem(donationInformationSelect, donationInformationInput);
+selectItem(donationInformationSelectTwo, donationInformationInputTwo);
+selectItem(donationInformationSelectThree, donationInformationInputThree);
 
 const formData = {
     donationAmount: '',
@@ -661,6 +715,8 @@ const formData = {
     expMonth: '',
     expYear: '',
 };
+
+
 
 
 for (let i = 0; i < openPanels.length; i++) {
@@ -700,16 +756,35 @@ function openPanel(curentopenPanel, overlayActive, arrowBoxActive) {
 const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('html');
 const lockPadding = document.querySelectorAll('.lock-padding');
+const popupBottomBtn = document.querySelector('.pets-paf__info-box-moreinfo-btn');
+const popupBottom = document.getElementById('popup_bottom');
+const allPopups = document.querySelectorAll('.donation__popup');
+
+const checkBoxFirst = document.querySelector('.donation__popup-checkbox-daw');
+const checkBoxName = document.querySelector('.donation__popup-name-input');
+const checkBoxEmail = document.querySelector('.donation__popup-email-input');
+const checkBoxCard = document.querySelector('.donation__popup-card-input');
+const checkBoxCVV = document.querySelector('.donation__popup-cvv-input');
+const checkDate = document.querySelectorAll('.donation__popup-input');
+console.log(checkDate);
+
+
+
 
 let unlock = true;
 
 const timeout = 400;
 
+// popupBottomBtn.addEventListener('click', function (e) {
+//     popupBottom.classList.add('open');
+//     e.preventDefault();
+// });
 
 if (popupLinks.length > 0) {
     for (let index = 0; index < popupLinks.length; index++) {
         const popupLink = popupLinks[index];
         popupLink.addEventListener("click", function (e) {
+            e.preventDefault();
             const popupName = popupLink.getAttribute('href').replace('#', '');
             const curentPopup = document.getElementById(popupName);
             popupOpen(curentPopup);
@@ -738,6 +813,27 @@ function popupOpen(curentPopup) {
 function popupClose(popupActive, doUnlock = true) {
     if (unlock) {
         popupActive.classList.remove('open');
+        setTimeout(() => {
+                if (!allPopups[0].classList.contains('open') &&
+                !allPopups[1].classList.contains('open') && 
+                !allPopups[2].classList.contains('open') && 
+                !allPopups[3].classList.contains('open')) {
+                    checkDate[0].placeholder = 'Choose your favourite';
+                    checkDate[1].placeholder = 'Month';
+                    checkDate[2].placeholder = 'Year';
+                    checkDate[0].value = '';
+                    checkDate[1].value = '';
+                    checkDate[2].value = '';
+                    clearInput.value = '';
+                    checkBoxFirst.checked = false;
+                    checkBoxName.value = '';
+                    checkBoxEmail.value = '';
+                    checkBoxCard.value = '';
+                    checkBoxCVV.value = '';
+                    searchButton();
+                }
+        }, 100);
+
         if (doUnlock) {
             bodyUnLock();
         }
@@ -788,3 +884,94 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+
+const inputPopupValidate = document.querySelector('.donation__popup-input');
+const buttonBlock = document.querySelectorAll('.block');
+const popupFirstValidate = document.getElementById('popup');
+const popupTwoValidate = document.getElementById('popup_2');
+const inputName = document.querySelector('.donation__popup-name-input');
+const inputEmail = document.querySelector('.donation__popup-email-input');
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+const htmll = document.querySelector('html');
+const firstPageInput = document.querySelector('.donation__popup-clear-block-container span');
+const firstPageSelect = document.querySelector('.donation__popup-input-container-box-content span');
+const secondPageName = document.querySelector('.donation__popup-name span');
+const secondPageEmail = document.querySelector('.donation__popup-email span');
+
+popupFirstValidate.addEventListener('click', function () {
+    if (inputPopupValidate.placeholder !== 'Choose your favourite') {
+        btnMenuPanel[0].style.border = '1px solid #000000';
+        firstPageSelect.classList.remove('active');
+    }
+    if (inputPopupValidate.placeholder !== 'Choose your favourite' && clearInput.value !== '') {
+        buttonBlock[0].classList.add('hidden');
+    }
+});
+
+popupFirstValidate.addEventListener('keyup', function () {
+    if (clearInput.value !== '') {
+        clearInput.style.border = '1px solid #000000';
+        firstPageInput.classList.remove('active');
+    }
+    if (inputPopupValidate.placeholder !== 'Choose your favourite' && clearInput.value !== '') {
+        buttonBlock[0].classList.add('hidden');
+    }
+});
+
+
+buttonBlock[0].addEventListener('click', function () {
+    if (inputPopupValidate.placeholder == 'Choose your favourite') {
+        btnMenuPanel[0].style.border = '2px solid #ff8400';
+        firstPageSelect.classList.add('active');
+    } if (clearInput.value == '') {
+        clearInput.style.border = '2px solid #ff8400';
+        asyncTimeoutInput();
+        firstPageInput.classList.add('active');
+    }
+});
+
+popupFirstValidate.addEventListener('mousemove', function() {
+    if (inputPopupValidate.placeholder == 'Choose your favourite' || clearInput.value == '') {
+        buttonBlock[0].classList.remove('hidden');
+    }
+});
+
+
+
+
+function validateEmail(email) {
+    return EMAIL_REGEXP.test(email.value);
+}
+function validateName(name) {
+    return name.value.length > 1;
+}
+
+popupTwoValidate.addEventListener('mousemove', function () {
+    if (!validateEmail(inputEmail) || !validateName(inputName)){
+        buttonBlock[1].classList.remove('hidden');
+    }
+});
+
+popupTwoValidate.addEventListener('keyup', function () {
+    if (validateName(inputName)) {
+        inputName.style.border = '1px solid #000000';
+        secondPageName.classList.remove('active');
+    }
+    if (validateEmail(inputEmail)) {
+        inputEmail.style.border = '1px solid #000000';
+        secondPageEmail.classList.remove('active');
+    }
+    if (inputName.value !== '' && inputEmail.value !== '') {
+        buttonBlock[1].classList.add('hidden');
+    }
+});
+
+buttonBlock[1].addEventListener('click', function () {
+    if (!validateName(inputName)) {
+        inputName.style.border = '2px solid #ff8400';
+        secondPageName.classList.add('active');
+    } if (!validateEmail(inputEmail)) {
+        inputEmail.style.border = '2px solid #ff8400';
+        secondPageEmail.classList.add('active');
+    }
+});

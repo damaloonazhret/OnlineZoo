@@ -491,9 +491,9 @@
                     You can support your favorite animals or any animal you care about and make a real personal impact.
                     Never
                     doubt that your donation can make a difference even if it is small. </div>
-                  <div class="pets-paf__info-box-moreinfo-btn">
-                    <a class="pets-paf__info-box-moreinfo-btn-link" href="#">donate now</a>
-                  </div>
+                  <a href="#popup_bottom" class="pets-paf__info-box-moreinfo-btn popup-link">donate now
+                    <!-- <a class="pets-paf__info-box-moreinfo-btn-link" href="#">donate now</a> -->
+                  </a>
                 </div>
               </div>
             </div>
@@ -927,7 +927,7 @@
                 <a href="contact.html">Contact us</a>
               </div>
               <div class="footer-content__top-btn">
-                <a href="#">Donate for volunteers</a>
+                <a href="#popup_bottom" class="popup-link">Donate for volunteers</a>
               </div>
             </div>
             <div class="footer-content__bottom">
@@ -955,244 +955,280 @@
 
 
 
+    <form>
+
+      <div id="popup" class="donation__popup save-data">
+        <div class="donation__popup-box">
+          <div class="donation__popup-header">make your donation</div>
+          <div class="donation__popup-container">
+            <div class="donation__popup-body">
+              <div class="donation__popup-info">Donation Information:</div>
+
+              <div class="donation__popup-choose">
+                <p>*</p>Choose your donation amount:
+              </div>
+              <div name="price" class="donation__popup-price">
+
+                <input name="donationAmount" type="button" value="$10">
+                <input type="button" value="$20">
+                <input type="button" value="$30">
+                <input type="button" value="$50">
+                <input type="button" value="$80">
+                <input type="button" value="$100">
 
 
-        <form id="popup" class="donation__popup save-data">
-          <div class="donation__popup-box">
-            <div class="donation__popup-header">make your donation</div>
-            <div class="donation__popup-container">
-              <div class="donation__popup-body">
-                <div class="donation__popup-info">Donation Information:</div>
-
-                <div class="donation__popup-choose">
-                  <p>*</p>Choose your donation amount:
+              </div>
+              <div class="donation__popup-other">
+                <div class="donation__popup-other-block">Other amount</div>
+                <div class="donation__popup-clear-block-container">
+                  <input autofocus required type="number" class="donation__popup-clear-block">
+                  <span>Please enter the donation amount or select a quick donation.</span>
                 </div>
-                <div name="price" class="donation__popup-price">
 
-                  <input name="donationAmount" type="button" value="$10" class="active">
-                  <input type="button" value="$20">
-                  <input type="button" value="$30">
-                  <input type="button" value="$50">
-                  <input type="button" value="$80">
-                  <input type="button" value="$100">
-                  
+              </div>
+              <div class="donation__popup-special">
+                <div class="donation__popup-special-block">for special pet</div>
 
-                </div>
-                <div class="donation__popup-other">
-                  <div class="donation__popup-other-block">Other amount</div>
-
-                  <input type="number" class="donation__popup-clear-block" autofocus>
-
-                </div>
-                <div class="donation__popup-special">
-                  <div class="donation__popup-special-block">for special pet</div>
-
-                  <div id="donation_information"
-                    class="donation__popup-input-container donation__popup-input-container-1">
+                <div id="donation_information"
+                  class="donation__popup-input-container donation__popup-input-container-1">
+                  <div class="donation__popup-input-container-box-content">
+                    <span>Please select for which animal donation</span>
                     <div class="donation__popup-input-container-box">
                       <a class="popup-link-not-close" href="#popup_4">
                         <input data-input readonly name="specialPet" required placeholder="Choose your favourite"
                           class="donation__popup-input donation__popup-input-basic">
                       </a>
                     </div>
+                  </div>
 
-                    <div class="menu__list-overlay"></div>
 
-                    <div id="popup_4" class="donation__popup-choise-content">
-                      <div class="donation__popup-choise">
-                        <div class="donation__popup-choise-panel">
-                          <div class="donation__popup-choise-arrow-top-box">
-                            <div class="donation__popup-choise-arrow-top"></div>
-                          </div>
-                          <div class="donation__popup-choise-jaw"></div>
-                          <div class="donation__popup-choise-arrow-bottom-box">
-                            <div class="donation__popup-choise-arrow-bottom"></div>
-                          </div>
+                  <div class="menu__list-overlay"></div>
+
+                  <div id="popup_4" class="donation__popup-choise-content">
+                    <div class="donation__popup-choise">
+                      <div class="donation__popup-choise-panel">
+                        <div class="donation__popup-choise-arrow-top-box">
+                          <div class="donation__popup-choise-arrow-top"></div>
                         </div>
-                        <p>Lukas the Panda</p>
-                        <p>Andy the Lemur</p>
-                        <p>Glen the Gorilla</p>
-                        <p>Mike the Alligator</p>
-                        <p>Sam & Lora the eagles family</p>
-                        <p>Liz the Koala</p>
-                        <p>Shake the Lion</p>
-                        <p>Senja the Tiger</p>
+                        <div class="donation__popup-choise-jaw"></div>
+                        <div class="donation__popup-choise-arrow-bottom-box">
+                          <div class="donation__popup-choise-arrow-bottom"></div>
+                        </div>
                       </div>
+                      <p>Lukas the Panda</p>
+                      <p>Andy the Lemur</p>
+                      <p>Glen the Gorilla</p>
+                      <p>Mike the Alligator</p>
+                      <p>Sam & Lora the eagles family</p>
+                      <p>Liz the Koala</p>
+                      <p>Shake the Lion</p>
+                      <p>Senja the Tiger</p>
                     </div>
                   </div>
-
-                </div>
-                <div class="donation__popup-checkbox">
-                  <input name="isGift" class="donation__popup-checkbox-daw" type="checkbox">
-                  <div class="donation__popup-checkbox-text">Make this a monthly recurring gift</div>
-                </div>
-                <div class="donation__popup-nav">
-                  <div class="donation__popup-points">
-                    <p class="active"></p>
-                    <p></p>
-                    <p></p>
-                  </div>
-                  <button type="submit" href="#popup_2" class="donation__popup-btn popup-link">next</button>
                 </div>
 
               </div>
-            </div>
-
-          </div>
-        </form>
-
-
-
-        <form id="popup_2" class="donation__popup save-data">
-          <div class="donation__popup-box donation__popup-box-two">
-            <div class="donation__popup-header">make your donation</div>
-            <div class="donation__popup-container">
-              <div class="donation__popup-body donation__popup-body-two">
-                <div class="donation__popup-info">Billing Information:</div>
-                <div class="donation__popup-name">
-                  <p>*</p> Your Name
+              <div class="donation__popup-checkbox">
+                <input name="isGift" class="donation__popup-checkbox-daw" type="checkbox">
+                <div class="donation__popup-checkbox-text">Make this a monthly recurring gift</div>
+              </div>
+              <div class="donation__popup-nav">
+                <div class="donation__popup-points">
+                  <p class="active"></p>
+                  <p></p>
+                  <p></p>
                 </div>
+                <div class="block">
+                  <button id="mybtn" href="#popup_2" class="donation__popup-btn popup-link">next</button>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div id="popup_2" class="donation__popup save-data">
+        <div class="donation__popup-box donation__popup-box-two">
+          <div class="donation__popup-header">make your donation</div>
+          <div class="donation__popup-container">
+            <div class="donation__popup-body donation__popup-body-two">
+              <div class="donation__popup-info">Billing Information:</div>
+              <div class="donation__popup-name">
+                <p>*</p> Your Name 
+                <span>Please enter your first and last name</span>
+              </div>
                 <input name="fullName" class="donation__popup-name-input" placeholder="First and last name" type="text"
-                  required>
-                <div class="donation__popup-email">
-                  <p>*</p> Your Email Address
-                </div>
-                <input name="email" class="donation__popup-email-input" placeholder="Enter your email" type="text" id=""
-                  required>
-                <div class="donation__popup-information">You will receive emails from the Online Zoo, including updates
-                  and
-                  news on the latest discoveries and translations. You can unsubscribe at any time.</div>
+                required>
+              <div class="donation__popup-email">
+                <p>*</p> Your Email Address
+                <span>Please enter your email</span>
+              </div>
+              <input name="email" class="donation__popup-email-input" placeholder="Enter your email" type="text" id=""
+                required>
+              <div class="donation__popup-information">You will receive emails from the Online Zoo, including updates
+                and
+                news on the latest discoveries and translations. You can unsubscribe at any time.</div>
 
-                <div class="donation__popup-nav-two">
-                  <div class="donation__popup-points">
-                    <p class="active"></p>
-                    <p class="active"></p>
-                    <p></p>
-                  </div>
-                  <a href="#popup" class="donation__popup-backup popup-link">Back</a>
-                  <button type="submit" href="#popup_3" class="donation__popup-btn popup-link">next</button>
+              <div class="donation__popup-nav-two">
+                <div class="donation__popup-points">
+                  <p class="active"></p>
+                  <p class="active"></p>
+                  <p></p>
                 </div>
+                <a href="#popup" class="donation__popup-backup popup-link">Back</a>
+                <div class="block">
+                  <button href="#popup_3" class="donation__popup-btn popup-link">next</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div id="popup_3" class="donation__popup save-data">
+        <div class="donation__popup-box donation__popup-box-two">
+          <div class="donation__popup-header">make your donation</div>
+          <div class="donation__popup-container">
+            <div class="donation__popup-body donation__popup-body-three">
+              <div class="donation__popup-info">Payment Information:</div>
+
+              <div class="donation__popup-credit">
+                <div class="donation__popup-card">
+                  <p>*</p> Credit Card Number
+                </div>
+                <input name="cardNumber" type="number" class="donation__popup-card-input" required>
+                <div class="donation__popup-cvv">
+                  <p>*</p> CVV Number
+                </div>
+                <input name="cvv" type="number" class="donation__popup-cvv-input" required>
+              </div>
+              <div class="donation__popup-expiration">
+                <div class="donation__popup-text">
+                  <p>*</p> Expiration Date
+                </div>
+
+                <div id="donation_information_2" class="donation__popup-input-container">
+                  <div class="donation__popup-input-container-box">
+                    <a class="popup-link-not-close" href="#popup_5">
+                      <input name="expMonth" data-input type="number" readonly required placeholder="Month"
+                        class="donation__popup-input">
+                    </a>
+                  </div>
+
+                  <div class="menu__list-overlay"></div>
+
+                  <div id="popup_5" class="donation__popup-choise-content">
+                    <div class="donation__popup-choise donation__popup-choise-5">
+                      <div class="donation__popup-choise-panel">
+                        <div class="donation__popup-choise-arrow-top-box">
+                          <div class="donation__popup-choise-arrow-top"></div>
+                        </div>
+                        <div class="donation__popup-choise-jaw"></div>
+                        <div class="donation__popup-choise-arrow-bottom-box">
+                          <div class="donation__popup-choise-arrow-bottom"></div>
+                        </div>
+                      </div>
+                      <p>01</p>
+                      <p>02</p>
+                      <p>03</p>
+                      <p>04</p>
+                      <p>05</p>
+                      <p>06</p>
+                      <p>07</p>
+                      <p>08</p>
+                      <p>09</p>
+                      <p>10</p>
+                      <p>11</p>
+                      <p>12</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="donation_information_3" class="donation__popup-input-container">
+                  <div class="donation__popup-input-container-box">
+                    <a class="popup-link-not-close" href="#popup_6">
+                      <input name="expYear" data-input type="number" readonly required placeholder="Year"
+                        class="donation__popup-input">
+                    </a>
+                  </div>
+
+                  <div class="menu__list-overlay"></div>
+
+                  <div id="popup_6" class="donation__popup-choise-content">
+                    <div class="donation__popup-choise donation__popup-choise-6">
+                      <div class="donation__popup-choise-panel">
+                        <div class="donation__popup-choise-arrow-top-box">
+                          <div class="donation__popup-choise-arrow-top"></div>
+                        </div>
+                        <div class="donation__popup-choise-jaw"></div>
+                        <div class="donation__popup-choise-arrow-bottom-box">
+                          <div class="donation__popup-choise-arrow-bottom"></div>
+                        </div>
+                      </div>
+                      <p>21</p>
+                      <p>22</p>
+                      <p>23</p>
+                      <p>24</p>
+                      <p>25</p>
+                      <p>26</p>
+                    </div>
+                  </div>
+                </div>
+
 
               </div>
+
+              <div class="donation__popup-nav-two">
+                <div class="donation__popup-points">
+                  <p class="active"></p>
+                  <p class="active"></p>
+                  <p class="active"></p>
+                </div>
+                <a href="#popup_2" class="donation__popup-backup popup-link">Back</a>
+                <button id="disabled-button" type="submit" class="donation__popup-btn-three">complete donation</button>
+              </div>
+
             </div>
-
           </div>
-        </form>
 
+        </div>
+      </div>
 
-
-        <form id="popup_3" class="donation__popup save-data">
-          <div class="donation__popup-box donation__popup-box-two">
-            <div class="donation__popup-header">make your donation</div>
-            <div class="donation__popup-container">
-              <div class="donation__popup-body donation__popup-body-three">
-                <div class="donation__popup-info">Payment Information:</div>
-
-                <div class="donation__popup-credit">
-                  <div class="donation__popup-card">
-                    <p>*</p> Credit Card Number
-                  </div>
-                  <input name="cardNumber" type="number" class="donation__popup-card-input" required>
-                  <div class="donation__popup-cvv">
-                    <p>*</p> CVV Number
-                  </div>
-                  <input name="cvv" type="number" class="donation__popup-cvv-input" required>
-                </div>
-                <div class="donation__popup-expiration">
-                  <div class="donation__popup-text">
-                    <p>*</p> Expiration Date
-                  </div>
-
-                  <div id="donation_information_2" class="donation__popup-input-container">
-                    <div class="donation__popup-input-container-box">
-                      <a class="popup-link-not-close" href="#popup_5">
-                        <input name="expMonth" data-input type="number" readonly placeholder="Month"
-                          class="donation__popup-input">
-                      </a>
-                    </div>
-
-                    <div class="menu__list-overlay"></div>
-
-                    <div id="popup_5" class="donation__popup-choise-content">
-                      <div class="donation__popup-choise donation__popup-choise-5">
-                        <div class="donation__popup-choise-panel">
-                          <div class="donation__popup-choise-arrow-top-box">
-                            <div class="donation__popup-choise-arrow-top"></div>
-                          </div>
-                          <div class="donation__popup-choise-jaw"></div>
-                          <div class="donation__popup-choise-arrow-bottom-box">
-                            <div class="donation__popup-choise-arrow-bottom"></div>
-                          </div>
-                        </div>
-                        <p>01</p>
-                        <p>02</p>
-                        <p>03</p>
-                        <p>04</p>
-                        <p>05</p>
-                        <p>06</p>
-                        <p>07</p>
-                        <p>08</p>
-                        <p>09</p>
-                        <p>10</p>
-                        <p>11</p>
-                        <p>12</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div id="donation_information_3" class="donation__popup-input-container">
-                    <div class="donation__popup-input-container-box">
-                      <a class="popup-link-not-close" href="#popup_6">
-                        <input name="expYear" data-input type="number" readonly placeholder="Year"
-                          class="donation__popup-input">
-                      </a>
-                    </div>
-
-                    <div class="menu__list-overlay"></div>
-
-                    <div id="popup_6" class="donation__popup-choise-content">
-                      <div class="donation__popup-choise donation__popup-choise-6">
-                        <div class="donation__popup-choise-panel">
-                          <div class="donation__popup-choise-arrow-top-box">
-                            <div class="donation__popup-choise-arrow-top"></div>
-                          </div>
-                          <div class="donation__popup-choise-jaw"></div>
-                          <div class="donation__popup-choise-arrow-bottom-box">
-                            <div class="donation__popup-choise-arrow-bottom"></div>
-                          </div>
-                        </div>
-                        <p>21</p>
-                        <p>22</p>
-                        <p>23</p>
-                        <p>24</p>
-                        <p>25</p>
-                        <p>26</p>
-                      </div>
-                    </div>
-                  </div>
-
-
-                </div>
-
-                <div class="donation__popup-nav-two">
-                  <div class="donation__popup-points">
-                    <p class="active"></p>
-                    <p class="active"></p>
-                    <p class="active"></p>
-                  </div>
-                  <a href="#popup_2" class="donation__popup-backup popup-link">Back</a>
-                  <button type="submit" class="donation__popup-btn-three">complete donation</button>
-                </div>
-
+      <div id="popup_bottom" class="donation__popup">
+        <div id="box-null" class="donation__popup-box">
+          <div class="donation__popup-live">
+            <div class="donation__popup-bg">
+              <div class="donation__popup-close-modal"></div>
+            </div>
+            <div class="donation__popup-live-info">
+              <div class="donation__popup-live-info-head">together we care, save and protect!</div>
+              <div class="donation__popup-live-info-text">Your most generous gift not only cares for countless animals,
+                but it also offers hope and a vital lifeline to the world’s most endangered wildlife relying on us to
+                survive.</div>
+              <div class="donation__popup-live-info-button">
+                <a class="popup-link active" href="#popup">$20</a>
+                <a class="popup-link" href="#popup">$30</a>
+                <a class="popup-link" href="#popup">$50</a>
+                <a class="popup-link" href="#popup">$80</a>
+                <a class="popup-link" href="#popup">$100</a>
+                <a class="popup-link" href="#popup">Other amount</a>
               </div>
             </div>
-
           </div>
-        </form>
+        </div>
 
+      </div>
 
-
-      </form>
+    </form>
 
 
 
