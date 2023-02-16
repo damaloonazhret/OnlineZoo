@@ -83,7 +83,6 @@ function popupClose(popupActive, doUnlock = true) {
                     inputBorder.forEach(el => {
                         el.style.border = '1px solid #000000';
                     });
-                    validadion();
                 }
         }, 100);
 

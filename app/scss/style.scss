@@ -3024,15 +3024,20 @@ html.lock {
         align-content: center;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.4s ease-in-out;
+        // transition: all 0.2s ease-in-out;
         z-index: 2;
+        // transform: scale(50%);
+        transform: rotate3d(1, 1, 1, 101deg) scale(0.5);
+        transition: all ease-in .4s;
+        
     }
 
     &-choise-content.open {
-        opacity: 4;
+        opacity: 1;
         visibility: visible;
         cursor: pointer;
-        transition: all 0.4s ease-in-out;
+        // transform: scale(100%);
+        transform: none;
     }
 
     &-choise {
@@ -3048,7 +3053,7 @@ html.lock {
         grid-template-rows: repeat(8, 56px);
         grid-template-columns: auto 32px;
         z-index: 4;
-        transition: all 0.01s;
+        // transition: all 0.01s;
         overflow-y: auto;
         overflow-x: hidden;
 
@@ -3110,7 +3115,7 @@ html.lock {
             font-weight: 400;
             font-size: 18px;
             line-height: 150%;
-            transition: 0.3s ease-in-out;
+            // transition: 0.3s ease-in-out;
             height: 32px;
 
             &:hover {
@@ -3195,7 +3200,7 @@ html.lock {
         background: #80cfc8;
         align-self: center;
         justify-self: center;
-        transition: all 0.4s ease-in-out;
+        // transition: all 0.4s ease-in-out;
         margin-left: -4px;
 
         &:hover {
@@ -3216,7 +3221,7 @@ html.lock {
         justify-content: center;
         align-content: center;
         color: #ffffff;
-        transition: all 0.4s ease-in-out;
+        // transition: all 0.4s ease-in-out;
 
         &:hover {
             background: #00a092;
@@ -3297,14 +3302,14 @@ html.lock {
         line-height: 22px;
         text-transform: uppercase;
         color: #ffffff;
-        transition: 0.5s;
+        // transition: 0.5s;
         position: relative;
         padding-right: 22px;
         display: grid;
         align-content: center;
         justify-content: center;
         cursor: pointer;
-        transition: all 0.4s ease-in-out;
+        // transition: all 0.4s ease-in-out;
 
         &:hover {
             background: #05786e;
@@ -3425,7 +3430,7 @@ html.lock {
         color: #00a092;
         width: 200px;
         height: 74px;
-        transition: 0.5s;
+        // transition: 0.5s;
         border-radius: 5px;
         display: grid;
         justify-content: center;
@@ -3530,7 +3535,7 @@ html.lock {
             background: #80cfc8;
             border: 1px solid #000000;
             border-radius: 0px 5px 5px 0px;
-            transition: all 0.4s ease-in-out;
+            // transition: all 0.4s ease-in-out;
             cursor: pointer;
             z-index: 0;
         }
@@ -3550,7 +3555,7 @@ html.lock {
             height: 11px;
             z-index: 1;
             cursor: pointer;
-            transition: 0.5s;
+            // transition: 0.5s;
         }
     }
 
@@ -3636,7 +3641,7 @@ html.lock {
         height: 24px;
         opacity: 1;
         cursor: pointer;
-        transition: all 0.4s ease-in-out;
+        // transition: all 0.4s ease-in-out;
 
         &::before,
         &::after {
@@ -3647,7 +3652,7 @@ html.lock {
             width: 35px;
             height: 3px;
             background: white;
-            transition: 0.3s ease-in-out;
+            // transition: 0.3s ease-in-out;
         }
 
         &::before {
@@ -3725,7 +3730,7 @@ html.lock {
             line-height: 22px;
             text-transform: uppercase;
             color: #ffffff;
-            transition: 0.5s ease-in-out;
+            // transition: 0.5s ease-in-out;
 
             &:hover {
                 background-color: #05786e;
@@ -3746,7 +3751,7 @@ html.lock {
     left: 0;
     width: 100vw;
     height: 100vh;
-    transition: all 0.4s ease-in-out;
+    // transition: all 0.4s ease-in-out;
 }
 
 .menu__list-overlay.active {
