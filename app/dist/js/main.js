@@ -573,6 +573,7 @@ inputLink.addEventListener('click', function () {
         searchButton();
         asyncTimeoutInput();
         clearInput.value = inputParent.value;
+        otherBlock.classList.add('active');
         inputParent.value = '';
     }
 });
@@ -595,12 +596,14 @@ buttonDollars.forEach(el2 => {
                 // el2.setAttribute('name', 'donationAmount');
                 clearInput.value = '';
                 clearInput.value = el2.value.replace(/\D/g, "");
+                otherBlock.classList.add('active');
             }
         });
         el2.addEventListener('click', function () {
             clearInput.value = '';
             clearInput.value = el2.value.replace(/\D/g, "");
             clearInput.style.border = '1px solid #000000';
+            otherBlock.classList.add('active');
             firstPageInput.classList.remove('active');
         });
     });
@@ -917,6 +920,10 @@ const CVVInputContainer = document.querySelector('.donation__popup-cvv-input-con
 const inputContainer = document.querySelectorAll('.donation__popup-input-container span');
 const popupCard = document.querySelector('.donation__popup-card');
 const popupCVV = document.querySelector('.donation__popup-cvv');
+const donationInformation = document.querySelector('.donation__popup-information');
+const disabledButton = document.querySelector('.donation__popup-btn-three');
+const specialBlock = document.querySelector('.donation__popup-special-block');
+const otherBlock = document.querySelector('.donation__popup-other-block');
 
 const choise = document.querySelectorAll('.donation__popup-choise');
 
@@ -930,12 +937,16 @@ const spanAll = [
     CVVInputContainer,
     inputContainer[1],
     inputContainer[2],
+    disabledButton,
+    specialBlock,
+    otherBlock
 ];
 
 popupFirstValidate.addEventListener('click', function () {
     if (inputPopupValidate[0].placeholder !== 'Choose your favourite') {
         btnMenuPanel[0].style.border = '1px solid #000000';
         firstPageSelect.classList.remove('active');
+        specialBlock.classList.add('active');
     }
     if (inputPopupValidate[0].placeholder !== 'Choose your favourite' && clearInput.value !== '') {
         buttonBlock[0].classList.add('hidden');
@@ -946,6 +957,7 @@ popupFirstValidate.addEventListener('keyup', function () {
     if (clearInput.value !== '') {
         clearInput.style.border = '1px solid #000000';
         firstPageInput.classList.remove('active');
+        otherBlock.classList.add('active');
     }
     if (inputPopupValidate[0].placeholder !== 'Choose your favourite' && clearInput.value !== '') {
         buttonBlock[0].classList.add('hidden');
@@ -993,6 +1005,7 @@ popupTwoValidate.addEventListener('keyup', function () {
     }
     if (validateEmail(inputEmail)) {
         inputEmail.style.border = '1px solid #000000';
+        donationInformation.style.marginTop = '';
         secondPageEmail.classList.remove('active');
     }
     if (inputName.value !== '' && inputEmail.value !== '') {
@@ -1006,6 +1019,7 @@ buttonBlock[1].addEventListener('click', function () {
         secondPageName.classList.add('active');
     } if (!validateEmail(inputEmail)) {
         inputEmail.style.border = '2px solid #ff8400';
+        donationInformation.style.marginTop = '20px';
         secondPageEmail.classList.add('active');
     }
 });
@@ -1044,30 +1058,25 @@ popupThreeValidate.addEventListener('mousemove', function () {
         !validateMonth(inputPopupValidate[1]) &&
         !validateYear(inputPopupValidate[2])) {
         buttonBlock[2].classList.add('hidden');
+        disabledButton.classList.add('active');
     }
 });
 
 buttonBlock[2].addEventListener('click', function () {
     if (validateCard(checkBoxCard)) {
         checkBoxCard.style.border = '2px solid #ff8400';
-        // creditError.classList.add('donation__popup-credit-error');
-        popupCard.style.marginTop = '-30px';
         cardInputContainer.classList.add('active');
     }
     if (validateCVV(checkBoxCVV)) {
         checkBoxCVV.style.border = '2px solid #ff8400';
-        // creditError.classList.add('donation__popup-credit-error');
-        popupCVV.style.marginTop = '-30px';
         CVVInputContainer.classList.add('active');
     }
     if (validateMonth(inputPopupValidate[1])) {
         inputPopupValidate[1].style.border = '2px solid #ff8400';
-        expirationError.classList.add('donation__popup-expiration-error');
         inputContainer[1].classList.add('active');
     }
     if (validateYear(inputPopupValidate[2])) {
         inputPopupValidate[2].style.border = '2px solid #ff8400';
-        expirationError.classList.add('donation__popup-expiration-error');
         inputContainer[2].classList.add('active');
     }
 });
@@ -1079,17 +1088,14 @@ for (let i = 4; i < 6; i++) {
         if (!validateCard(checkBoxCard)) {
             checkBoxCard.style.border = '1px solid #000000';
             cardInputContainer.classList.remove('active');
-            popupCard.style.marginTop = '';
         }
         if (!validateCVV(checkBoxCVV)) {
             checkBoxCVV.style.border = '1px solid #000000';
             CVVInputContainer.classList.remove('active');
-            popupCVV.style.marginTop = '';
         }
     });
 }
 
-// for (let i = 1; i < 3; i++) {
 popupThreeValidate.addEventListener('click', function () {
     if (!validateMonth(inputPopupValidate[1])) {
         inputPopupValidate[1].style.border = '1px solid #000000';
@@ -1099,11 +1105,12 @@ popupThreeValidate.addEventListener('click', function () {
         inputPopupValidate[2].style.border = '1px solid #000000';
         inputContainer[2].classList.remove('active');
     }
-    if (!validateMonth(inputPopupValidate[1] && !validateYear(inputPopupValidate[2]))) {
-        expirationError.classList.remove('donation__popup-expiration-error');
-    }
 });
-// }
+
+
+disabledButton.addEventListener('click', function() {
+    popupClose(document.getElementById('popup_3'));
+});
 
 
 

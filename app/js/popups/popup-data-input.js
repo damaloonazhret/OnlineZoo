@@ -37,6 +37,7 @@ inputLink.addEventListener('click', function () {
         searchButton();
         asyncTimeoutInput();
         clearInput.value = inputParent.value;
+        otherBlock.classList.add('active');
         inputParent.value = '';
     }
 });
@@ -59,12 +60,14 @@ buttonDollars.forEach(el2 => {
                 // el2.setAttribute('name', 'donationAmount');
                 clearInput.value = '';
                 clearInput.value = el2.value.replace(/\D/g, "");
+                otherBlock.classList.add('active');
             }
         });
         el2.addEventListener('click', function () {
             clearInput.value = '';
             clearInput.value = el2.value.replace(/\D/g, "");
             clearInput.style.border = '1px solid #000000';
+            otherBlock.classList.add('active');
             firstPageInput.classList.remove('active');
         });
     });

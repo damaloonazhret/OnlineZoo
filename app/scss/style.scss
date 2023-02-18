@@ -2868,6 +2868,9 @@ html.lock {
         &:hover {
             background: #05786e;
         }
+        &.active {
+            background: #05786e;
+        }
     }
 
     .block {
@@ -2937,8 +2940,8 @@ html.lock {
 
         span {
             position: absolute;
-            left: -240px;
-            top: -29px;
+            left: 1px;
+            top: 69px;
             color: red;
             display: none;
         }
@@ -3231,6 +3234,10 @@ html.lock {
         &:hover {
             background: #00a092;
         }
+
+        &.active {
+            background: #05786e;
+        }
     }
 
     &-checkbox {
@@ -3357,8 +3364,8 @@ html.lock {
 
         span {
             position: absolute;
-            left: 177px;
-            top: 0;
+            left: 1px;
+            top: 99px;
             color: red;
             display: none;
         }
@@ -3384,8 +3391,8 @@ html.lock {
 
         span {
             position: absolute;
-            left: 226px;
-            top: 0;
+            left: 1px;
+            top: 96px;
             color: red;
             display: none;
         }
@@ -3417,6 +3424,7 @@ html.lock {
         line-height: 150%;
         color: rgba(0, 0, 0, 0.7);
         width: 101%;
+        transition: 0.4s ease-in-out;
     }
 
     &-nav-two {
@@ -3468,8 +3476,8 @@ html.lock {
         position: relative;
         span {
             position: absolute;
-            left: 88px;
-            top: -28px;
+            left: 1px;
+            top: 71px;
             color: red;
             display: none;
         }
@@ -3482,8 +3490,8 @@ html.lock {
         position: relative;
         span {
             position: absolute;
-            left: 12px;
-            top: -28px;
+            left: 1px;
+            top: 71px;
             color: red;
             display: none;
         }
@@ -3622,8 +3630,8 @@ html.lock {
         grid-row: 2 / 3;
         span {
             position: absolute;
-            left: 4px;
-            top: -25px;
+            left: 1px !important;
+            top: 72px;
             color: red;
             display: none;
             width: 100%;
@@ -3651,10 +3659,10 @@ html.lock {
         transition: 0.4s ease-in-out;
     }
 
-    &-expiration-error{
-        row-gap: 40px;
-        margin-top: -30px;
-    }
+    // &-expiration-error{
+    //     row-gap: 40px;
+    //     margin-top: -30px;
+    // }
 
     &-btn-three {
         width: 359px;
@@ -3671,6 +3679,9 @@ html.lock {
         display: grid;
         align-content: center;
         justify-content: center;
+        transition: 0.4s ease-in-out;
+
+        
 
         &::after {
             content: "";
@@ -3683,8 +3694,12 @@ html.lock {
         }
     }
 
-    &-btn-three.disabled {
-        background: #ff7300;
+    &-btn-three.active {
+        background: #f58021;
+        opacity: 0.95;
+        &:hover {
+            background: #ff7300;
+        }
     }
 
     &-bg {
