@@ -969,7 +969,7 @@
               </div>
               <div name="price" class="donation__popup-price">
 
-                <input name="donationAmount" type="button" value="$10">
+                <input type="button" value="$10">
                 <input type="button" value="$20">
                 <input type="button" value="$30">
                 <input type="button" value="$50">
@@ -981,7 +981,7 @@
               <div class="donation__popup-other">
                 <div class="donation__popup-other-block">Other amount</div>
                 <div class="donation__popup-clear-block-container">
-                  <input autofocus required type="number" class="donation__popup-clear-block input-border">
+                  <input autofocus name="donationAmount" required type="number" class="donation__popup-clear-block input-border">
                   <span>Please enter the donation amount or select a quick donation.</span>
                 </div>
 
@@ -1040,7 +1040,6 @@
                 </div>
                 <div class="block">
                   <button id="mybtn" href="#popup_2" class="donation__popup-btn popup-link">next</button>
-
                 </div>
               </div>
 
@@ -1082,7 +1081,7 @@
                 </div>
                 <a href="#popup" class="donation__popup-backup popup-link">Back</a>
                 <div class="block">
-                  <button href="#popup_3" class="donation__popup-btn popup-link">next</button>
+                  <button href="#popup_3"  class="donation__popup-btn popup-link">next</button>
                 </div>
               </div>
 
@@ -1105,11 +1104,17 @@
                 <div class="donation__popup-card">
                   <p>*</p> Credit Card Number
                 </div>
-                <input name="cardNumber" type="number" class="donation__popup-card-input input-border" required>
+                <div class="donation__popup-card-input-container">
+                  <span>Card number must be 16 digits</span>
+                  <input name="cardNumber" type="text" onkeypress="return isNumberKey(event)" maxlength="16" class="donation__popup-card-input input-border" required>
+                </div>
                 <div class="donation__popup-cvv">
                   <p>*</p> CVV Number
                 </div>
-                <input name="cvv" type="number" class="donation__popup-cvv-input input-border" required>
+                <div class="donation__popup-cvv-input-container">
+                  <span>CVV must be 3 digits</span>
+                  <input name="cvv" type="text" maxlength="3" onkeypress="return isNumberKey(event)" class="donation__popup-cvv-input input-border" required>
+                </div>
               </div>
               <div class="donation__popup-expiration">
                 <div class="donation__popup-text">
@@ -1117,10 +1122,11 @@
                 </div>
 
                 <div id="donation_information_2" class="donation__popup-input-container">
+                  <span>Please check the month</span>
                   <div class="donation__popup-input-container-box">
                     <a class="popup-link-not-close" href="#popup_5">
                       <input name="expMonth" data-input type="number" readonly required placeholder="Month"
-                        class="donation__popup-input">
+                        class="donation__popup-input input-border">
                     </a>
                   </div>
 
@@ -1152,12 +1158,13 @@
                     </div>
                   </div>
                 </div>
-
+                
                 <div id="donation_information_3" class="donation__popup-input-container">
+                  <span>Please check the year</span>
                   <div class="donation__popup-input-container-box">
                     <a class="popup-link-not-close" href="#popup_6">
                       <input name="expYear" data-input type="number" readonly required placeholder="Year"
-                        class="donation__popup-input">
+                        class="donation__popup-input input-border">
                     </a>
                   </div>
 
@@ -1194,7 +1201,9 @@
                   <p class="active"></p>
                 </div>
                 <a href="#popup_2" class="donation__popup-backup popup-link">Back</a>
-                <button id="disabled-button" type="submit" class="donation__popup-btn-three">complete donation</button>
+                <div class="block block-width">
+                  <button id="disabled-button" type="submit" class="donation__popup-btn-three">complete donation</button>
+                </div>
               </div>
 
             </div>

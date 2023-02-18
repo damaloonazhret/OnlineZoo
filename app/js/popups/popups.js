@@ -12,7 +12,6 @@ const checkBoxCard = document.querySelector('.donation__popup-card-input');
 const checkBoxCVV = document.querySelector('.donation__popup-cvv-input');
 const checkDate = document.querySelectorAll('.donation__popup-input');
 const inputBorder = document.querySelectorAll('.input-border');
-console.log(checkDate);
 
 
 
@@ -47,7 +46,7 @@ function popupOpen(curentPopup) {
             bodyLock();
         }
         curentPopup.classList.add('open');
-        curentPopup.addEventListener("click", function (e) {
+        curentPopup.addEventListener("mousedown", function (e) {
             if (!e.target.closest('.donation__popup-box')) {
                 popupClose(e.target.closest('.donation__popup'));
             }
@@ -83,6 +82,8 @@ function popupClose(popupActive, doUnlock = true) {
                     inputBorder.forEach(el => {
                         el.style.border = '1px solid #000000';
                     });
+                    expirationError.classList.remove('donation__popup-expiration-error');
+                    creditError.classList.remove('donation__popup-credit-error');
                 }
         }, 100);
 

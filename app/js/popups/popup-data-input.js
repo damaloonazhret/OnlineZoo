@@ -56,7 +56,7 @@ buttonDollars.forEach(el2 => {
             if (el.textContent == el2.value) {
                 searchButton();
                 el2.classList.add('active');
-                el2.setAttribute('name', 'donationAmount');
+                // el2.setAttribute('name', 'donationAmount');
                 clearInput.value = '';
                 clearInput.value = el2.value.replace(/\D/g, "");
             }
@@ -76,7 +76,7 @@ buttonDollars.forEach(el => {
         if (!el.classList.contains('active')) {
             searchButton();
             el.classList.add('active');
-            el.setAttribute('name', 'donationAmount');
+            // el.setAttribute('name', 'donationAmount');
         }
     });
 });
@@ -85,14 +85,14 @@ function searchButton() {
     buttonDollars.forEach(el => {
         if (el.classList.contains('active')) {
             el.classList.remove('active');
-            el.removeAttribute('name');
-            clearInput.removeAttribute('name');
+            // el.removeAttribute('name');
+            // clearInput.removeAttribute('name');
         }
     });
 }
 
 clearInput.addEventListener('click', function () {
-    clearInput.setAttribute('name', 'donationAmount');
+    // clearInput.setAttribute('name', 'donationAmount');
     searchButton();
 });
 
@@ -130,17 +130,19 @@ applicantForms.addEventListener('submit', handleFormSubmit);
 //     console.log(obj);
 // }
 
+
+
 function serializeForm(formNode) {
     const { elements } = formNode;
 
     Array.from(elements)
+    .filter((item) => !!item.name)
         .map((element) => {
             const { name, type } = element;
             const value = type === 'checkbox' ? element.checked : element.value;
             formData[name] = value;
             return { name, value };
         })
-        .filter((item) => !!item.name);
     console.log(formData);
 }
 
@@ -171,15 +173,15 @@ selectItem(donationInformationSelectTwo, donationInformationInputTwo);
 selectItem(donationInformationSelectThree, donationInformationInputThree);
 
 const formData = {
-    donationAmount: '',
-    specialPet: '',
-    isGift: false,
-    fullName: '',
-    email: '',
-    cardNumber: '',
-    cvv: '',
-    expMonth: '',
-    expYear: '',
+    // donationAmount: '',
+    // specialPet: '',
+    // isGift: false,
+    // fullName: '',
+    // email: '',
+    // cardNumber: '',
+    // cvv: '',
+    // expMonth: '',
+    // expYear: '',
 };
 
 
