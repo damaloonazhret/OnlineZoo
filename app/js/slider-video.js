@@ -1,20 +1,32 @@
 const videoPlaceholder = document.querySelector(".video-menu__box");
+const videoPlaceholder2 = document.querySelector(".video-menu__box");
 
 console.log(videoPlaceholder);
 
-const asideCards = (animal) => {
-return `
-    <div class="video-animals-open">
-		<a href="${animal.href}">
-			<div class="video-animal-block">
-                ${animal.src}
-				<p>${animal.text}</p>
-			</div>
-		</a>
-		<p></p>
+// const asideCards = (animal) => {
+// return `
+//     <div class="video-animals-open">
+// 		<a href="${animal.href}">
+// 			<div class="video-animal-block">
+//                 ${animal.src}
+// 				<p>${animal.text}</p>
+// 			</div>
+// 		</a>
+// 		<p></p>
+//     </div>
+// `;
+// };
+
+const asideCards2 = (animal) => {
+    return `
+    <div class="video-animals--1 video-animals--hov video-animals--nobg">
+        <a href="${animal.href}">
+            ${animal.src}
+        </a>
+        <p></p>
     </div>
-`;
-};
+    `;
+    };
 
 
 const asideClose = [
@@ -24,7 +36,7 @@ const asideClose = [
         </svg>
         `,
         href: `cams.html`,
-        class: `video-animals--active`
+        class: `video-animals--active`,
     },
     {
         src: `<svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,16 +159,23 @@ const asideOpened = [
     },
 ];
 
-const createListWithInnerHTML2 = (asideOpened) => {
-    const asideCloseCard = asideOpened.map(asideCards);
-    // const rowsBottom = slidesBottom.map(mapCards);
+// const createListWithInnerHTML2 = (asideOpened) => {
+//     const asideCloseCard = asideOpened.map(asideCards);
+
+//     const html2 = `${asideCloseCard.join(' ')}`;
+//     videoPlaceholder.innerHTML = html2;
+// };
+// createListWithInnerHTML2(asideOpened);
+
+
+
+const createListWithInnerHTML3 = (asideClose) => {
+    const asideCloseCard = asideClose.map(asideCards2);
 
     const html2 = `${asideCloseCard.join(' ')}`;
-    // <div class="pets-bottom__row-2" >${rowsBottom.join(' ')}</div>`;
     videoPlaceholder.innerHTML = html2;
 };
-
-createListWithInnerHTML2(asideOpened);
+createListWithInnerHTML3(asideClose);
 
 
 

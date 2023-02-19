@@ -7,3 +7,4 @@
 //=require ./popups/validation.js
 //=require ./slider-bottom-points.js
 //=require ./slider-video.js
+//=require ./slider-video-work.js
