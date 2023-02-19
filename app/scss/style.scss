@@ -1904,6 +1904,9 @@ html.lock {
         position: sticky;
         top: 0;
         z-index: 500;
+        &.open {
+            width: 300px;
+        }
     }
 
     &-animals--openbtn {
@@ -1913,13 +1916,25 @@ html.lock {
         height: 80px;
         background: url(../images/cam/double-arrows.svg) 85% 46% no-repeat;
         transition: 0.8s;
-
+        
         &:hover {
             transform: translateX(7px);
         }
-
+        
         &:hover::after {
             transform: translateX(-7px);
+        }
+        
+        &.active {
+            width: 300px;
+            background: url(../images/cam/doublearrowsx.svg) 90% 46% no-repeat;
+            &:hover {
+                transform: translateX(-7px);
+            }
+    
+            &:hover::after {
+                transform: translateX(7px);
+            }
         }
 
         &::after {
@@ -1963,24 +1978,88 @@ html.lock {
             top: -14px;
             transition: 0.8s;
         }
+
+        &.active{
+            &::after {
+                width: 300px;
+            }
+        }
     }
 
     &-menu__box {
         overflow: hidden;
     }
 
+    // &-animals--1 {
+    //     position: relative;
+    //     width: 220px;
+    //     height: 171px;
+    //     background-image: url(../images/cam/elipseorange.svg);
+    //     background-repeat: no-repeat;
+    //     background-position: 50%;
+    //     border-top: 1px solid #ffffff;
+    //     /* border-bottom: 1px solid #FFFFFF; */
+    //     cursor: pointer;
+
+    //     svg {
+    //         width: 80px;
+    //         height: 60px;
+    //         position: absolute;
+    //         left: 70px;
+    //         top: 49px;
+    //     }
+    // }
+
+    &-animals-open {
+        width: 300px;
+        height: 171px;
+        cursor: pointer;
+        transition: 0.2s;
+        border-top: 1px solid #fff;
+        margin-top: 1px;
+    }
+
+    &-animal-block {
+        position: relative;
+        svg {
+            position: absolute;
+            left: 23px;
+            top: 39px;
+            width: 66.67px;
+            height: 50px;
+            cursor: pointer;
+        }
+        p {
+            position: absolute;
+            left: 114px;
+            top: 38px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 130%;
+            color: #ffffff;
+            width: 169px;
+        }
+    }
+
     &-animals--1 {
         position: relative;
         width: 220px;
         height: 171px;
-        background-image: url(../images/cam/elipseorange.svg);
+        // background-image: url(../images/cam/elipseorange.svg);
         background-repeat: no-repeat;
         background-position: 50%;
         border-top: 1px solid #ffffff;
-        /* border-bottom: 1px solid #FFFFFF; */
         cursor: pointer;
 
-        img {
+        &:hover {
+            a {
+                svg {
+                    fill: #000000;
+                }
+            }
+        }
+
+        svg {
             width: 80px;
             height: 60px;
             position: absolute;
@@ -1999,7 +2078,7 @@ html.lock {
         border-top: 1px solid #ffffff;
         /* border-bottom: 1px solid #FFFFFF; */
 
-        img {
+        svg {
             width: 80px;
             height: 60px;
             position: absolute;
@@ -2018,7 +2097,7 @@ html.lock {
         border-top: 1px solid #ffffff;
         /* border-bottom: 1px solid #FFFFFF; */
 
-        img {
+        svg {
             width: 80px;
             height: 60px;
             position: absolute;
@@ -2043,7 +2122,7 @@ html.lock {
         border-top: 1px solid #ffffff;
         /* border-bottom: 1px solid #FFFFFF; */
 
-        img {
+        svg {
             width: 80px;
             height: 60px;
             position: absolute;
@@ -2062,7 +2141,7 @@ html.lock {
         border-top: 1px solid #ffffff;
         /* border-bottom: 1px solid #FFFFFF; */
 
-        img {
+        svg {
             width: 80px;
             height: 60px;
             position: absolute;
@@ -2081,7 +2160,7 @@ html.lock {
         border-top: 1px solid #ffffff;
         /* border-bottom: 1px solid #FFFFFF; */
 
-        img {
+        svg {
             width: 80px;
             height: 60px;
             position: absolute;
@@ -2100,7 +2179,7 @@ html.lock {
         border-top: 1px solid #ffffff;
         /* border-bottom: 1px solid #FFFFFF; */
 
-        img {
+        svg {
             width: 80px;
             height: 60px;
             position: absolute;
@@ -2119,7 +2198,7 @@ html.lock {
         border-top: 1px solid #ffffff;
         /* border-bottom: 1px solid #FFFFFF; */
 
-        img {
+        svg {
             width: 80px;
             height: 60px;
             position: absolute;
@@ -3640,7 +3719,7 @@ html.lock {
         span.active {
             display: block;
         }
-        &:last-child span{
+        &:last-child span {
             left: 14px;
         }
     }
@@ -3680,8 +3759,6 @@ html.lock {
         align-content: center;
         justify-content: center;
         transition: 0.4s ease-in-out;
-
-        
 
         &::after {
             content: "";
@@ -3845,6 +3922,14 @@ form {
 
 #popup_bottom {
     z-index: 10;
+}
+
+.svg-white {
+    &:hover {
+        path {
+            fill: #ffffff;
+        }
+    }
 }
 
 @import "media";

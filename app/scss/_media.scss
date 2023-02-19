@@ -383,8 +383,8 @@ footer {
 		&__box {
 			grid-template-columns: repeat(2, 100%);
 			grid-template-rows: repeat(4, auto);
-		// 	gap: 55px;
-		// 	padding-top: 100px;
+			// 	gap: 55px;
+			// 	padding-top: 100px;
 		}
 
 		.pets-toddler {
@@ -423,11 +423,11 @@ footer {
 		}
 
 		&__box-slider {
-		// 	margin-right: -40px;
-		grid-row: 2 / 3;
-		grid-column: 1 / 2;
-		margin-left: -20px;
-		justify-self: start;
+			// 	margin-right: -40px;
+			grid-row: 2 / 3;
+			grid-column: 1 / 2;
+			margin-left: -20px;
+			justify-self: start;
 		}
 
 		// &__box-slider-strip{
@@ -1313,7 +1313,7 @@ footer {
 		}
 
 		&-slider-strip {
-			grid-template-columns: repeat(20, 523px);			
+			grid-template-columns: repeat(20, 523px);
 			gap: 20px;
 		}
 
@@ -1382,9 +1382,11 @@ footer {
 
 		&-animals__mobile-slider {
 			display: grid;
-			grid-template-columns: repeat(4, 600px);
+			grid-template-columns: repeat(5, 600px);
 			column-gap: 40px;
 			row-gap: 50px;
+			width: 3160px;
+			transition: 0.5s ease-in-out;
 		}
 
 		&-animals__mobile-box {
@@ -1466,17 +1468,36 @@ footer {
 		&-animals__mobile-points {
 			display: grid;
 			justify-content: center;
-			grid-template-columns: repeat(4, auto);
-			column-gap: 20px;
+			grid-template-columns: repeat(4, 40px);
+			grid-template-rows: 40px;
 			grid-column: 1 / 4;
-			width: 100vw;
-			margin-left: -10px;
-
+			width: 160px;
+			padding-top: 30px;
+			margin: 0 auto;
+			align-items: center;
+			justify-items: center;
+			
 			div {
-				border: 1px solid #000000;
-				border-radius: 50%;
-				width: 8px;
-				height: 8px;
+				width: 30px;
+				height: 30px;
+				position: relative;
+				cursor: pointer;
+				&::after {
+					content: "";
+					position: absolute;
+					left: 11px;
+					top: 11px;				
+					width: 8px;
+					height: 8px;
+					border: 1px solid #000000;
+					border-radius: 50%;
+				}
+			}
+
+			div.active {
+				&::after {
+					background-color: #000000;
+				}
 			}
 		}
 
@@ -1928,7 +1949,7 @@ footer {
 		}
 	}
 
-	.menu__btn{
+	.menu__btn {
 		margin-right: 10px;
 	}
 

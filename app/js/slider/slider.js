@@ -1,5 +1,8 @@
 const animalPlaceholder = document.querySelector(".pets-bottom");
 
+
+
+
 const mapCards = (animal) => {
 	return `
 		<div class="pets-bottom__card card-${animal.id} ${animal.status}" style="left:0" id="${animal.idi}">
