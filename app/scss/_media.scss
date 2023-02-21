@@ -804,6 +804,39 @@ footer {
 			}
 		}
 
+
+		&-animals--openbtned {
+			position: relative;
+			&::after {
+			position: absolute;
+			content: "LIVE";
+			background-color: #f58021;
+			border-radius: 0px 0px 5px 0px;
+			width: 120px;
+			height: 38px;
+			background-image: url(../images/cam/cam.svg);
+			background-repeat: no-repeat;
+			background-position: 75% 50%;
+			font-family: "Montserrat";
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 22px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			text-transform: uppercase;
+			color: #fff;
+			padding-left: 25px;
+			-webkit-transition: .8s;
+			-o-transition: .8s;
+			transition: .8s;
+			z-index: 1000000;
+		}
+	}
+
 		&__head-more-slider-box-img-2 {
 			img {
 				object-fit: cover;
