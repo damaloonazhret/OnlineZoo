@@ -1892,8 +1892,6 @@ html.lock {
         transition: all 0.4s;
     }
 
-
-
     &-menu {
         width: 220px;
         height: 846px;
@@ -1985,12 +1983,12 @@ html.lock {
     }
 
     &-menu__box {
-        // overflow: hidden;
         width: 300px;
     }
 
     &-menu__box-open {
-        height: 691.99px;
+        // height: 691.99px;
+        height: 1375px;
         // overflow: hidden;
         position: absolute;
         top: 0;
@@ -2003,12 +2001,16 @@ html.lock {
             visibility: visible;
             transform: translateX(0);
         }
+        &:last-child {
+            border-bottom: 1px solid rgb(255, 255, 255);
+        }
     }
 
     &-menu__box-container {
         width: 220px;
         overflow: hidden;
         position: relative;
+        // display: none;
         &.active {
             width: 300px;
         }
@@ -2051,7 +2053,7 @@ html.lock {
     &-animals-open {
         width: 300px;
 
-        height: 171px;
+        height: 170px;
         cursor: pointer;
         transition: 0.2s;
         border-top: 1px solid #fff;

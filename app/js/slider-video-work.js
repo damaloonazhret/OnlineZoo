@@ -1,31 +1,42 @@
-const openBtn = document.querySelector('.video-animals--openbtn');
-const videoBtn = document.querySelector('.video-animals--btn');
+const openBtn = document.querySelectorAll('.video-animals--openbtn');
+const videoBtn = document.querySelectorAll('.video-animals--btn');
 const videoBtnAfter = document.querySelector('.video-animals--btn');
 const videoMenu = document.querySelector('.video-menu');
-const videoMenuBoxContainer = document.querySelector('.video-menu__box-container');
+const videoMenuBoxContainer = document.querySelectorAll('.video-menu__box-container');
 const videoMenuhov = document.querySelectorAll('.video-animals--hov');
-const videoMenuBoxOpen = document.querySelector('.video-menu__box-open');
-const videoMenuBox = document.querySelector('.video-menu__box');
+const videoMenuBoxOpen = document.querySelectorAll('.video-menu__box-open');
+const videoMenuBox = document.querySelectorAll('.video-menu__box');
+const menuMobile = document.querySelector('.video-menu__mobile');
 
-openBtn.addEventListener('click', function () {
-    videoMenuhov.forEach(el => {
-        el.classList.toggle('disable');
+
+
+for (let i = 0; i < 2; i++) {
+    openBtn[i].addEventListener('click', function () {
+        videoMenuhov.forEach(el => {
+            el.classList.toggle('disable');
+        });
+        videoMenuBoxOpen[i].classList.toggle('active');
+        videoMenu.classList.toggle('active');
+        openBtn[i].classList.toggle('active');
+        videoBtn[i].classList.toggle('active');
+        menuMobile.classList.toggle('active');
+        videoMenuBoxContainer[i].classList.toggle('active');
     });
-    videoMenuBoxOpen.classList.toggle('active');
-    videoMenu.classList.toggle('active');
-    openBtn.classList.toggle('active');
-    videoBtn.classList.toggle('active');
-    videoMenuBoxContainer.classList.toggle('active');
 
-});
+    let indexV = 1;
+    videoBtn[i].addEventListener('click', function () {
+        const arrMax = [];
+        videoMenuhov.forEach(el => {
+            arrMax.push(el.clientHeight);
+        });
+        const maximum = Math.max(...arrMax);
+        videoMenuBoxOpen[i].style.transform = 'translateY(' + (-maximum * indexV) + 'px';
+        videoMenuBox[i].style.transform = 'translateY(' + (-maximum * indexV) + 'px';
+        indexV++;
+        if (indexV == 5) {
+            indexV = 0;
+        }
+    });
+}
 
 
-let indexV = 1;
-videoBtnAfter.addEventListener('click', function () {
-    videoMenuBoxOpen.style.transform = 'translateY(' + (-171 * indexV) + 'px';
-    videoMenuBox.style.transform = 'translateY(' + (-171 * indexV) + 'px';
-    indexV++;
-    if (indexV == 5) {
-        indexV = 0;
-    }
-});
