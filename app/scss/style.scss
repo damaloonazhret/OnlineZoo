@@ -2001,9 +2001,10 @@ html.lock {
             visibility: visible;
             transform: translateX(0);
         }
-        &:last-child {
-            border-bottom: 1px solid rgb(255, 255, 255);
-        }
+    }
+
+    &-animals-open-bottom {
+        border-bottom: 1px solid #FFFFFF;
     }
 
     &-menu__box-container {
@@ -2121,7 +2122,6 @@ html.lock {
         background-repeat: no-repeat;
         background-position: 50%;
         border-top: 1px solid #ffffff;
-        /* border-bottom: 1px solid #FFFFFF; */
 
         svg {
             width: 80px;
@@ -2140,7 +2140,6 @@ html.lock {
         background-repeat: no-repeat;
         background-position: 50%;
         border-top: 1px solid #ffffff;
-        /* border-bottom: 1px solid #FFFFFF; */
 
         svg {
             width: 80px;
@@ -2165,7 +2164,6 @@ html.lock {
         background-repeat: no-repeat;
         background-position: 50%;
         border-top: 1px solid #ffffff;
-        /* border-bottom: 1px solid #FFFFFF; */
 
         svg {
             width: 80px;
@@ -2184,7 +2182,6 @@ html.lock {
         background-repeat: no-repeat;
         background-position: 50%;
         border-top: 1px solid #ffffff;
-        /* border-bottom: 1px solid #FFFFFF; */
 
         svg {
             width: 80px;
@@ -2203,7 +2200,6 @@ html.lock {
         background-repeat: no-repeat;
         background-position: 50%;
         border-top: 1px solid #ffffff;
-        /* border-bottom: 1px solid #FFFFFF; */
 
         svg {
             width: 80px;
@@ -2222,7 +2218,6 @@ html.lock {
         background-repeat: no-repeat;
         background-position: 50%;
         border-top: 1px solid #ffffff;
-        /* border-bottom: 1px solid #FFFFFF; */
 
         svg {
             width: 80px;
@@ -2241,7 +2236,7 @@ html.lock {
         background-repeat: no-repeat;
         background-position: 50%;
         border-top: 1px solid #ffffff;
-        /* border-bottom: 1px solid #FFFFFF; */
+        border-bottom: 1px solid #FFFFFF;
 
         svg {
             width: 80px;

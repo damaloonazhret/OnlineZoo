@@ -806,17 +806,21 @@ footer {
 
 
 		&-animals--openbtned {
-			position: relative;
-			&::after {
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.4s ease-in-out;
 			position: absolute;
+			left: 0;
+			top: -1px;
+			&::after {
 			content: "LIVE";
 			background-color: #f58021;
 			border-radius: 0px 0px 5px 0px;
-			width: 120px;
-			height: 38px;
+			width: 144px;
+			height: 40px;
 			background-image: url(../images/cam/cam.svg);
 			background-repeat: no-repeat;
-			background-position: 75% 50%;
+			background-position: 72% 50%;
 			font-family: "Montserrat";
 			font-weight: 600;
 			font-size: 18px;
@@ -829,11 +833,14 @@ footer {
 			align-items: center;
 			text-transform: uppercase;
 			color: #fff;
-			padding-left: 25px;
+			padding-left: 35px;
 			-webkit-transition: .8s;
 			-o-transition: .8s;
 			transition: .8s;
-			z-index: 1000000;
+		}
+		&.active{
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 
@@ -941,9 +948,9 @@ footer {
 			grid-template-rows: 173px;
 		}
 
-		&-animals--nobg {
-			border-bottom: none;
-		}
+		// &-animals--nobg {
+		// 	border-bottom: none;
+		// }
 
 		&-animals--openbtn {
 			cursor: pointer;
@@ -1681,7 +1688,7 @@ footer {
 
 	.video {
 		&__head-video {
-			grid-template-columns: 542px;
+			grid-template-columns: minmax(542px, 815px);
 			grid-template-rows: 402px;
 			justify-self: end;
 			padding-top: 21px;
@@ -1720,8 +1727,15 @@ footer {
 			p {
 				left: 94px;
 				top: 0px;
-				width: 150px;
+				width: 145px;
 			}
+		}
+
+		&-animals--openbtned::after {
+			width: 91px;
+			height: 30px;
+			background-position: 85% 35%;
+			padding-left: 11px;
 		}
 
 		&-animals-open {
@@ -2720,6 +2734,14 @@ footer {
 		}
 	}
 
+	.videovs {
+		grid-template-columns: 40px 100%;
+		.container {
+			justify-self: end;
+			// align-self: end;
+		}
+	}
+
 	.video {
 		&__head-top-title {
 			font-weight: 500;
@@ -2728,8 +2750,8 @@ footer {
 		}
 
 		&__head-video {
-			grid-template-columns: 270px;
-			grid-template-rows: 200px;
+			grid-template-columns: minmax(270px, 530px);
+			grid-template-rows: minmax(200px, 200px);
 		}
 
 		&-animals--openbtn {
