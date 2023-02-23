@@ -54,8 +54,29 @@ gulp.task('js-include', () => {
     .pipe(gulp.dest('app/dist/js'));
 })
 
-gulp.task('js-include2', () => {
-  return gulp.src('app/js/slider-main.js')
+gulp.task('js-panda', () => {
+  return gulp.src('app/js/slider-panda-main.js')
+    .pipe(include())
+    .on('error', console.log)
+    .pipe(gulp.dest('app/dist/js/slider'));
+})
+
+gulp.task('js-eagles', () => {
+  return gulp.src('app/js/slider-eagles-main.js')
+    .pipe(include())
+    .on('error', console.log)
+    .pipe(gulp.dest('app/dist/js/slider'));
+})
+
+gulp.task('js-lemur', () => {
+  return gulp.src('app/js/slider-lemur-main.js')
+    .pipe(include())
+    .on('error', console.log)
+    .pipe(gulp.dest('app/dist/js/slider'));
+})
+
+gulp.task('js-gorila', () => {
+  return gulp.src('app/js/slider-gorila-main.js')
     .pipe(include())
     .on('error', console.log)
     .pipe(gulp.dest('app/dist/js/slider'));
@@ -103,10 +124,10 @@ gulp.task('export', async function () {
 gulp.task('watch', function () {
   gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'));
   gulp.watch('app/*.html', gulp.parallel('html'));
-  gulp.watch('app/js/**/*.js', gulp.parallel('js-include', 'script'));
-  gulp.watch('app/js/**/*.js', gulp.parallel('js-include2', 'script'));
+  gulp.watch('app/js/**/*.js', gulp.parallel('js-include', 'js-panda', 'js-eagles', 'js-lemur', 'js-gorila', 'script'));
+  // gulp.watch('app/js/**/*.js', gulp.parallel('js-panda', 'script'));
 });
 
 gulp.task('build', gulp.series('clean', 'export'));
 
-gulp.task('default', gulp.parallel('css', 'scss', 'js', 'js-include', 'js-include2', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('css', 'scss', 'js', 'js-include', 'js-panda', 'js-eagles', 'js-lemur', 'js-gorila', 'browser-sync', 'watch'));

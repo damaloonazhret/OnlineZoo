@@ -8,9 +8,11 @@ const videoMenuBoxOpen = document.querySelectorAll('.video-menu__box-open');
 const videoMenuBox = document.querySelectorAll('.video-menu__box');
 const menuMobile = document.querySelector('.video-menu__mobile');
 const openBtned = document.querySelector('.video-animals--openbtned');
+const videoPlaceholder = document.querySelector('.video__head-video');
 
 for (let i = 0; i < 2; i++) {
-    openBtn[i].addEventListener('click', function () {
+    openBtn[i].addEventListener('click', function (e) {
+        e.preventDefault();
         videoMenuhov.forEach(el => {
             el.classList.toggle('disable');
         });
@@ -39,30 +41,21 @@ for (let i = 0; i < 2; i++) {
     });
 }
 
-const videoPlaceholder = document.querySelector('.video__head-video');
-
-
-
-
-
-
-
-
-
-const videoSlider = document.querySelectorAll('.video__head-more-slider-box div');
-const videoNextStart = `<iframe src="https://www.youtube.com/embed/sa3lP0Odkq4" title="YouTube video player"
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+const videoSliderGorrila = document.querySelectorAll('.slider-box-gorila div');
+const videoNextStartGorrila = `<iframe src="https://www.youtube.com/embed/VC8I4OQY7sE" title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>`;
-const videoNext = `<iframe src="https://www.youtube.com/embed/ZkcOKC6XDJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-const videoNextTwo = `<iframe src="https://www.youtube.com/embed/Dw3WNgL8PxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-videoSlider[0].addEventListener('click', function() {
-    videoPlaceholder.innerHTML = videoNextStart;
+const videoNextGorrila = `<iframe src="https://www.youtube.com/embed/iAIi5DZddkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+const videoNextTwoGorrila = `<iframe src="https://www.youtube.com/embed/x7O17LygDVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+videoSliderGorrila[0].addEventListener('click', function() {
+    videoPlaceholder.innerHTML = videoNextStartGorrila;
 });
-videoSlider[1].addEventListener('click', function() {
-    videoPlaceholder.innerHTML = videoNext;
+videoSliderGorrila[1].addEventListener('click', function() {
+    videoPlaceholder.innerHTML = videoNextGorrila;
 });
-videoSlider[2].addEventListener('click', function() {
-    videoPlaceholder.innerHTML = videoNextTwo;
+videoSliderGorrila[2].addEventListener('click', function() {
+    videoPlaceholder.innerHTML = videoNextTwoGorrila;
 });
 const iconMenu = document.querySelector('.menu__btn');
 if (iconMenu) {

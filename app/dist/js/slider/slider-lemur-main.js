@@ -8,9 +8,11 @@ const videoMenuBoxOpen = document.querySelectorAll('.video-menu__box-open');
 const videoMenuBox = document.querySelectorAll('.video-menu__box');
 const menuMobile = document.querySelector('.video-menu__mobile');
 const openBtned = document.querySelector('.video-animals--openbtned');
+const videoPlaceholder = document.querySelector('.video__head-video');
 
 for (let i = 0; i < 2; i++) {
-    openBtn[i].addEventListener('click', function () {
+    openBtn[i].addEventListener('click', function (e) {
+        e.preventDefault();
         videoMenuhov.forEach(el => {
             el.classList.toggle('disable');
         });
@@ -39,30 +41,18 @@ for (let i = 0; i < 2; i++) {
     });
 }
 
-const videoPlaceholder = document.querySelector('.video__head-video');
-
-
-
-
-
-
-
-
-
-const videoSlider = document.querySelectorAll('.video__head-more-slider-box div');
-const videoNextStart = `<iframe src="https://www.youtube.com/embed/sa3lP0Odkq4" title="YouTube video player"
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>`;
-const videoNext = `<iframe src="https://www.youtube.com/embed/ZkcOKC6XDJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-const videoNextTwo = `<iframe src="https://www.youtube.com/embed/Dw3WNgL8PxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-videoSlider[0].addEventListener('click', function() {
-    videoPlaceholder.innerHTML = videoNextStart;
+const videoSliderLemur = document.querySelectorAll('.slider-box-lemur div');
+const videoNextStartLemur = `<iframe src="https://www.youtube.com/embed/TH__ublmwDw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+const videoNextLemur = `<iframe src="https://www.youtube.com/embed/j7rPzCmYygg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+const videoNextTwoLemur = `<iframe src="https://www.youtube.com/embed/_2f2bhbtYFw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+videoSliderLemur[0].addEventListener('click', function() {
+    videoPlaceholder.innerHTML = videoNextStartLemur;
 });
-videoSlider[1].addEventListener('click', function() {
-    videoPlaceholder.innerHTML = videoNext;
+videoSliderLemur[1].addEventListener('click', function() {
+    videoPlaceholder.innerHTML = videoNextLemur;
 });
-videoSlider[2].addEventListener('click', function() {
-    videoPlaceholder.innerHTML = videoNextTwo;
+videoSliderLemur[2].addEventListener('click', function() {
+    videoPlaceholder.innerHTML = videoNextTwoLemur;
 });
 const iconMenu = document.querySelector('.menu__btn');
 if (iconMenu) {
