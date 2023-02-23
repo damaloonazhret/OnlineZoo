@@ -41,6 +41,16 @@ for (let i = 0; i < 2; i++) {
     });
 }
 
+const headerPageWidth = (document.querySelector('.header-page').clientWidth);
+let borderImage = `3px solid #f58021`;
+if (headerPageWidth < 656) {
+    borderImage = `2px solid #f58021`;
+}
+function checkBorder() {
+for (let i = 0; i < 7; i++) {
+    videoSliderEagles[i].children[0].style.border = '2px solid #f5802100';
+    }
+}
 const videoSliderLemur = document.querySelectorAll('.slider-box-lemur div');
 const videoNextStartLemur = `<iframe src="https://www.youtube.com/embed/TH__ublmwDw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
 const videoNextLemur = `<iframe src="https://www.youtube.com/embed/j7rPzCmYygg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;

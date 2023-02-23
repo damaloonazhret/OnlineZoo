@@ -40,3 +40,14 @@ for (let i = 0; i < 2; i++) {
         }
     });
 }
+
+const headerPageWidth = (document.querySelector('.header-page').clientWidth);
+let borderImage = `3px solid #f58021`;
+if (headerPageWidth < 656) {
+    borderImage = `2px solid #f58021`;
+}
+function checkBorder() {
+for (let i = 0; i < 7; i++) {
+    videoSliderEagles[i].children[0].style.border = '2px solid #f5802100';
+    }
+}
