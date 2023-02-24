@@ -1,8 +1,3 @@
-const svg = document.querySelectorAll('svg path');
-
-svg.forEach(el => {
-    el.style.transition = '0.4s ease-in-out';
-});
 const openBtn = document.querySelectorAll('.video-animals--openbtn');
 const videoBtn = document.querySelectorAll('.video-animals--btn');
 const videoBtnAfter = document.querySelector('.video-animals--btn');
@@ -12,6 +7,7 @@ const videoMenuhov = document.querySelectorAll('.video-animals--hov');
 const videoMenuBoxOpen = document.querySelectorAll('.video-menu__box-open');
 const videoMenuBox = document.querySelectorAll('.video-menu__box');
 const menuMobile = document.querySelector('.video-menu__mobile');
+const openBtned = document.querySelector('.video-animals--openbtned');
 
 for (let i = 0; i < 2; i++) {
     openBtn[i].addEventListener('click', function () {
@@ -24,6 +20,7 @@ for (let i = 0; i < 2; i++) {
         videoBtn[i].classList.toggle('active');
         menuMobile.classList.toggle('active');
         videoMenuBoxContainer[i].classList.toggle('active');
+        openBtned.classList.toggle('active');
     });
 
     let indexV = 1;
@@ -41,6 +38,32 @@ for (let i = 0; i < 2; i++) {
         }
     });
 }
+
+const videoPlaceholder = document.querySelector('.video__head-video');
+
+
+
+
+
+
+
+
+
+const videoSlider = document.querySelectorAll('.video__head-more-slider-box div');
+const videoNextStart = `<iframe src="https://www.youtube.com/embed/sa3lP0Odkq4" title="YouTube video player"
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>`;
+const videoNext = `<iframe src="https://www.youtube.com/embed/ZkcOKC6XDJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+const videoNextTwo = `<iframe src="https://www.youtube.com/embed/Dw3WNgL8PxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+videoSlider[0].addEventListener('click', function() {
+    videoPlaceholder.innerHTML = videoNextStart;
+});
+videoSlider[1].addEventListener('click', function() {
+    videoPlaceholder.innerHTML = videoNext;
+});
+videoSlider[2].addEventListener('click', function() {
+    videoPlaceholder.innerHTML = videoNextTwo;
+});
 const iconMenu = document.querySelector('.menu__btn');
 if (iconMenu) {
 	iconMenu.addEventListener("click", function (e) {
@@ -76,4 +99,10 @@ document.addEventListener("click", function (e) {
 	if (!itsMenu && !itsBtnMenu && menuIsActive) {
 		toggleMenu();
 	}
+});
+
+const svg = document.querySelectorAll('svg path');
+
+svg.forEach(el => {
+    el.style.transition = '0.4s ease-in-out';
 });
