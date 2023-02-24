@@ -107,6 +107,14 @@ footer {
 }
 
 @media (max-width: 1440px) {
+	.video__head-top-btn {
+		a {
+			&::after{
+				top: 15px;
+			}
+		}
+	}
+
 	.header-page {
 		.container {
 			padding: 0 100px;
@@ -1003,6 +1011,15 @@ footer {
 			}
 		}
 
+		&__head-top-btn{
+			a{
+				&::after {
+				top: 15px;
+			}
+			}
+			
+		}
+
 		&-menu {
 			width: 115px;
 		}
@@ -1025,6 +1042,15 @@ footer {
 }
 
 @media (max-width: 1120px) {
+
+	.video__head-top-btn {
+		a {
+			&::after{
+				top: 11px;
+			}
+		}
+	}
+
 	.video {
 		&__head-video {
 			grid-template-columns: minmax(542px, 815px);

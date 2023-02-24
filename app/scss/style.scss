@@ -1897,6 +1897,7 @@ html.lock {
         position: sticky;
         top: -2px;
         transition: 0.4s;
+        z-index: 1;
         &.active {
             width: 300px;
         }
@@ -2267,6 +2268,8 @@ html.lock {
 
 .video__head {
     margin-left: -220px;
+    // position: relative;
+    // z-index: -1;
 
     &-top {
         display: flex;
@@ -2316,6 +2319,11 @@ html.lock {
             color: #ffffff;
             padding-right: 33px;
             position: relative;
+            width: 240px;
+            height: 100%;
+            display: grid;
+            justify-content: center;
+            align-content: center;
 
             &::after {
                 content: "";
@@ -2323,8 +2331,8 @@ html.lock {
                 height: 25px;
                 width: 28.3px;
                 position: absolute;
-                left: 145px;
-                top: -3px;
+                left: 179px;
+                top: 24px;
             }
         }
     }
@@ -3962,6 +3970,7 @@ form {
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 1;
 }
 
 #popup_bottom {
