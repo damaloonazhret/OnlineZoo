@@ -1587,8 +1587,10 @@ footer {
 		&__info-box-moreinfo-btn {
 			padding: 0;
 			margin: 55px auto 0 auto;
-			align-self: center;
-			justify-self: center;
+			// align-self: center;
+			// justify-self: center;
+			justify-content: start;
+			padding-left: 58px;
 			width: 289px;
 
 			a {
@@ -1596,7 +1598,8 @@ footer {
 			}
 
 			&::after {
-				right: 60px;
+				right: 51px;
+				top: 25px;
 			}
 		}
 
@@ -2338,7 +2341,8 @@ footer {
 		&-bg {
 			width: 600px;
 			height: 167px;
-			background-position: 62% 100%;
+			background-position: 53% 83%;
+			background-size: 100%;
 			object-fit: cover;
 		}
 		&-live {
@@ -2363,6 +2367,11 @@ footer {
 			column-gap: 20px;
 			row-gap: 40px;
 			justify-content: center;
+			a {
+				p {
+					display: none;
+				}
+			}
 		}
 	}
 }
@@ -2608,6 +2617,7 @@ footer {
 
 		&__info-box-moreinfo-btn {
 			margin: 40px auto 0 auto;
+			padding-left: 112px;
 			width: 100%;
 			height: 46px;
 
@@ -2616,7 +2626,8 @@ footer {
 			}
 
 			&::after {
-				right: 66px;
+				right: 121px;
+				top: 13px;
 			}
 		}
 
@@ -3246,6 +3257,52 @@ footer {
 
 	.donation-box--cam .donation-box__left--text {
 		width: 100%;
+	}
+
+	.donation__popup {
+		&-bg {
+			width: 90vw;
+			height: 18vh;
+			background-position: 53% 100%;
+			background-size: 163%;
+		}
+
+		&-live-info {
+			width: 90vw;
+			grid-template-rows: repeat(3, 15vh);
+			align-items: center;
+			height: 60vh;
+		}
+
+		&-live {
+			width: 90vw;
+			grid-template-rows: 18vh 100%;
+			height: 72vh;
+		}
+
+		&-live-info-text {
+			width: 85vw;
+			font-size: 15px;
+			line-height: 143%;
+		}
+
+		&-live-info-head {
+			width: 90vw;
+			font-size: 29px;
+			line-height: 37px;
+			// height: 84px;
+			padding: 0;
+			margin: 0;
+		}
+
+		&-live-info-button {
+			width: 90vw;
+		}
+
+		&-live-info-button {
+			grid-template-columns: repeat(3, 22vw);
+			grid-template-rows: repeat(2, 6vh);
+		}
 	}
 
 	.animal-infocard {

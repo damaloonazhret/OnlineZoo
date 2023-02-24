@@ -46,8 +46,8 @@ let borderImage = `3px solid #f58021`;
 if (headerPageWidth < 656) {
     borderImage = `2px solid #f58021`;
 }
-function checkBorder() {
+function checkBorder(videoSlider) {
 for (let i = 0; i < 7; i++) {
-    videoSliderEagles[i].children[0].style.border = '2px solid #f5802100';
+    videoSlider[i].children[0].style.border = '2px solid #f5802100';
     }
 }

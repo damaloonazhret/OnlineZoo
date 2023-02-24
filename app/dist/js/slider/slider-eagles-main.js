@@ -627,28 +627,27 @@ let borderImage = `3px solid #f58021`;
 if (headerPageWidth < 656) {
     borderImage = `2px solid #f58021`;
 }
-function checkBorder() {
+function checkBorder(videoSlider) {
 for (let i = 0; i < 7; i++) {
-    videoSliderEagles[i].children[0].style.border = '2px solid #f5802100';
+    videoSlider[i].children[0].style.border = '2px solid #f5802100';
     }
 }
 const videoSliderEagles = document.querySelectorAll('.slider-box-eagles div div');
-const videoStorage = [
-    [`<iframe src="https://www.youtube.com/embed/3dEbq6Or-jU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
-    [`<iframe src="https://www.youtube.com/embed/UVeI91_yNH0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
-    [`<iframe src="https://www.youtube.com/embed/qmAJLsmK1Eo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
-    [`<iframe src="https://www.youtube.com/embed/AZbClwCixI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
-    [`<iframe src="https://www.youtube.com/embed/9lZbexVhb-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
-    [`<iframe src="https://www.youtube.com/embed/Y_4z455r-Sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
-    [`<iframe src="https://www.youtube.com/embed/alfGV_cmQMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`]
+const videoStorageEagles = [
+    [`<iframe src="https://www.youtube.com/embed/1zwLNlUWATo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
+    [`<iframe src="https://www.youtube.com/embed/l7YR1NrlKlo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
+    [`<iframe src="https://www.youtube.com/embed/OfifkMCPUCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
+    [`<iframe src="https://www.youtube.com/embed/ZkQrMB56DWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
+    [`<iframe src="https://www.youtube.com/embed/-LX5YnMBe5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
+    [`<iframe src="https://www.youtube.com/embed/YCwDg8IAb3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`],
+    [`<iframe src="https://www.youtube.com/embed/uNoaioMQWUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`]
 ];
 
 const onButtonClickSlider = (el) => () => {
     console.log(el);
-    videoPlaceholder.innerHTML = videoStorage[el.id][0];
-    checkBorder();
+    videoPlaceholder.innerHTML = videoStorageEagles[el.id][0];
+    checkBorder(videoSliderEagles);
     el.children[0].style.border = borderImage;
-    // el.classList.add('active');
 };
 
 videoSliderEagles.forEach(el => {

@@ -889,8 +889,6 @@ html.lock {
         height: 74px;
         background: #f58021;
         border-radius: 5px;
-        // display: flex;
-        // align-items: center;
         display: grid;
         justify-content: center;
         align-content: center;
@@ -1897,7 +1895,7 @@ html.lock {
         height: 846px;
         background: #20113d;
         position: sticky;
-        top: 0;
+        top: -2px;
         transition: 0.4s;
         &.active {
             width: 300px;
@@ -2290,6 +2288,7 @@ html.lock {
 
     &-more-slider {
         position: relative;
+        // z-index: -1;
     }
 
     &-top-btn {
@@ -3929,7 +3928,6 @@ html.lock {
             line-height: 22px;
             text-transform: uppercase;
             color: #ffffff;
-            // transition: 0.5s ease-in-out;
 
             &:hover {
                 background-color: #05786e;
