@@ -701,7 +701,68 @@ sliderTouchTop.addEventListener("touchend", () => {
 });
 
 
-//=require ./slider-review.js
+
+
+
+function slideList () {
+    const range = document.getElementById('range'),
+    boxSlide = document.querySelector('.pets-think__box-slider-box'),
+    boxContainer = document.querySelector('.pets-think__box-slider-container'),
+    gap = (boxContainer.clientWidth - (boxSlide.clientWidth * 2)),
+    translateWidth = (boxSlide.clientWidth + (gap));
+
+    let indexR = range.value;
+    boxContainer.style.transition = "transform .7s ease-in-out";
+    boxContainer.style.transform = "translateX(" + (-indexR * translateWidth) + 'px';
+}
+
+
+
+
+
+
+
+
+// sliderStrip.style.transform = 'translateX(' + (-indexR * translateWidth) + 'px';
+
+// const onButtonClickReview = (direction) => () => {
+// 	switch (direction) {
+// 		case 'left':
+// 			indexR > 0 && indexR--;
+// 			break;
+// 		case 'right':
+// 			indexR < 4 && indexR++;
+// 			break;
+// 		default:
+// 			break;
+// 	}
+//     console.log(indexR);
+// 	sliderStrip.style.transition = "transform .9s ease-in-out";
+//     sliderStrip.style.transform = "translateX(" + (-indexR * translateWidth) + 'px';
+//     arrowRightReviev.setAttribute("disabled", "disabled");
+// 	arrowLeftReview.setAttribute("disabled", "disabled");
+// };
+
+// const onSlidesBoxTransitionEndReview = () => {
+//     switch (slidesReview[indexR].id) {
+//         case '0':
+//             indexR = 3;
+// 			break;
+//             case '4':
+//                 indexR = 1;
+//                 break;
+//                 default:
+//                     break;
+//                 }
+//     sliderStrip.style.transition = "none";
+// 	sliderStrip.style.transform = "translateX(" + (-indexR * translateWidth) + 'px';
+// 	arrowRightReviev.removeAttribute('disabled');
+// 	arrowLeftReview.removeAttribute('disabled');
+// };
+
+// arrowRightReviev.addEventListener('click', onButtonClickReview('right'));
+// arrowLeftReview.addEventListener('click', onButtonClickReview('left'));
+// sliderStrip.addEventListener('transitionend', onSlidesBoxTransitionEndReview);
 const openPanels = document.querySelectorAll('.popup-link-not-close');
 const menuPanel = document.querySelectorAll('.donation__popup-choise-content');
 const overlay = document.querySelectorAll('.menu__list-overlay');
@@ -943,6 +1004,9 @@ const checkBoxCard = document.querySelector('.donation__popup-card-input');
 const checkBoxCVV = document.querySelector('.donation__popup-cvv-input');
 const checkDate = document.querySelectorAll('.donation__popup-input');
 const inputBorder = document.querySelectorAll('.input-border');
+const closePopapWhite = document.querySelector('.donation__popup-close-modal');
+
+
 
 
 
@@ -1071,7 +1135,9 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-
+closePopapWhite.addEventListener('click', function() {
+    popupBottom.classList.remove('open');
+});
 const inputPopupValidate = document.querySelectorAll('.donation__popup-input');
 const buttonBlock = document.querySelectorAll('.block');
 const popupFirstValidate = document.getElementById('popup');
@@ -1276,6 +1342,12 @@ for (let i = 4; i < 6; i++) {
             checkBoxCVV.style.border = '1px solid #000000';
             CVVInputContainer.classList.remove('active');
         }
+        if (!validateCard(checkBoxCard) && 
+        !validateCVV(checkBoxCVV) && 
+        !validateMonth(inputPopupValidate[1]) && 
+        !validateYear(inputPopupValidate[2])){
+            buttonBlock[2].classList.add('hidden');
+        }
     });
 }
 
@@ -1287,6 +1359,12 @@ popupThreeValidate.addEventListener('click', function () {
     if (!validateYear(inputPopupValidate[2])) {
         inputPopupValidate[2].style.border = '1px solid #000000';
         inputContainer[2].classList.remove('active');
+    }
+    if(!validateMonth(inputPopupValidate[1]) && 
+    !validateYear(inputPopupValidate[2]) && 
+    !validateCard(checkBoxCard) && 
+    !validateCVV(checkBoxCVV)) {
+        buttonBlock[2].classList.add('hidden');
     }
 });
 

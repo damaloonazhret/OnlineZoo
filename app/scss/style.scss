@@ -86,6 +86,11 @@ html.lock {
 }
 
 .menu__btn.active {
+
+    &::before,
+    &::after {
+        background-color: rgb(255, 255, 255);
+    }
     &::before {
         transform: rotate(45deg);
         top: 10px;
@@ -910,16 +915,6 @@ html.lock {
         transition: 1s;
         cursor: pointer;
 
-        // a {
-        //     width: 100%;
-        //     height: 100%;
-        //     display: grid;
-        //     align-content: center;
-        //     justify-content: center;
-        //     // margin-right: 57px;
-        //     padding-right: 57px;
-        // }
-
         &:hover {
             background: #ac4f03;
         }
@@ -930,7 +925,7 @@ html.lock {
             height: 22px;
             background-image: url(../images/arrow-right.svg);
             position: absolute;
-            right: 30px;
+            left: 178px;
             top: 24px;
         }
     }
@@ -1543,6 +1538,7 @@ html.lock {
         text-transform: uppercase;
         position: relative;
         transition: 1s;
+        
 
         &:hover {
             background-color: #00a092;
@@ -1553,6 +1549,8 @@ html.lock {
             border-radius: 5px;
             padding: 26px 68px 26px 34px;
             color: #ffffff;
+            z-index: 1;
+            position: relative;
 
             &:hover {
                 color: #ffffff;
@@ -3996,5 +3994,8 @@ form {
     }
 }
 
+.contact-none {
+    display: none;
+}
 
 @import "media";

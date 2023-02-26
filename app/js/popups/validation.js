@@ -202,6 +202,12 @@ for (let i = 4; i < 6; i++) {
             checkBoxCVV.style.border = '1px solid #000000';
             CVVInputContainer.classList.remove('active');
         }
+        if (!validateCard(checkBoxCard) && 
+        !validateCVV(checkBoxCVV) && 
+        !validateMonth(inputPopupValidate[1]) && 
+        !validateYear(inputPopupValidate[2])){
+            buttonBlock[2].classList.add('hidden');
+        }
     });
 }
 
@@ -213,6 +219,12 @@ popupThreeValidate.addEventListener('click', function () {
     if (!validateYear(inputPopupValidate[2])) {
         inputPopupValidate[2].style.border = '1px solid #000000';
         inputContainer[2].classList.remove('active');
+    }
+    if(!validateMonth(inputPopupValidate[1]) && 
+    !validateYear(inputPopupValidate[2]) && 
+    !validateCard(checkBoxCard) && 
+    !validateCVV(checkBoxCVV)) {
+        buttonBlock[2].classList.add('hidden');
     }
 });
 

@@ -12,6 +12,9 @@ const checkBoxCard = document.querySelector('.donation__popup-card-input');
 const checkBoxCVV = document.querySelector('.donation__popup-cvv-input');
 const checkDate = document.querySelectorAll('.donation__popup-input');
 const inputBorder = document.querySelectorAll('.input-border');
+const closePopapWhite = document.querySelector('.donation__popup-close-modal');
+
+
 
 
 
@@ -140,3 +143,6 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+closePopapWhite.addEventListener('click', function() {
+    popupBottom.classList.remove('open');
+});
