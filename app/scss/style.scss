@@ -575,6 +575,12 @@ html.lock {
         grid-template-columns: repeat(22, 1fr);
         position: relative;
     }
+    &__row-3 {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        padding-top: 50px;
+        position: relative;
+    }
 
     &__card-img {
         border-radius: 5px;
@@ -3191,7 +3197,7 @@ html.lock {
         border-radius: 5px;
         display: grid;
         grid-template-rows: repeat(8, 56px);
-        grid-template-columns: auto 32px;
+        grid-template-columns: auto;
         z-index: 4;
         // transition: all 0.01s;
         overflow-y: auto;
@@ -3985,15 +3991,5 @@ form {
     }
 }
 
-.asd {
-    width: 100px;
-    height: 100px;
-    background: black;
-    position: sticky;
-    opacity: 1;
-    visibility: visible;
-    z-index: 100000;
-    top: 0;
-}
 
 @import "media";
