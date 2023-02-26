@@ -69,6 +69,7 @@ buttonDollars.forEach(el2 => {
             clearInput.style.border = '1px solid #000000';
             otherBlock.classList.add('active');
             firstPageInput.classList.remove('active');
+            firstPageSpecBlock.classList.remove('activeBtn');
         });
     });
 });
@@ -310,6 +311,9 @@ function popupClose(popupActive, doUnlock = true) {
                     });
                     expirationError.classList.remove('donation__popup-expiration-error');
                     creditError.classList.remove('donation__popup-credit-error');
+                    firstPageCheckBlock.classList.remove('activeBtn');
+                    firstPageSpecBlock.classList.remove('activeBtn');
+                    bodyTwoPopup.classList.remove('active');
                 }
         }, 100);
 
@@ -377,6 +381,8 @@ const firstPageInput = document.querySelector('.donation__popup-clear-block-cont
 const firstPageSelect = document.querySelector('.donation__popup-input-container-box-content span');
 const secondPageName = document.querySelector('.donation__popup-name span');
 const secondPageEmail = document.querySelector('.donation__popup-email span');
+const firstPageSpecBlock = document.querySelector('.donation__popup-special-block');
+const firstPageCheckBlock = document.querySelector('.donation__popup-checkbox');
 const creditError = document.querySelector('.donation__popup-credit');
 const expirationError = document.querySelector('.donation__popup-expiration');
 const cardInputContainer = document.querySelector('.donation__popup-card-input-container span');
@@ -388,6 +394,7 @@ const donationInformation = document.querySelector('.donation__popup-information
 const disabledButton = document.querySelector('.donation__popup-btn-three');
 const specialBlock = document.querySelector('.donation__popup-special-block');
 const otherBlock = document.querySelector('.donation__popup-other-block');
+const bodyTwoPopup = document.querySelector('.donation__popup-body-two');
 
 const choise = document.querySelectorAll('.donation__popup-choise');
 
@@ -410,6 +417,7 @@ popupFirstValidate.addEventListener('click', function () {
     if (inputPopupValidate[0].placeholder !== 'Choose your favourite') {
         btnMenuPanel[0].style.border = '1px solid #000000';
         firstPageSelect.classList.remove('active');
+        firstPageCheckBlock.classList.remove('activeBtn');
         specialBlock.classList.add('active');
     }
     if (inputPopupValidate[0].placeholder !== 'Choose your favourite' && clearInput.value !== '') {
@@ -421,6 +429,7 @@ popupFirstValidate.addEventListener('keyup', function () {
     if (clearInput.value !== '') {
         clearInput.style.border = '1px solid #000000';
         firstPageInput.classList.remove('active');
+        firstPageSpecBlock.classList.remove('activeBtn');
         otherBlock.classList.add('active');
     }
     if (inputPopupValidate[0].placeholder !== 'Choose your favourite' && clearInput.value !== '') {
@@ -433,9 +442,11 @@ buttonBlock[0].addEventListener('click', function () {
     if (inputPopupValidate[0].placeholder == 'Choose your favourite') {
         btnMenuPanel[0].style.border = '2px solid #ff8400';
         firstPageSelect.classList.add('active');
+        firstPageCheckBlock.classList.add('activeBtn');
     } if (clearInput.value == '') {
         clearInput.style.border = '2px solid #ff8400';
         asyncTimeoutInput();
+        firstPageSpecBlock.classList.add('activeBtn');
         firstPageInput.classList.add('active');
     }
 });
@@ -466,6 +477,7 @@ popupTwoValidate.addEventListener('keyup', function () {
     if (validateName(inputName)) {
         inputName.style.border = '1px solid #000000';
         secondPageName.classList.remove('active');
+        bodyTwoPopup.classList.remove('active');
     }
     if (validateEmail(inputEmail)) {
         inputEmail.style.border = '1px solid #000000';
@@ -481,6 +493,9 @@ buttonBlock[1].addEventListener('click', function () {
     if (!validateName(inputName)) {
         inputName.style.border = '2px solid #ff8400';
         secondPageName.classList.add('active');
+        bodyTwoPopup.classList.add('active');
+
+
     } if (!validateEmail(inputEmail)) {
         inputEmail.style.border = '2px solid #ff8400';
         donationInformation.style.marginTop = '20px';
@@ -644,7 +659,6 @@ const videoStorageEagles = [
 ];
 
 const onButtonClickSlider = (el) => () => {
-    console.log(el);
     videoPlaceholder.innerHTML = videoStorageEagles[el.id][0];
     checkBorder(videoSliderEagles);
     el.children[0].style.border = borderImage;
@@ -663,11 +677,6 @@ const imgVideoSliderWidth = imgVideoSlider.clientWidth;
 const videoSliderBoxGap = ((videoSliderBox.clientWidth / 3) - imgVideoSliderWidth);
 const videoSliderBoxGapMini = ((videoSliderBox.clientWidth / 2) - imgVideoSliderWidth);
 let widthImg = 0;
-
-console.log(videoSliderBox.clientWidth);
-console.log(imgVideoSliderWidth);
-console.log(videoSliderBoxGapMini);
-
 let indexVS = 0;
 
 const onButtonClick = (direction) => () => {
@@ -681,17 +690,14 @@ const onButtonClick = (direction) => () => {
         default:
             break;
     }
-    console.log(indexVS);
     if (videoWidth < 600) {
         widthImg = videoSliderBoxGapMini;
-        console.log(indexVS);
         if (indexVS == 3) {
             indexVS = -2;
         }
         if (indexVS == -3) {
             indexVS = 2;
         }
-        console.log(indexVS);
     } else {
         widthImg = videoSliderBoxGap;
         if (indexVS == 3) {
@@ -733,12 +739,10 @@ function move(e) {
 	}
 	e.preventDefault();
 	if (e.changedTouches[0].pageX > startPoint + sliderTouch.offsetWidth / 4) {
-		console.log("направо");
         onButtonClick('left')();
 		moved = true;
 	}
 	if (e.changedTouches[0].pageX < startPoint - sliderTouch.offsetWidth / 4) {
-		console.log("налево");
         onButtonClick('right')();
 		moved = true;
 	}
@@ -777,11 +781,6 @@ document.addEventListener("click", function (e) {
 	const itsMenu = target == menu || menu.contains(target);
 	const itsBtnMenu = target == btnMenu;
 	const menuIsActive = menu.classList.contains("active");
-	// console.log(target);
-	// console.log(itsMenu);
-	// console.log(itsBtnMenu);
-	// console.log(menuIsActive);
-
 	if (!itsMenu && !itsBtnMenu && menuIsActive) {
 		toggleMenu();
 	}

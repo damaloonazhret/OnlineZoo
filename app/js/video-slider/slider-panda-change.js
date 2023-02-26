@@ -12,7 +12,6 @@ const videoStoragePanda = [
 
 
 const onButtonClickSliderPanda = (el) => () => {
-    console.log(el);
     videoPlaceholder.innerHTML = videoStoragePanda[el.id][0];
     checkBorder(videoSlider);
     el.children[0].style.border = borderImage;

@@ -69,6 +69,7 @@ buttonDollars.forEach(el2 => {
             clearInput.style.border = '1px solid #000000';
             otherBlock.classList.add('active');
             firstPageInput.classList.remove('active');
+            firstPageSpecBlock.classList.remove('activeBtn');
         });
     });
 });

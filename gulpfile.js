@@ -82,6 +82,22 @@ gulp.task('js-gorila', () => {
     .pipe(gulp.dest('app/dist/js/slider'));
 })
 
+gulp.task('js-map', () => {
+  return gulp.src('app/js/map-main.js')
+    .pipe(include())
+    .on('error', console.log)
+    .pipe(gulp.dest('app/dist/js'));
+})
+
+gulp.task('js-contact', () => {
+  return gulp.src('app/js/contact-main.js')
+    .pipe(include())
+    .on('error', console.log)
+    .pipe(gulp.dest('app/dist/js'));
+})
+
+
+
 gulp.task('js', function () {
   return gulp.src([
     'node_modules/slick-carousel/slick/slick.js',
@@ -124,10 +140,10 @@ gulp.task('export', async function () {
 gulp.task('watch', function () {
   gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'));
   gulp.watch('app/*.html', gulp.parallel('html'));
-  gulp.watch('app/js/**/*.js', gulp.parallel('js-include', 'js-panda', 'js-eagles', 'js-lemur', 'js-gorila', 'script'));
+  gulp.watch('app/js/**/*.js', gulp.parallel('js-include', 'js-panda', 'js-eagles', 'js-contact', 'js-map', 'js-lemur', 'js-gorila', 'script'));
   // gulp.watch('app/js/**/*.js', gulp.parallel('js-panda', 'script'));
 });
 
 gulp.task('build', gulp.series('clean', 'export'));
 
-gulp.task('default', gulp.parallel('css', 'scss', 'js', 'js-include', 'js-panda', 'js-eagles', 'js-lemur', 'js-gorila', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('css', 'scss', 'js', 'js-include', 'js-panda', 'js-contact', 'js-eagles', 'js-lemur', 'js-map', 'js-gorila', 'browser-sync', 'watch'));

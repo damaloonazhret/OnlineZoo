@@ -10,7 +10,6 @@ const videoStorageLemur = [
 ];
 
 const onButtonClickSlider = (el) => () => {
-    console.log(el);
     videoPlaceholder.innerHTML = videoStorageLemur[el.id][0];
     checkBorder(videoSliderLemur);
     el.children[0].style.border = borderImage;

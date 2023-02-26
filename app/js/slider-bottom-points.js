@@ -24,7 +24,6 @@ function pointSlider(direction) {
     if (direction == 'right') {
         indexVHS < 3 && indexVHS++;
     }
-    console.log(indexVHS);
     checkPointActive();
     mobilePoints[indexVHS].classList.add('active');
     mobileSlider.style.transform = "translateX(" + ((-mobileSliderBox.clientWidth - 40) * indexVHS) + 'px';
@@ -42,7 +41,6 @@ function move(e) {
 	}
 	e.preventDefault();
 	if (e.changedTouches[0].pageX > startPoint + sliderTouch.offsetWidth / 14) {
-		console.log("направо");
         pointSlider('left');
 		moved = true;
 	}

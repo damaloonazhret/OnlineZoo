@@ -178,8 +178,7 @@ else {
 
 const cardWidth = (document.querySelector('.pets-bottom__card').clientWidth);
 const cardMiniRow = document.querySelector('.pets-bottom__row-3');
-console.log(cardMiniRow)
-console.log(cardWidth);
+
 
 let indexVVS = 0;
 const misiSliderTop = (direction) => () => {
@@ -199,7 +198,6 @@ const misiSliderTop = (direction) => () => {
 	if (indexVVS == -1) {
 		indexVVS = 5;
 	}
-	console.log(indexVVS);
 	cardMiniRow.style.transition = "transform .5s ease-in-out";
 	cardMiniRow.style.transform = "translateX(" + (-indexVVS * (cardWidth + 20)) + 'px';
 };
@@ -219,12 +217,10 @@ function moveTop(e) {
 	}
 	e.preventDefault();
 	if (e.changedTouches[0].pageX > startPointTop + sliderTouchTop.offsetWidth / 15) {
-		console.log("направо");
 		misiSliderTop('left')();
 		movedTop = true;
 	}
 	if (e.changedTouches[0].pageX < startPointTop - sliderTouchTop.offsetWidth / 15) {
-		console.log("налево");
 		misiSliderTop('right')();
 		movedTop = true;
 	}

@@ -8,11 +8,6 @@ const imgVideoSliderWidth = imgVideoSlider.clientWidth;
 const videoSliderBoxGap = ((videoSliderBox.clientWidth / 3) - imgVideoSliderWidth);
 const videoSliderBoxGapMini = ((videoSliderBox.clientWidth / 2) - imgVideoSliderWidth);
 let widthImg = 0;
-
-console.log(videoSliderBox.clientWidth);
-console.log(imgVideoSliderWidth);
-console.log(videoSliderBoxGapMini);
-
 let indexVS = 0;
 
 const onButtonClick = (direction) => () => {
@@ -26,17 +21,14 @@ const onButtonClick = (direction) => () => {
         default:
             break;
     }
-    console.log(indexVS);
     if (videoWidth < 600) {
         widthImg = videoSliderBoxGapMini;
-        console.log(indexVS);
         if (indexVS == 3) {
             indexVS = -2;
         }
         if (indexVS == -3) {
             indexVS = 2;
         }
-        console.log(indexVS);
     } else {
         widthImg = videoSliderBoxGap;
         if (indexVS == 3) {
@@ -78,12 +70,10 @@ function move(e) {
 	}
 	e.preventDefault();
 	if (e.changedTouches[0].pageX > startPoint + sliderTouch.offsetWidth / 4) {
-		console.log("направо");
         onButtonClick('left')();
 		moved = true;
 	}
 	if (e.changedTouches[0].pageX < startPoint - sliderTouch.offsetWidth / 4) {
-		console.log("налево");
         onButtonClick('right')();
 		moved = true;
 	}

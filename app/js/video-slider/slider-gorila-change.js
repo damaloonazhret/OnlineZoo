@@ -12,7 +12,6 @@ const videoStorageGorilla = [
 ];
 
 const onButtonClickSlider = (el) => () => {
-    console.log(el);
     videoPlaceholder.innerHTML = videoStorageGorilla[el.id][0];
     checkBorder(videoSliderGorrila);
     el.children[0].style.border = borderImage;

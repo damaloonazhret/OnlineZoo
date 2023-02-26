@@ -84,6 +84,9 @@ function popupClose(popupActive, doUnlock = true) {
                     });
                     expirationError.classList.remove('donation__popup-expiration-error');
                     creditError.classList.remove('donation__popup-credit-error');
+                    firstPageCheckBlock.classList.remove('activeBtn');
+                    firstPageSpecBlock.classList.remove('activeBtn');
+                    bodyTwoPopup.classList.remove('active');
                 }
         }, 100);
 

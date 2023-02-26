@@ -10,7 +10,6 @@ const videoStorageEagles = [
 ];
 
 const onButtonClickSlider = (el) => () => {
-    console.log(el);
     videoPlaceholder.innerHTML = videoStorageEagles[el.id][0];
     checkBorder(videoSliderEagles);
     el.children[0].style.border = borderImage;
